@@ -1277,8 +1277,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     sse_instr(dst, src, 0x##escape, 0x##opcode);             \
   }
 
-  SSE_UNOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-  SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
 #undef DECLARE_SSE_INSTRUCTION
 
   // SSE instructions with prefix and SSE2 instructions
@@ -1295,10 +1293,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   }
 
   // These SSE instructions have the same encoding as the SSE2 instructions.
-  SSE_INSTRUCTION_LIST_SS(DECLARE_SSE2_INSTRUCTION)
-  SSE2_INSTRUCTION_LIST(DECLARE_SSE2_INSTRUCTION)
-  SSE2_INSTRUCTION_LIST_SD(DECLARE_SSE2_INSTRUCTION)
-  SSE2_UNOP_INSTRUCTION_LIST(DECLARE_SSE2_INSTRUCTION)
 #undef DECLARE_SSE2_INSTRUCTION
 
   void sse2_instr(XMMRegister reg, uint8_t imm8, uint8_t prefix, uint8_t escape,
@@ -1312,7 +1306,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void instruction(XMMRegister reg, uint8_t imm8) {                            \
     sse2_instr(reg, imm8, 0x##prefix, 0x##escape, 0x##opcode, 0x##extension);  \
   }
-  SSE2_INSTRUCTION_LIST_SHIFT_IMM(DECLARE_SSE2_SHIFT_IMM)
 #undef DECLARE_SSE2_SHIFT_IMM
 
 #define DECLARE_SSE2_AVX_INSTRUCTION(instruction, prefix, escape, opcode)    \
@@ -1332,7 +1325,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX);     \
   }
 
-  SSE2_INSTRUCTION_LIST_PD(DECLARE_SSE2_PD_AVX_INSTRUCTION)
 #undef DECLARE_SSE2_PD_AVX_INSTRUCTION
 
 #define DECLARE_SSE2_PI_AVX_INSTRUCTION(instruction, prefix, escape, opcode) \
@@ -1344,7 +1336,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX2);    \
   }
 
-  SSE2_INSTRUCTION_LIST_PI(DECLARE_SSE2_PI_AVX_INSTRUCTION)
 #undef DECLARE_SSE2_PI_AVX_INSTRUCTION
 
 #define DECLARE_SSE2_SHIFT_AVX_INSTRUCTION(instruction, prefix, escape,      \
@@ -1357,7 +1348,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX2);    \
   }
 
-  SSE2_INSTRUCTION_LIST_SHIFT(DECLARE_SSE2_SHIFT_AVX_INSTRUCTION)
 #undef DECLARE_SSE2_SHIFT_AVX_INSTRUCTION
 #undef DECLARE_SSE2_AVX_INSTRUCTION
 
@@ -1369,7 +1359,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vpd(0x##opcode, dst, xmm0, src);                                           \
   }
 
-  SSE2_UNOP_INSTRUCTION_LIST(DECLARE_SSE2_UNOP_AVX_INSTRUCTION)
 #undef DECLARE_SSE2_UNOP_AVX_INSTRUCTION
 
 #define DECLARE_SSE2_UNOP_AVX_YMM_INSTRUCTION(                 \
@@ -1411,8 +1400,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     ssse3_instr(dst, src, 0x##prefix, 0x##escape1, 0x##escape2, 0x##opcode); \
   }
 
-  SSSE3_INSTRUCTION_LIST(DECLARE_SSSE3_INSTRUCTION)
-  SSSE3_UNOP_INSTRUCTION_LIST(DECLARE_SSSE3_INSTRUCTION)
 #undef DECLARE_SSSE3_INSTRUCTION
 
   // SSE4
@@ -1437,8 +1424,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     sse4_instr(dst, src, 0x##prefix, 0x##escape1, 0x##escape2, 0x##opcode); \
   }
 
-  SSE4_INSTRUCTION_LIST(DECLARE_SSE4_INSTRUCTION)
-  SSE4_UNOP_INSTRUCTION_LIST(DECLARE_SSE4_INSTRUCTION)
   DECLARE_SSE4_INSTRUCTION(pblendvb, 66, 0F, 38, 10)
   DECLARE_SSE4_INSTRUCTION(blendvps, 66, 0F, 38, 14)
   DECLARE_SSE4_INSTRUCTION(blendvpd, 66, 0F, 38, 15)
@@ -1455,7 +1440,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
                imm8);                                                      \
   }
 
-  SSE4_EXTRACT_INSTRUCTION_LIST(DECLARE_SSE4_EXTRACT_INSTRUCTION)
 #undef DECLARE_SSE4_EXTRACT_INSTRUCTION
 
   // SSE4.2
@@ -1472,7 +1456,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     sse4_2_instr(dst, src, 0x##prefix, 0x##escape1, 0x##escape2, 0x##opcode); \
   }
 
-  SSE4_2_INSTRUCTION_LIST(DECLARE_SSE4_2_INSTRUCTION)
 #undef DECLARE_SSE4_2_INSTRUCTION
 
 #define DECLARE_SSE34_AVX_INSTRUCTION(instruction, prefix, escape1, escape2,  \
@@ -1492,9 +1475,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
            AVX2);                                                             \
   }
 
-  SSSE3_INSTRUCTION_LIST(DECLARE_SSE34_AVX_INSTRUCTION)
-  SSE4_INSTRUCTION_LIST(DECLARE_SSE34_AVX_INSTRUCTION)
-  SSE4_2_INSTRUCTION_LIST(DECLARE_SSE34_AVX_INSTRUCTION)
 #undef DECLARE_SSE34_AVX_INSTRUCTION
 
 #define DECLARE_SSSE3_UNOP_AVX_INSTRUCTION(instruction, prefix, escape1,     \
@@ -1512,7 +1492,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vinstr(0x##opcode, dst, ymm0, src, k##prefix, k##escape1##escape2, kW0); \
   }
 
-  SSSE3_UNOP_INSTRUCTION_LIST(DECLARE_SSSE3_UNOP_AVX_INSTRUCTION)
 #undef DECLARE_SSSE3_UNOP_AVX_INSTRUCTION
 
   void vpblendvb(XMMRegister dst, XMMRegister src1, XMMRegister src2,
@@ -1562,7 +1541,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instruction(XMMRegister dst, Operand src) {                        \
     vinstr(0x##opcode, dst, xmm0, src, k##prefix, k##escape1##escape2, kW0); \
   }
-  SSE4_UNOP_INSTRUCTION_LIST(DECLARE_SSE4_PMOV_AVX_INSTRUCTION)
 #undef DECLARE_SSE4_PMOV_AVX_INSTRUCTION
 
 #define DECLARE_SSE4_PMOV_AVX2_INSTRUCTION(instruction, prefix, escape1,     \
@@ -1573,7 +1551,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instruction(YMMRegister dst, Operand src) {                        \
     vinstr(0x##opcode, dst, xmm0, src, k##prefix, k##escape1##escape2, kW0); \
   }
-  SSE4_UNOP_INSTRUCTION_LIST_PMOV(DECLARE_SSE4_PMOV_AVX2_INSTRUCTION)
 #undef DECLARE_SSE4_PMOV_AVX2_INSTRUCTION
 
   void vptest(YMMRegister dst, YMMRegister src) {
@@ -1594,7 +1571,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     emit(imm8);                                                                \
   }
 
-  SSE4_EXTRACT_INSTRUCTION_LIST(DECLARE_AVX_INSTRUCTION)
 #undef DECLARE_AVX_INSTRUCTION
 
   void movd(XMMRegister dst, Register src);
@@ -1812,7 +1788,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instr(YMMRegister dst, Operand src2) {     \
     vps(0x##opcode, dst, ymm0, src2);                \
   }
-  SSE_UNOP_INSTRUCTION_LIST(AVX_SSE_UNOP)
 #undef AVX_SSE_UNOP
 
 #define AVX_SSE_BINOP(instr, escape, opcode)                           \
@@ -1828,7 +1803,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instr(YMMRegister dst, YMMRegister src1, Operand src2) {     \
     vps(0x##opcode, dst, src1, src2);                                  \
   }
-  SSE_BINOP_INSTRUCTION_LIST(AVX_SSE_BINOP)
 #undef AVX_SSE_BINOP
 
 #define AVX_3(instr, opcode, impl, SIMDRegister)                       \
@@ -1849,8 +1823,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instr(XMMRegister dst, XMMRegister src1, Operand src2) {     \
     vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kWIG);   \
   }
-  SSE_INSTRUCTION_LIST_SS(AVX_SCALAR)
-  SSE2_INSTRUCTION_LIST_SD(AVX_SCALAR)
 #undef AVX_SCALAR
 
 #undef AVX_3
@@ -1867,7 +1839,6 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vinstr(0x##opcode, ext_reg, dst, src, k##prefix, k##escape, kWIG); \
     emit(imm8);                                                        \
   }
-  SSE2_INSTRUCTION_LIST_SHIFT_IMM(AVX_SSE2_SHIFT_IMM)
 #undef AVX_SSE2_SHIFT_IMM
 
   void vmovlhps(XMMRegister dst, XMMRegister src1, XMMRegister src2) {
