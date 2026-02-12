@@ -124,20 +124,29 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
   template <typename Op>
   void Pinsrb(XMMRegister dst, XMMRegister src1, Op src2, uint8_t imm8,
               uint32_t* load_pc_offset = nullptr) {
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
     PinsrHelper(this, &Assembler::vpinsrb, &Assembler::pinsrb, dst, src1, src2,
                 imm8, load_pc_offset, {SSE4_1});
+#else
+    UNREACHABLE();
+#endif
   }
 
   template <typename Op>
   void Pinsrw(XMMRegister dst, XMMRegister src1, Op src2, uint8_t imm8,
               uint32_t* load_pc_offset = nullptr) {
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
     PinsrHelper(this, &Assembler::vpinsrw, &Assembler::pinsrw, dst, src1, src2,
                 imm8, load_pc_offset);
+#else
+    UNREACHABLE();
+#endif
   }
 
   // Supports both SSE and AVX. Move src1 to dst if they are not equal on SSE.
   template <typename Op>
   void Pshufb(XMMRegister dst, XMMRegister src, Op mask) {
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope avx_scope(this, AVX);
       vpshufb(dst, src, mask);
@@ -150,6 +159,9 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
       CpuFeatureScope sse_scope(this, SSSE3);
       pshufb(dst, mask);
     }
+#else
+    UNREACHABLE();
+#endif
   }
 
   template <typename Op>
@@ -174,6 +186,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
     template <void (Assembler::*avx)(Dst, Dst, Arg, Args...),
               void (Assembler::*no_avx)(Dst, Arg, Args...)>
     void emit(Dst dst, Arg arg, Args... args) {
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
       if (CpuFeatures::IsSupported(AVX)) {
         CpuFeatureScope scope(assm, AVX);
         (assm->*avx)(dst, dst, arg, args...);
@@ -184,6 +197,9 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
       } else {
         (assm->*no_avx)(dst, arg, args...);
       }
+#else
+      (assm->*no_avx)(dst, arg, args...);
+#endif
     }
 
     // Call a method in the AVX form (one more operand), but if unsupported will
@@ -193,6 +209,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
     template <void (Assembler::*avx)(Dst, Arg, Args...),
               void (Assembler::*no_avx)(Dst, Args...)>
     void emit(Dst dst, Arg arg, Args... args) {
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
       if (CpuFeatures::IsSupported(AVX)) {
         CpuFeatureScope scope(assm, AVX);
         (assm->*avx)(dst, arg, args...);
@@ -205,6 +222,10 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
         DCHECK_EQ(dst, arg);
         (assm->*no_avx)(dst, args...);
       }
+#else
+      DCHECK_EQ(dst, arg);
+      (assm->*no_avx)(dst, args...);
+#endif
     }
 
     // Call a method where the AVX version expects no duplicated dst argument.
@@ -213,6 +234,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
     template <void (Assembler::*avx)(Dst, Arg, Args...),
               void (Assembler::*no_avx)(Dst, Arg, Args...)>
     void emit(Dst dst, Arg arg, Args... args) {
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
       if (CpuFeatures::IsSupported(AVX)) {
         CpuFeatureScope scope(assm, AVX);
         (assm->*avx)(dst, arg, args...);
@@ -223,9 +245,13 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
       } else {
         (assm->*no_avx)(dst, arg, args...);
       }
+#else
+      (assm->*no_avx)(dst, arg, args...);
+#endif
     }
   };
 
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
 #define AVX_OP(macro_name, name)                                        \
   template <typename Dst, typename Arg, typename... Args>               \
   void macro_name(Dst dst, Arg arg, Args... args) {                     \
@@ -284,7 +310,99 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
         .template emit<&Assembler::v##name, &Assembler::name>(dst, arg,   \
                                                               args...);   \
   }
+#else
+  template <typename Dst, typename Arg>
+  void Movd(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
 
+  template <typename Dst, typename Arg>
+  void Pxor(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Pcmpeqd(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Psrld(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Cvtdq2ps(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Cmpleps(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Cvttps2dq(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Pmaxsd(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Paddd(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg, typename... Args>
+  void Unpcklps(Dst dst, Arg arg, Args... args) {
+    USE(dst);
+    USE(arg);
+    int dummy[] = {0, (USE(args), 0)...};
+    USE(dummy);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg, typename... Args>
+  void Subpd(Dst dst, Arg arg, Args... args) {
+    USE(dst);
+    USE(arg);
+    int dummy[] = {0, (USE(args), 0)...};
+    USE(dummy);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg, typename... Args>
+  void Pmaddwd(Dst dst, Arg arg, Args... args) {
+    USE(dst);
+    USE(arg);
+    int dummy[] = {0, (USE(args), 0)...};
+    USE(dummy);
+    UNREACHABLE();
+  }
+#endif
+
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
   // Keep this list sorted by required extension, then instruction name.
   AVX_OP(Addpd, addpd)
   AVX_OP(Addps, addps)
@@ -461,6 +579,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
   AVX_OP_SSE4_1(Roundps, roundps)
   AVX_OP_SSE4_1(Roundsd, roundsd)
   AVX_OP_SSE4_1(Roundss, roundss)
+#endif
 
 #undef AVX_OP
 #undef AVX_OP_SSE3
