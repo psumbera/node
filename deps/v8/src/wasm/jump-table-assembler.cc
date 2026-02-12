@@ -88,6 +88,14 @@ void JumpTableAssembler::emit(T value, RelaxedStoreTag) DISABLE_UBSAN {
   DCHECK_EQ(write_start >> kSystemPointerSizeLog2,
             write_end >> kSystemPointerSizeLog2);
 #endif
+#elif V8_TARGET_ARCH_SPARC64
+#ifdef DEBUG
+  Address write_start = pc_;
+  Address write_end = write_start + sizeof(T) - 1;
+  // Check that the write doesn't cross a qword boundary.
+  DCHECK_EQ(write_start >> kSystemPointerSizeLog2,
+            write_end >> kSystemPointerSizeLog2);
+#endif
 #endif
   jit_allocation_.WriteValue(pc_, value, kRelaxedStore);
   pc_ += sizeof(T);
@@ -165,6 +173,79 @@ void JumpTableAssembler::PatchFarJumpSlot(WritableJitAllocation& jit_allocation,
 void JumpTableAssembler::SkipUntil(int offset) {
   DCHECK_GE(offset, pc_offset());
   pc_ += offset - pc_offset();
+}
+
+#elif V8_TARGET_ARCH_SPARC64
+void JumpTableAssembler::EmitLazyCompileJumpSlot(uint32_t func_index,
+                                                 Address lazy_compile_target) {
+  // Use a push, because mov to an extended register takes 6 bytes.
+  const uint8_t inst[kLazyCompileTableSlotSize] = {
+      0x68, 0, 0, 0, 0,  // pushq func_index
+      0xe9, 0, 0, 0, 0,  // near_jmp displacement
+  };
+
+  intptr_t displacement =
+      lazy_compile_target - (pc_ + kLazyCompileTableSlotSize);
+
+  emit<uint8_t>(inst[0]);
+  emit<uint32_t>(func_index);
+  emit<uint8_t>(inst[5]);
+  emit<int32_t>(base::checked_cast<int32_t>(displacement));
+}
+
+bool JumpTableAssembler::EmitJumpSlot(Address target) {
+#ifdef V8_ENABLE_CET_IBT
+  uint32_t endbr_insn = 0xfa1e0ff3;
+  uint32_t nop = 0x00401f0f;
+  uint32_t mov_rax = 0xb848;
+  uint16_t push_rax = 0x50;
+  uint16_t ret = 0xc3;
+
+  // See EmitLazyCompileJumpSlot for reasons why atomicity of writes is
+  // important.
+  const uint8_t int3 = 0xcc;
+
+  emit<uint32_t>(endbr_insn, kRelaxedStore);
+  emit<uint32_t>(nop, kRelaxedStore);
+  emit<uint16_t>(mov_rax, kRelaxedStore);
+  Address jump_target = pc_;
+  emit<Address>(target, kRelaxedStore);
+  emit<uint16_t>(push_rax, kRelaxedStore);
+  emit<uint8_t>(ret, kRelaxedStore);
+
+  base::AsAtomic8::Release_Store(reinterpret_cast<base::Atomic8*>(jump_target),
+                                 int3);
+  base::AsAtomic8::Release_Store(reinterpret_cast<base::Atomic8*>(jump_target),
+                                 static_cast<uint8_t>(target));
+  return false;
+#else
+  // jmp [rip+0] / addr
+  const uint8_t inst[kJumpTableSlotSize] = {
+      0xff, 0x25, 0, 0, 0, 0,  // jmp [rip+0]
+      0,    0};                 // target
+  emit<uint8_t>(inst[0], kRelaxedStore);
+  emit<uint8_t>(inst[1], kRelaxedStore);
+  emit<uint32_t>(0, kRelaxedStore);
+  emit<Address>(target, kRelaxedStore);
+  return false;
+#endif
+}
+
+void JumpTableAssembler::EmitFarJumpSlot(Address target) {
+  static_assert(kJumpTableSlotSize == kFarJumpTableSlotSize);
+  EmitJumpSlot(target);
+}
+
+// static
+void JumpTableAssembler::PatchFarJumpSlot(WritableJitAllocation& jit_allocation,
+                                          Address slot, Address target) {
+  UNREACHABLE();
+}
+
+void JumpTableAssembler::SkipUntil(int offset) {
+  // On this platform the jump table is not zapped with valid instructions, so
+  // skipping over bytes is not allowed.
+  DCHECK_EQ(offset, pc_offset());
 }
 
 #elif V8_TARGET_ARCH_IA32

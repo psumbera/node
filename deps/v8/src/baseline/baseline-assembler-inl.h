@@ -19,6 +19,8 @@
 
 #if V8_TARGET_ARCH_X64
 #include "src/baseline/x64/baseline-assembler-x64-inl.h"
+#elif V8_TARGET_ARCH_SPARC64
+#include "src/baseline/sparc64/baseline-assembler-sparc64-inl.h"
 #elif V8_TARGET_ARCH_ARM64
 #include "src/baseline/arm64/baseline-assembler-arm64-inl.h"
 #elif V8_TARGET_ARCH_IA32

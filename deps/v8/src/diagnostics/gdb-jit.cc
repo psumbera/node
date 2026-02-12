@@ -628,8 +628,9 @@ class ELF {
 #if (V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_ARM)
     const uint8_t ident[16] = {0x7F, 'E', 'L', 'F', 1, 1, 1, 0,
                                0,    0,   0,   0,   0, 0, 0, 0};
-#elif V8_TARGET_ARCH_X64 && V8_TARGET_ARCH_64_BIT || \
-    V8_TARGET_ARCH_PPC64 && V8_TARGET_LITTLE_ENDIAN
+#elif (V8_TARGET_ARCH_X64 && V8_TARGET_ARCH_64_BIT) || \
+    (V8_TARGET_ARCH_PPC64 && V8_TARGET_LITTLE_ENDIAN) || \
+    V8_TARGET_ARCH_SPARC64
     const uint8_t ident[16] = {0x7F, 'E', 'L', 'F', 2, 1, 1, 0,
                                0,    0,   0,   0,   0, 0, 0, 0};
 #elif V8_TARGET_ARCH_S390X
@@ -664,6 +665,9 @@ class ELF {
     // http://refspecs.linuxbase.org/ELF/zSeries/lzsabi0_s390.html#AEN1691
     // http://refspecs.linuxbase.org/ELF/zSeries/lzsabi0_zSeries.html#AEN1599
     header->machine = 22;
+#elif V8_TARGET_ARCH_SPARC64
+    // Processor identification value for SPARC V9 is EM_SPARCV9 (43).
+    header->machine = 43;
 #else
 #error Unsupported target architecture.
 #endif
@@ -1092,6 +1096,8 @@ class DebugInfoSection : public DebugSection {
       w->Write<uint8_t>(DW_OP_reg31);  // The frame pointer is here on PPC64.
 #elif V8_TARGET_ARCH_S390X
       w->Write<uint8_t>(DW_OP_reg11);  // The frame pointer's here on S390.
+#elif V8_TARGET_ARCH_SPARC64
+      w->Write<uint8_t>(DW_OP_reg30);  // The frame pointer's here on SPARC.
 #else
 #error Unsupported target architecture.
 #endif
