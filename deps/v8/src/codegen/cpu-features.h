@@ -101,6 +101,18 @@ enum CpuFeature {
   ZBS,
   ZICOND,
   ZICFISS,
+
+#elif V8_TARGET_ARCH_SPARC64
+  // Shared macro-assembler helpers use x86 feature names to describe
+  // optional SIMD code paths. Keep these enum entries available for
+  // sparc64 builds even though they always probe as unsupported.
+  SSE4_2,
+  SSE4_1,
+  SSSE3,
+  SSE3,
+  AVX,
+  AVX2,
+  FMA3,
 #endif
 
   NUMBER_OF_CPU_FEATURES
