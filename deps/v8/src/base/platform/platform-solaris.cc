@@ -5,8 +5,8 @@
 // Platform-specific code for Solaris 10 goes here. For the POSIX-compatible
 // parts, the implementation is in platform-posix.cc.
 
-#ifdef __sparc
-# error "V8 does not support the SPARC CPU architecture."
+#if defined(__sparc) && !defined(__sparcv9)
+# error "V8 does not support 32-bit SPARC on Solaris."
 #endif
 
 #include <dlfcn.h>  // dladdr
@@ -76,7 +76,7 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
   pthread_attr_t attr;
   int error;
   pthread_attr_init(&attr);
-  error = pthread_attr_get_np(pthread_self(), &attr);
+  error = pthread_getattr_np(pthread_self(), &attr);
   if (!error) {
     void* base;
     size_t size;
