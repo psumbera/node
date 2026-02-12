@@ -6,8 +6,8 @@
 #define V8_CODEGEN_SPARC64_SSE_INSTR_H_
 
 // SPARCV9 does not implement x86 SSE/SSE2/SSE3 instructions.
-// This header intentionally provides SPARC VIS instruction families that are
-// used by the SPARC64 backend to model vector/floating operations.
+// This header provides SPARC VIS instruction families used by the
+// SPARC64 backend.
 
 // VIS integer/vector logical and arithmetic operations.
 #define SPARCV9_VIS_LOGICAL_INSTRUCTION_LIST(V) \
