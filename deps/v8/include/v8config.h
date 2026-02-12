@@ -898,6 +898,9 @@ V8 shared library set USING_V8_SHARED.
 #elif defined(__s390x__)
 #define V8_HOST_ARCH_S390X 1
 #define V8_HOST_ARCH_64_BIT 1
+#elif defined(__sparc) && defined(__arch64__)
+#define V8_HOST_ARCH_SPARC64 1
+#define V8_HOST_ARCH_64_BIT 1
 #elif defined(__riscv) || defined(__riscv__)
 #if __riscv_xlen == 64
 #define V8_HOST_ARCH_RISCV64 1
@@ -921,6 +924,7 @@ V8 shared library set USING_V8_SHARED.
     !V8_TARGET_ARCH_ARM64 && !V8_TARGET_ARCH_MIPS64 &&                    \
     !V8_TARGET_ARCH_PPC64 && !V8_TARGET_ARCH_S390X &&                     \
     !V8_TARGET_ARCH_RISCV64 && !V8_TARGET_ARCH_LOONG64 &&                 \
+    !V8_TARGET_ARCH_SPARC64 &&                                            \
     !V8_TARGET_ARCH_RISCV32
 #if defined(_M_X64) || defined(__x86_64__)
 #define V8_TARGET_ARCH_X64 1
@@ -938,6 +942,8 @@ V8 shared library set USING_V8_SHARED.
 #define V8_TARGET_ARCH_PPC64 1
 #elif defined(__s390x__)
 #define V8_TARGET_ARCH_S390X 1
+#elif defined(__sparc) && defined(__arch64__)
+#define V8_TARGET_ARCH_SPARC64 1
 #elif defined(__riscv) || defined(__riscv__)
 #if __riscv_xlen == 64
 #define V8_TARGET_ARCH_RISCV64 1
@@ -971,6 +977,8 @@ V8 shared library set USING_V8_SHARED.
 #elif V8_TARGET_ARCH_PPC64
 #define V8_TARGET_ARCH_64_BIT 1
 #elif V8_TARGET_ARCH_S390X
+#define V8_TARGET_ARCH_64_BIT 1
+#elif V8_TARGET_ARCH_SPARC64
 #define V8_TARGET_ARCH_64_BIT 1
 #elif V8_TARGET_ARCH_RISCV64
 #define V8_TARGET_ARCH_64_BIT 1
@@ -1012,6 +1020,9 @@ arm64 host
 #if (V8_TARGET_ARCH_LOONG64 && !(V8_HOST_ARCH_X64 || V8_HOST_ARCH_LOONG64))
 #error Target architecture loong64 is only supported on loong64 and x64 host
 #endif
+#if (V8_TARGET_ARCH_SPARC64 && !V8_HOST_ARCH_SPARC64)
+#error Target architecture sparc64 is only supported on sparc64 host
+#endif
 
 // Determine architecture endianness.
 #if V8_TARGET_ARCH_IA32
@@ -1042,6 +1053,8 @@ arm64 host
 #else
 #define V8_TARGET_BIG_ENDIAN 1
 #endif
+#elif V8_TARGET_ARCH_SPARC64
+#define V8_TARGET_BIG_ENDIAN 1
 #elif V8_TARGET_ARCH_RISCV32 || V8_TARGET_ARCH_RISCV64
 #define V8_TARGET_LITTLE_ENDIAN 1
 #elif defined(__BYTE_ORDER__)
