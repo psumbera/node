@@ -60,6 +60,10 @@
 namespace v8 {
 namespace internal {
 
+// SPARC64 backend does not gate these SIMD helpers on x86 CpuFeature flags.
+static constexpr CpuFeature kSparcSimdFeature =
+    static_cast<CpuFeature>(NUMBER_OF_CPU_FEATURES);
+
 class SafepointTableBuilder;
 class MaglevSafepointTableBuilder;
 
@@ -1075,11 +1079,11 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void palignr(XMMRegister dst, XMMRegister src, uint8_t mask);
 
   void vpermq(YMMRegister dst, Operand src, uint8_t imm8) {
-    vinstr(0x0, dst, ymm0, src, k66, k0F3A, kW1, AVX2);
+    vinstr(0x0, dst, ymm0, src, k66, k0F3A, kW1, kSparcSimdFeature);
     emit(imm8);
   }
   void vpermq(YMMRegister dst, YMMRegister src, uint8_t imm8) {
-    vinstr(0x0, dst, ymm0, src, k66, k0F3A, kW1, AVX2);
+    vinstr(0x0, dst, ymm0, src, k66, k0F3A, kW1, kSparcSimdFeature);
     emit(imm8);
   }
 
@@ -1257,13 +1261,13 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void movmskps(Register dst, XMMRegister src);
 
   void vinstr(uint8_t op, XMMRegister dst, XMMRegister src1, XMMRegister src2,
-              SIMDPrefix pp, LeadingOpcode m, VexW w, CpuFeature feature = AVX);
+              SIMDPrefix pp, LeadingOpcode m, VexW w, CpuFeature feature = kSparcSimdFeature);
   void vinstr(uint8_t op, XMMRegister dst, XMMRegister src1, Operand src2,
-              SIMDPrefix pp, LeadingOpcode m, VexW w, CpuFeature feature = AVX);
+              SIMDPrefix pp, LeadingOpcode m, VexW w, CpuFeature feature = kSparcSimdFeature);
 
   template <typename Reg1, typename Reg2, typename Op>
   void vinstr(uint8_t op, Reg1 dst, Reg2 src1, Op src2, SIMDPrefix pp,
-              LeadingOpcode m, VexW w, CpuFeature feature = AVX2);
+              LeadingOpcode m, VexW w, CpuFeature feature = kSparcSimdFeature);
 
   // SSE instructions
   void sse_instr(XMMRegister dst, XMMRegister src, uint8_t escape,
@@ -1319,10 +1323,10 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
 #define DECLARE_SSE2_PD_AVX_INSTRUCTION(instruction, prefix, escape, opcode) \
   DECLARE_SSE2_AVX_INSTRUCTION(instruction, prefix, escape, opcode)          \
   void v##instruction(YMMRegister dst, YMMRegister src1, YMMRegister src2) { \
-    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX);     \
+    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, kSparcSimdFeature);     \
   }                                                                          \
   void v##instruction(YMMRegister dst, YMMRegister src1, Operand src2) {     \
-    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX);     \
+    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, kSparcSimdFeature);     \
   }
 
 #undef DECLARE_SSE2_PD_AVX_INSTRUCTION
@@ -1330,10 +1334,10 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
 #define DECLARE_SSE2_PI_AVX_INSTRUCTION(instruction, prefix, escape, opcode) \
   DECLARE_SSE2_AVX_INSTRUCTION(instruction, prefix, escape, opcode)          \
   void v##instruction(YMMRegister dst, YMMRegister src1, YMMRegister src2) { \
-    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX2);    \
+    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, kSparcSimdFeature);    \
   }                                                                          \
   void v##instruction(YMMRegister dst, YMMRegister src1, Operand src2) {     \
-    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX2);    \
+    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, kSparcSimdFeature);    \
   }
 
 #undef DECLARE_SSE2_PI_AVX_INSTRUCTION
@@ -1342,10 +1346,10 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
                                            opcode)                           \
   DECLARE_SSE2_AVX_INSTRUCTION(instruction, prefix, escape, opcode)          \
   void v##instruction(YMMRegister dst, YMMRegister src1, XMMRegister src2) { \
-    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX2);    \
+    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, kSparcSimdFeature);    \
   }                                                                          \
   void v##instruction(YMMRegister dst, YMMRegister src1, Operand src2) {     \
-    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, AVX2);    \
+    vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kW0, kSparcSimdFeature);    \
   }
 
 #undef DECLARE_SSE2_SHIFT_AVX_INSTRUCTION
@@ -1468,11 +1472,11 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   }                                                                           \
   void v##instruction(YMMRegister dst, YMMRegister src1, YMMRegister src2) {  \
     vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape1##escape2, kW0,  \
-           AVX2);                                                             \
+           kSparcSimdFeature);                                                             \
   }                                                                           \
   void v##instruction(YMMRegister dst, YMMRegister src1, Operand src2) {      \
     vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape1##escape2, kW0,  \
-           AVX2);                                                             \
+           kSparcSimdFeature);                                                             \
   }
 
 #undef DECLARE_SSE34_AVX_INSTRUCTION
@@ -1502,7 +1506,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   }
   void vpblendvb(YMMRegister dst, YMMRegister src1, YMMRegister src2,
                  YMMRegister mask) {
-    vinstr(0x4C, dst, src1, src2, k66, k0F3A, kW0, AVX2);
+    vinstr(0x4C, dst, src1, src2, k66, k0F3A, kW0, kSparcSimdFeature);
     // The mask operand is encoded in bits[7:4] of the immediate byte.
     emit(mask.code() << 4);
   }
@@ -1515,7 +1519,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   }
   void vblendvps(YMMRegister dst, YMMRegister src1, YMMRegister src2,
                  YMMRegister mask) {
-    vinstr(0x4A, dst, src1, src2, k66, k0F3A, kW0, AVX);
+    vinstr(0x4A, dst, src1, src2, k66, k0F3A, kW0, kSparcSimdFeature);
     // The mask operand is encoded in bits[7:4] of the immediate byte.
     emit(mask.code() << 4);
   }
@@ -1528,7 +1532,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   }
   void vblendvpd(YMMRegister dst, YMMRegister src1, YMMRegister src2,
                  YMMRegister mask) {
-    vinstr(0x4B, dst, src1, src2, k66, k0F3A, kW0, AVX);
+    vinstr(0x4B, dst, src1, src2, k66, k0F3A, kW0, kSparcSimdFeature);
     // The mask operand is encoded in bits[7:4] of the immediate byte.
     emit(mask.code() << 4);
   }
@@ -1554,10 +1558,10 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
 #undef DECLARE_SSE4_PMOV_AVX2_INSTRUCTION
 
   void vptest(YMMRegister dst, YMMRegister src) {
-    vinstr(0x17, dst, ymm0, src, k66, k0F38, kW0, AVX);
+    vinstr(0x17, dst, ymm0, src, k66, k0F38, kW0, kSparcSimdFeature);
   }
   void vptest(YMMRegister dst, Operand src) {
-    vinstr(0x17, dst, ymm0, src, k66, k0F38, kW0, AVX);
+    vinstr(0x17, dst, ymm0, src, k66, k0F38, kW0, kSparcSimdFeature);
   }
 
 #define DECLARE_AVX_INSTRUCTION(instruction, prefix, escape1, escape2, opcode) \
@@ -1729,7 +1733,9 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     fma_instr(0x##opcode, dst, src1, src2, kL128, k##prefix,        \
               k##escape1##escape2, k##extension);                   \
   }
+#ifdef FMA_INSTRUCTION_LIST
   FMA_INSTRUCTION_LIST(FMA)
+#endif
 #undef FMA
 
 #define DECLARE_FMA_YMM_INSTRUCTION(instr, prefix, escape1, escape2, \
@@ -1742,8 +1748,12 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     fma_instr(0x##opcode, dst, src1, src2, kL256, k##prefix,         \
               k##escape1##escape2, k##extension);                    \
   }
+#ifdef FMA_PS_INSTRUCTION_LIST
   FMA_PS_INSTRUCTION_LIST(DECLARE_FMA_YMM_INSTRUCTION)
+#endif
+#ifdef FMA_PD_INSTRUCTION_LIST
   FMA_PD_INSTRUCTION_LIST(DECLARE_FMA_YMM_INSTRUCTION)
+#endif
 #undef DECLARE_FMA_YMM_INSTRUCTION
 
   void vmovd(XMMRegister dst, Register src);
@@ -1851,19 +1861,19 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vinstr(0xe6, dst, xmm0, src, kF3, k0F, kWIG);
   }
   void vcvtdq2pd(YMMRegister dst, XMMRegister src) {
-    vinstr(0xe6, dst, xmm0, src, kF3, k0F, kWIG, AVX);
+    vinstr(0xe6, dst, xmm0, src, kF3, k0F, kWIG, kSparcSimdFeature);
   }
   void vcvtdq2pd(YMMRegister dst, Operand src) {
-    vinstr(0xe6, dst, xmm0, src, kF3, k0F, kWIG, AVX);
+    vinstr(0xe6, dst, xmm0, src, kF3, k0F, kWIG, kSparcSimdFeature);
   }
   void vcvttps2dq(XMMRegister dst, XMMRegister src) {
     vinstr(0x5b, dst, xmm0, src, kF3, k0F, kWIG);
   }
   void vcvttps2dq(YMMRegister dst, YMMRegister src) {
-    vinstr(0x5b, dst, ymm0, src, kF3, k0F, kWIG, AVX);
+    vinstr(0x5b, dst, ymm0, src, kF3, k0F, kWIG, kSparcSimdFeature);
   }
   void vcvttps2dq(YMMRegister dst, Operand src) {
-    vinstr(0x5b, dst, ymm0, src, kF3, k0F, kWIG, AVX);
+    vinstr(0x5b, dst, ymm0, src, kF3, k0F, kWIG, kSparcSimdFeature);
   }
   void vcvtlsi2sd(XMMRegister dst, XMMRegister src1, Register src2) {
     XMMRegister isrc2 = XMMRegister::from_code(src2.code());
@@ -1954,7 +1964,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     emit(static_cast<uint8_t>(mode) | 0x8);  // Mask precision exception.
   }
   void vroundps(YMMRegister dst, YMMRegister src, RoundingMode mode) {
-    vinstr(0x08, dst, ymm0, src, k66, k0F3A, kWIG, AVX);
+    vinstr(0x08, dst, ymm0, src, k66, k0F3A, kWIG, kSparcSimdFeature);
     emit(static_cast<uint8_t>(mode) | 0x8);  // Mask precision exception.
   }
   void vroundpd(XMMRegister dst, XMMRegister src, RoundingMode mode) {
@@ -1962,13 +1972,13 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     emit(static_cast<uint8_t>(mode) | 0x8);  // Mask precision exception.
   }
   void vroundpd(YMMRegister dst, YMMRegister src, RoundingMode mode) {
-    vinstr(0x09, dst, ymm0, src, k66, k0F3A, kWIG, AVX);
+    vinstr(0x09, dst, ymm0, src, k66, k0F3A, kWIG, kSparcSimdFeature);
     emit(static_cast<uint8_t>(mode) | 0x8);  // Mask precision exception.
   }
 
   template <typename Reg, typename Op>
   void vsd(uint8_t op, Reg dst, Reg src1, Op src2) {
-    vinstr(op, dst, src1, src2, kF2, k0F, kWIG, AVX);
+    vinstr(op, dst, src1, src2, kF2, k0F, kWIG, kSparcSimdFeature);
   }
 
   void vmovss(XMMRegister dst, XMMRegister src1, XMMRegister src2) {
@@ -2250,9 +2260,11 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   template <typename Reg, typename Op>                                      \
   void instr(Reg dst, Op src) {                                             \
     vinstr(0x##opcode, dst, xmm0, src, k##prefix, k##escape1##escape2, kW0, \
-           AVX2);                                                           \
+           kSparcSimdFeature);                                                           \
   }
+#ifdef AVX2_BROADCAST_LIST
   AVX2_BROADCAST_LIST(AVX2_INSTRUCTION)
+#endif
 #undef AVX2_INSTRUCTION
 
   // F16C Instructions.
@@ -2263,18 +2275,18 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
 
   // AVX-VNNI instruction
   void vpdpbusd(XMMRegister dst, XMMRegister src1, XMMRegister src2) {
-    vinstr(0x50, dst, src1, src2, k66, k0F38, kW0, AVX_VNNI);
+    vinstr(0x50, dst, src1, src2, k66, k0F38, kW0, kSparcSimdFeature);
   }
   void vpdpbusd(YMMRegister dst, YMMRegister src1, YMMRegister src2) {
-    vinstr(0x50, dst, src1, src2, k66, k0F38, kW0, AVX_VNNI);
+    vinstr(0x50, dst, src1, src2, k66, k0F38, kW0, kSparcSimdFeature);
   }
 
   // AVX-VNNI-INT8 instruction
   void vpdpbssd(XMMRegister dst, XMMRegister src1, XMMRegister src2) {
-    vinstr(0x50, dst, src1, src2, kF2, k0F38, kW0, AVX_VNNI_INT8);
+    vinstr(0x50, dst, src1, src2, kF2, k0F38, kW0, kSparcSimdFeature);
   }
   void vpdpbssd(YMMRegister dst, YMMRegister src1, YMMRegister src2) {
-    vinstr(0x50, dst, src1, src2, kF2, k0F38, kW0, AVX_VNNI_INT8);
+    vinstr(0x50, dst, src1, src2, kF2, k0F38, kW0, kSparcSimdFeature);
   }
 
   // BMI instruction
