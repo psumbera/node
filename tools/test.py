@@ -948,7 +948,8 @@ TIMEOUT_SCALEFACTOR = {
     'loong64'   : { 'debug' :  4, 'release' : 1 },
     'ia32'      : { 'debug' :  4, 'release' : 1 },
     'ppc'       : { 'debug' :  4, 'release' : 1 },
-    's390'      : { 'debug' :  4, 'release' : 1 } }
+    's390'      : { 'debug' :  4, 'release' : 1 },
+    'sparcv9'   : { 'debug' :  4, 'release' : 1 } }
 
 
 class Context(object):
