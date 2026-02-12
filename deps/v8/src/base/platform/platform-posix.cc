@@ -94,7 +94,7 @@
  * above, the illumos check below will have to be revisited.  This check
  * will work on both pre-and-post illumos#14418 illumos environments.
  */
-#if defined(V8_OS_SOLARIS) && !(defined(__illumos__) && defined(MEMCNTL_SHARED))
+#if defined(__illumos__) && !defined(MEMCNTL_SHARED)
 #if (defined(_POSIX_C_SOURCE) && _POSIX_C_SOURCE > 2) || defined(__EXTENSIONS__)
 extern "C" int madvise(caddr_t, size_t, int);
 #else
@@ -830,6 +830,8 @@ void OS::DebugBreak() {
 #elif V8_HOST_ARCH_S390X
   // Software breakpoint instruction is 0x0001
   asm volatile(".word 0x0001");
+#elif V8_HOST_ARCH_SPARC64
+  asm("ta 1");
 #elif V8_HOST_ARCH_RISCV64
   asm("ebreak");
 #elif V8_HOST_ARCH_RISCV32
