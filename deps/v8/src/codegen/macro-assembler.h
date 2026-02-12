@@ -59,6 +59,8 @@ enum class ArgumentAdaptionMode { kAdapt, kDontAdapt };
 #include "src/codegen/ia32/macro-assembler-ia32.h"
 #elif V8_TARGET_ARCH_X64
 #include "src/codegen/x64/macro-assembler-x64.h"
+#elif V8_TARGET_ARCH_SPARC64
+#include "src/codegen/sparc64/macro-assembler-sparc64.h"
 #elif V8_TARGET_ARCH_ARM64
 #include "src/codegen/arm64/constants-arm64.h"
 #include "src/codegen/arm64/macro-assembler-arm64.h"

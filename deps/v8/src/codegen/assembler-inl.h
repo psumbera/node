@@ -12,6 +12,8 @@
 #include "src/codegen/ia32/assembler-ia32-inl.h"
 #elif V8_TARGET_ARCH_X64
 #include "src/codegen/x64/assembler-x64-inl.h"
+#elif V8_TARGET_ARCH_SPARC64
+#include "src/codegen/sparc64/assembler-sparc64-inl.h"
 #elif V8_TARGET_ARCH_ARM64
 #include "src/codegen/arm64/assembler-arm64-inl.h"
 #elif V8_TARGET_ARCH_ARM

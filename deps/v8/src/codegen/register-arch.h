@@ -11,6 +11,8 @@
 #include "src/codegen/ia32/register-ia32.h"
 #elif V8_TARGET_ARCH_X64
 #include "src/codegen/x64/register-x64.h"
+#elif V8_TARGET_ARCH_SPARC64
+#include "src/codegen/sparc64/register-sparc64.h"
 #elif V8_TARGET_ARCH_ARM64
 #include "src/codegen/arm64/register-arm64.h"
 #elif V8_TARGET_ARCH_ARM

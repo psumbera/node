@@ -61,6 +61,9 @@ static_assert(RegisterConfiguration::kMaxFPRegisters >=
 #if V8_TARGET_ARCH_X64
 static_assert(RegisterConfiguration::kMaxFPRegisters >=
               Simd256Register::kNumRegisters);
+#elif V8_TARGET_ARCH_SPARC64
+static_assert(RegisterConfiguration::kMaxFPRegisters >=
+              Simd256Register::kNumRegisters);
 #endif
 
 static int get_num_simd128_registers() {
@@ -82,6 +85,8 @@ static int get_num_allocatable_double_registers() {
 #if V8_TARGET_ARCH_IA32
       kMaxAllocatableDoubleRegisterCount;
 #elif V8_TARGET_ARCH_X64
+      kMaxAllocatableDoubleRegisterCount;
+#elif V8_TARGET_ARCH_SPARC64
       kMaxAllocatableDoubleRegisterCount;
 #elif V8_TARGET_ARCH_ARM
       CpuFeatures::IsSupported(VFP32DREGS)
@@ -296,11 +301,17 @@ RegisterConfiguration::RegisterConfiguration(
           allocatable_double_codes_[i];
 #if V8_TARGET_ARCH_X64
       allocatable_simd256_codes_[i] = allocatable_double_codes_[i];
+#elif V8_TARGET_ARCH_SPARC64
+      allocatable_simd256_codes_[i] = allocatable_double_codes_[i];
 #endif
     }
     allocatable_float_codes_mask_ = allocatable_simd128_codes_mask_ =
         allocatable_double_codes_mask_;
 #if V8_TARGET_ARCH_X64
+    num_simd256_registers_ = num_double_registers_;
+    num_allocatable_simd256_registers_ = num_allocatable_double_registers_;
+    allocatable_simd256_codes_mask_ = allocatable_double_codes_mask_;
+#elif V8_TARGET_ARCH_SPARC64
     num_simd256_registers_ = num_double_registers_;
     num_allocatable_simd256_registers_ = num_allocatable_double_registers_;
     allocatable_simd256_codes_mask_ = allocatable_double_codes_mask_;
