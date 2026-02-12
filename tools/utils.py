@@ -101,6 +101,8 @@ def GuessArchitecture():
     return 'riscv64'
   elif id == 'loong64':
     return 'loong64'
+  elif id.startswith('sparc') or id.startswith('sun4'):
+    return 'sparcv9'
   else:
     id = platform.processor()
     if id == 'powerpc':

@@ -538,6 +538,10 @@
                 'cflags': [ '-m64', '-march=z196' ],
                 'ldflags': [ '-m64', '-march=z196' ],
               }],
+              [ 'host_arch=="sparcv9" and OS=="solaris"', {
+                'cflags': [ '-m64', '-mcpu=v9' ],
+                'ldflags': [ '-m64' ],
+              }],
             ],
           }],
           ['_toolset=="target"', {
@@ -562,6 +566,10 @@
               [ 'target_arch=="s390x" and OS=="linux"', {
                 'cflags': [ '-m64', '-march=z196' ],
                 'ldflags': [ '-m64', '-march=z196' ],
+              }],
+              [ 'target_arch=="sparcv9" and OS=="solaris"', {
+                'cflags': [ '-m64', '-mcpu=v9' ],
+                'ldflags': [ '-m64' ],
               }],
             ],
           }],
