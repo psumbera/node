@@ -947,10 +947,10 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     Pxor(scratch1, scratch1);
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope scope(this, AVX);
-      vmaxps(dst, src, scratch1);
+      this->vmaxps(dst, src, scratch1);
     } else {
       if (dst != src) movaps(dst, src);
-      maxps(dst, scratch1);
+      this->maxps(dst, scratch1);
     }
     // scratch: float representation of max_signed.
     Pcmpeqd(scratch1, scratch1);
@@ -961,10 +961,10 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     // Set negative lanes to 0.
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope scope(this, AVX);
-      vsubps(scratch2, dst, scratch1);
+      this->vsubps(scratch2, dst, scratch1);
     } else {
       movaps(scratch2, dst);
-      subps(scratch2, scratch1);
+      this->subps(scratch2, scratch1);
     }
     Cmpleps(scratch1, scratch2);
     Cvttps2dq(scratch2, scratch2);
@@ -1004,16 +1004,16 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope avx_scope(this, AVX);
       vmovdqa(scratch, op);
-      vpmaddubsw(dst, scratch, src);
+      this->vpmaddubsw(dst, scratch, src);
     } else {
       CpuFeatureScope sse_scope(this, SSSE3);
       if (dst == src) {
         movaps(scratch, op);
-        pmaddubsw(scratch, src);
+        this->pmaddubsw(scratch, src);
         movaps(dst, scratch);
       } else {
         movaps(dst, op);
-        pmaddubsw(dst, src);
+        this->pmaddubsw(dst, src);
       }
     }
   }
@@ -1025,13 +1025,13 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
         ExternalReference::address_of_wasm_i8x16_splat_0x01(), scratch);
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope avx_scope(this, AVX);
-      vpmaddubsw(dst, src, op);
+      this->vpmaddubsw(dst, src, op);
     } else {
       CpuFeatureScope sse_scope(this, SSSE3);
       if (dst != src) {
         movaps(dst, src);
       }
-      pmaddubsw(dst, op);
+      this->pmaddubsw(dst, op);
     }
   }
 
@@ -1051,8 +1051,8 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
         ExternalReference::address_of_wasm_i8x16_swizzle_mask(), tmp);
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope avx_scope(this, AVX);
-      vpaddusb(scratch, mask, op);
-      vpshufb(dst, src, scratch);
+      this->vpaddusb(scratch, mask, op);
+      this->vpshufb(dst, src, scratch);
     } else {
       CpuFeatureScope sse_scope(this, SSSE3);
       movaps(scratch, op);
@@ -1060,8 +1060,8 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
         DCHECK_NE(dst, mask);
         movaps(dst, src);
       }
-      paddusb(scratch, mask);
-      pshufb(dst, scratch);
+      this->paddusb(scratch, mask);
+      this->pshufb(dst, scratch);
     }
   }
 
@@ -1077,42 +1077,44 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
       vmovdqa(tmp1, ExternalReferenceAsOperand(
                         ExternalReference::address_of_wasm_i8x16_splat_0x0f(),
                         scratch));
-      vpandn(tmp2, tmp1, src);
-      vpand(dst, tmp1, src);
+      this->vpandn(tmp2, tmp1, src);
+      this->vpand(dst, tmp1, src);
       vmovdqa(tmp1, ExternalReferenceAsOperand(
                         ExternalReference::address_of_wasm_i8x16_popcnt_mask(),
                         scratch));
-      vpsrlw(tmp2, tmp2, 4);
-      vpshufb(dst, tmp1, dst);
-      vpshufb(tmp2, tmp1, tmp2);
-      vpaddb(dst, dst, tmp2);
+      this->vpsrlw(tmp2, tmp2, 4);
+      this->vpshufb(dst, tmp1, dst);
+      this->vpshufb(tmp2, tmp1, tmp2);
+      this->vpaddb(dst, dst, tmp2);
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
     } else if (CpuFeatures::IsSupported(INTEL_ATOM)) {
       // Pre-Goldmont low-power Intel microarchitectures have very slow
       // PSHUFB instruction, thus use PSHUFB-free divide-and-conquer
       // algorithm on these processors. ATOM CPU feature captures exactly
       // the right set of processors.
       movaps(tmp1, src);
-      psrlw(tmp1, 1);
+      this->psrlw(tmp1, 1);
       if (dst != src) {
         movaps(dst, src);
       }
-      andps(tmp1, ExternalReferenceAsOperand(
+      this->andps(tmp1, ExternalReferenceAsOperand(
                       ExternalReference::address_of_wasm_i8x16_splat_0x55(),
                       scratch));
-      psubb(dst, tmp1);
+      this->psubb(dst, tmp1);
       Operand splat_0x33 = ExternalReferenceAsOperand(
           ExternalReference::address_of_wasm_i8x16_splat_0x33(), scratch);
       movaps(tmp1, dst);
-      andps(dst, splat_0x33);
-      psrlw(tmp1, 2);
-      andps(tmp1, splat_0x33);
-      paddb(dst, tmp1);
+      this->andps(dst, splat_0x33);
+      this->psrlw(tmp1, 2);
+      this->andps(tmp1, splat_0x33);
+      this->paddb(dst, tmp1);
       movaps(tmp1, dst);
-      psrlw(dst, 4);
-      paddb(dst, tmp1);
-      andps(dst, ExternalReferenceAsOperand(
+      this->psrlw(dst, 4);
+      this->paddb(dst, tmp1);
+      this->andps(dst, ExternalReferenceAsOperand(
                      ExternalReference::address_of_wasm_i8x16_splat_0x0f(),
                      scratch));
+#endif
     } else {
       CpuFeatureScope sse_scope(this, SSSE3);
       movaps(tmp1, ExternalReferenceAsOperand(
@@ -1123,14 +1125,14 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
       if (tmp2 != tmp1) {
         movaps(tmp2, tmp1);
       }
-      andps(tmp1, src);
-      andnps(tmp2, src);
-      psrlw(tmp2, 4);
+      this->andps(tmp1, src);
+      this->andnps(tmp2, src);
+      this->psrlw(tmp2, 4);
       movaps(dst, mask);
-      pshufb(dst, tmp1);
+      this->pshufb(dst, tmp1);
       movaps(tmp1, mask);
-      pshufb(tmp1, tmp2);
-      paddb(dst, tmp1);
+      this->pshufb(tmp1, tmp2);
+      this->paddb(dst, tmp1);
     }
   }
 

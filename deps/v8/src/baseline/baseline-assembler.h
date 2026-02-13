@@ -176,9 +176,20 @@ class BaselineAssembler {
   inline void LoadPrototype(Register prototype, Register object);
 
 // Loads compressed pointer or loads from compressed pointer. This is because
-// X64 supports complex addressing mode, pointer decompression can be done by
+// X64 and SPARC64 support complex addressing mode, pointer decompression can be done by
 // [%compressed_base + %r1 + K].
 #if V8_TARGET_ARCH_X64
+  inline void LoadTaggedField(TaggedRegister output, Register source,
+                              int offset);
+  inline void LoadTaggedField(TaggedRegister output, TaggedRegister source,
+                              int offset);
+  inline void LoadTaggedField(Register output, TaggedRegister source,
+                              int offset);
+  inline void LoadFixedArrayElement(Register output, TaggedRegister array,
+                                    int32_t index);
+  inline void LoadFixedArrayElement(TaggedRegister output, TaggedRegister array,
+                                    int32_t index);
+#elif V8_TARGET_ARCH_SPARC64
   inline void LoadTaggedField(TaggedRegister output, Register source,
                               int offset);
   inline void LoadTaggedField(TaggedRegister output, TaggedRegister source,
