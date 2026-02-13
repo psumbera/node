@@ -729,32 +729,32 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
 
  public:
   void Abspd(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Andps,
+    FloatUnop(dst, src, tmp, &Assembler::andps,
               ExternalReference::address_of_double_abs_constant());
   }
 
   void Absps(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Andps,
+    FloatUnop(dst, src, tmp, &Assembler::andps,
               ExternalReference::address_of_float_abs_constant());
   }
 
   void Absph(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Andps,
+    FloatUnop(dst, src, tmp, &Assembler::andps,
               ExternalReference::address_of_fp16_abs_constant());
   }
 
   void Negpd(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Xorps,
+    FloatUnop(dst, src, tmp, &Assembler::xorps,
               ExternalReference::address_of_double_neg_constant());
   }
 
   void Negps(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Xorps,
+    FloatUnop(dst, src, tmp, &Assembler::xorps,
               ExternalReference::address_of_float_neg_constant());
   }
 
   void Negph(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Xorps,
+    FloatUnop(dst, src, tmp, &Assembler::xorps,
               ExternalReference::address_of_fp16_neg_constant());
   }
 #undef FLOAT_UNOP
@@ -767,10 +767,10 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
 
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope scope(this, AVX);
-      vpextrd(dst, src, imm8);
+      this->vpextrd(dst, src, imm8);
     } else if (CpuFeatures::IsSupported(SSE4_1)) {
       CpuFeatureScope sse_scope(this, SSE4_1);
-      pextrd(dst, src, imm8);
+      this->pextrd(dst, src, imm8);
     } else {
       DCHECK_LT(imm8, 2);
       impl()->PextrdPreSse41(dst, src, imm8);
@@ -835,27 +835,27 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope scope(this, AVX);
       vcmpeqps(tmp, src, src);
-      vandps(dst, src, tmp);
+      this->vandps(dst, src, tmp);
       vcmpgeps(tmp, src, op);
       vcvttps2dq(dst, dst);
-      vpxor(dst, dst, tmp);
+      this->vpxor(dst, dst, tmp);
     } else {
       if (src == dst) {
         movaps(tmp, src);
         cmpeqps(tmp, tmp);
-        andps(dst, tmp);
+        this->andps(dst, tmp);
         movaps(tmp, op);
         cmpleps(tmp, dst);
         cvttps2dq(dst, dst);
-        xorps(dst, tmp);
+        this->xorps(dst, tmp);
       } else {
         movaps(tmp, op);
         cmpleps(tmp, src);
         cvttps2dq(dst, src);
-        xorps(dst, tmp);
+        this->xorps(dst, tmp);
         movaps(tmp, src);
         cmpeqps(tmp, tmp);
-        andps(dst, tmp);
+        this->andps(dst, tmp);
       }
     }
   }
@@ -879,10 +879,10 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
           ExternalReferenceAsOperand(
               ExternalReference::address_of_wasm_int32_max_as_double(), tmp));
       // dst = 0 if src == NaN, src is saturated to INT32_MAX as double.
-      vminpd(dst, src, dst);
+      this->vminpd(dst, src, dst);
       // Values > INT32_MAX already saturated, values < INT32_MIN raises an
       // exception, which is masked and returns 0x80000000.
-      vcvttpd2dq(original_dst, dst);
+      this->vcvttpd2dq(original_dst, dst);
     } else {
       if (dst != src) {
         movaps(dst, src);
@@ -892,8 +892,8 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
       andps(scratch,
             ExternalReferenceAsOperand(
                 ExternalReference::address_of_wasm_int32_max_as_double(), tmp));
-      minpd(dst, scratch);
-      cvttpd2dq(dst, dst);
+      this->minpd(dst, scratch);
+      this->cvttpd2dq(dst, dst);
     }
   }
 
@@ -902,38 +902,42 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     ASM_CODE_COMMENT(this);
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope avx_scope(this, AVX);
-      vxorpd(scratch, scratch, scratch);
+      this->vxorpd(scratch, scratch, scratch);
       // Saturate to 0.
-      vmaxpd(dst, src, scratch);
+      this->vmaxpd(dst, src, scratch);
       // Saturate to UINT32_MAX.
-      vminpd(
+      this->vminpd(
           dst, dst,
           ExternalReferenceAsOperand(
               ExternalReference::address_of_wasm_uint32_max_as_double(), tmp));
       // Truncate.
-      vroundpd(dst, dst, kRoundToZero);
+      this->vroundpd(dst, dst, kRoundToZero);
       // Add to special double where significant bits == uint32.
-      vaddpd(dst, dst,
-             ExternalReferenceAsOperand(
-                 ExternalReference::address_of_wasm_double_2_power_52(), tmp));
+      this->vaddpd(
+          dst, dst,
+          ExternalReferenceAsOperand(
+              ExternalReference::address_of_wasm_double_2_power_52(), tmp));
       // Extract low 32 bits of each double's significand, zero top lanes.
       // dst = [dst[0], dst[2], 0, 0]
-      vshufps(dst, dst, scratch, 0x88);
+      this->vshufps(dst, dst, scratch, 0x88);
     } else {
       CpuFeatureScope scope(this, SSE4_1);
       if (dst != src) {
         movaps(dst, src);
       }
-      xorps(scratch, scratch);
-      maxpd(dst, scratch);
-      minpd(dst, ExternalReferenceAsOperand(
-                     ExternalReference::address_of_wasm_uint32_max_as_double(),
-                     tmp));
-      roundpd(dst, dst, kRoundToZero);
-      addpd(dst,
-            ExternalReferenceAsOperand(
-                ExternalReference::address_of_wasm_double_2_power_52(), tmp));
-      shufps(dst, scratch, 0x88);
+      this->xorps(scratch, scratch);
+      this->maxpd(
+          dst, scratch);
+      this->minpd(
+          dst, ExternalReferenceAsOperand(
+                   ExternalReference::address_of_wasm_uint32_max_as_double(),
+                   tmp));
+      this->roundpd(dst, dst, kRoundToZero);
+      this->addpd(
+          dst,
+          ExternalReferenceAsOperand(
+              ExternalReference::address_of_wasm_double_2_power_52(), tmp));
+      this->shufps(dst, scratch, 0x88);
     }
   }
 
