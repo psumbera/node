@@ -378,8 +378,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
   void Unpcklps(Dst dst, Arg arg, Args... args) {
     USE(dst);
     USE(arg);
-    int dummy[] = {0, (USE(args), 0)...};
-    USE(dummy);
+    ((void)args, ...);
     UNREACHABLE();
   }
 
@@ -387,8 +386,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
   void Subpd(Dst dst, Arg arg, Args... args) {
     USE(dst);
     USE(arg);
-    int dummy[] = {0, (USE(args), 0)...};
-    USE(dummy);
+    ((void)args, ...);
     UNREACHABLE();
   }
 
@@ -396,8 +394,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
   void Pmaddwd(Dst dst, Arg arg, Args... args) {
     USE(dst);
     USE(arg);
-    int dummy[] = {0, (USE(args), 0)...};
-    USE(dummy);
+    ((void)args, ...);
     UNREACHABLE();
   }
 #endif
