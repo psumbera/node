@@ -42,6 +42,16 @@ constexpr DoubleRegister kFpParamRegisters[] = {xmm1, xmm2, xmm3,
                                                 xmm4, xmm5, xmm6};
 constexpr DoubleRegister kFpReturnRegisters[] = {xmm1, xmm2};
 
+#elif V8_TARGET_ARCH_SPARC64
+// ===========================================================================
+// == sparc64 ================================================================
+// ===========================================================================
+constexpr Register kGpParamRegisters[] = {rsi, rax, rdx, rcx, rbx, r9};
+constexpr Register kGpReturnRegisters[] = {rax, rdx};
+constexpr DoubleRegister kFpParamRegisters[] = {xmm1, xmm2, xmm3,
+                                                xmm4, xmm5, xmm6};
+constexpr DoubleRegister kFpReturnRegisters[] = {xmm1, xmm2};
+
 #elif V8_TARGET_ARCH_ARM
 // ===========================================================================
 // == arm ====================================================================
