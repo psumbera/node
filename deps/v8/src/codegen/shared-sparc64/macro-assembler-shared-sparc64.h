@@ -835,7 +835,8 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope scope(this, AVX);
       vcmpeqps(tmp, src, src);
-      this->vandps(dst, src, tmp);
+      if (dst != src) movaps(dst, src);
+      this->andps(dst, tmp);
       vcmpgeps(tmp, src, op);
       vcvttps2dq(dst, dst);
       this->vpxor(dst, dst, tmp);
@@ -947,7 +948,8 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     Pxor(scratch1, scratch1);
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope scope(this, AVX);
-      this->vmaxps(dst, src, scratch1);
+      if (dst != src) movaps(dst, src);
+      this->maxps(dst, scratch1);
     } else {
       if (dst != src) movaps(dst, src);
       this->maxps(dst, scratch1);
@@ -961,7 +963,8 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
     // Set negative lanes to 0.
     if (CpuFeatures::IsSupported(AVX)) {
       CpuFeatureScope scope(this, AVX);
-      this->vsubps(scratch2, dst, scratch1);
+      movaps(scratch2, dst);
+      this->subps(scratch2, scratch1);
     } else {
       movaps(scratch2, dst);
       this->subps(scratch2, scratch1);
@@ -1082,7 +1085,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
       vmovdqa(tmp1, ExternalReferenceAsOperand(
                         ExternalReference::address_of_wasm_i8x16_popcnt_mask(),
                         scratch));
-      this->vpsrlw(tmp2, tmp2, 4);
+      this->psrlw(tmp2, 4);
       this->vpshufb(dst, tmp1, dst);
       this->vpshufb(tmp2, tmp1, tmp2);
       this->vpaddb(dst, dst, tmp2);
