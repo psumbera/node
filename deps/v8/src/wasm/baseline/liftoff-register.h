@@ -119,10 +119,16 @@ static inline constexpr RegClass reg_class_for(ValueKind kind) {
 // the bottom part of the code. Unlike (2), this is the fp register code itself
 // (not sharing index space with gp), so in this example, it is fp register 2.
 
-// Maximum code of a gp cache register.
+// Maximum code of a gp/fp cache register.
+#if V8_TARGET_ARCH_SPARC64
+// Keep SPARCV9/Sparc64 handling local: avoid constexpr evaluation through
+// RegListBase::last() on this target's toolchain.
+static constexpr int kMaxGpRegCode = kRegCode_r15;
+static constexpr int kMaxFpRegCode = kDoubleCode_xmm7;
+#else
 static constexpr int kMaxGpRegCode = kLiftoffAssemblerGpCacheRegs.last().code();
-// Maximum code of an fp cache register.
 static constexpr int kMaxFpRegCode = kLiftoffAssemblerFpCacheRegs.last().code();
+#endif
 static constexpr int kAfterMaxLiftoffGpRegCode = kMaxGpRegCode + 1;
 static constexpr int kAfterMaxLiftoffFpRegCode =
     kAfterMaxLiftoffGpRegCode + kMaxFpRegCode + 1;
