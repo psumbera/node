@@ -565,9 +565,16 @@ bool RegExpImpl::EnsureCompiledIrregexp(Isolate* isolate,
 
   DCHECK_IMPLIES(needs_tier_up_compilation, has_bytecode);
 
+#if V8_TARGET_ARCH_SPARC64
+  constexpr bool kNativeRegExpMacroAssemblerIsSupported = false;
+#else
+  constexpr bool kNativeRegExpMacroAssemblerIsSupported = true;
+#endif
+
   const bool is_tier_up_requested =
       v8_flags.regexp_tier_up_ticks > 0 && re_data->MarkedForTierUp();
-  if (v8_flags.regexp_assemble_from_bytecode && is_tier_up_requested) {
+  if (kNativeRegExpMacroAssemblerIsSupported &&
+      v8_flags.regexp_assemble_from_bytecode && is_tier_up_requested) {
     if (CompileIrregexpFromBytecode(isolate, re_data, sample_subject,
                                     is_one_byte)) {
       return true;
@@ -593,8 +600,10 @@ bool RegExpImpl::EnsureCompiledIrregexp(Isolate* isolate,
   // tier-up strategy and we need to recompile to tier-up, or if we're producing
   // native code for all regexp objects.
   RegExpCompilationTarget compilation_target =
-      re_data->ShouldProduceBytecode() ? RegExpCompilationTarget::kBytecode
-                                       : RegExpCompilationTarget::kNative;
+      (re_data->ShouldProduceBytecode() ||
+       !kNativeRegExpMacroAssemblerIsSupported)
+          ? RegExpCompilationTarget::kBytecode
+          : RegExpCompilationTarget::kNative;
   return CompileIrregexpFromSource(isolate, re_data, sample_subject,
                                    is_one_byte, compilation_target);
 }
@@ -787,6 +796,9 @@ std::unique_ptr<RegExpMacroAssembler> CreateNativeMacroAssembler(
 #elif V8_TARGET_ARCH_LOONG64
   macro_assembler.reset(new RegExpMacroAssemblerLOONG64(isolate, zone, mode,
                                                         output_register_count));
+#elif V8_TARGET_ARCH_SPARC64
+  // Keep SPARC64 on the bytecode/interpreter regexp path for now.
+  return nullptr;
 #else
 #error "Unsupported architecture"
 #endif
