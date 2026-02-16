@@ -131,6 +131,25 @@ bool Code::IsIsolateIndependent(Isolate* isolate) {
 
 #if defined(V8_TARGET_ARCH_PPC64) || defined(V8_TARGET_ARCH_MIPS64)
   return RelocIterator(*this, kModeMask).done();
+#elif defined(V8_TARGET_ARCH_SPARC64)
+  for (RelocIterator it(*this, kModeMask); !it.done(); it.next()) {
+    // On this platform we emit relative builtin-to-builtin
+    // jumps for isolate independent builtins in the snapshot. They are later
+    // rewritten as pc-relative jumps to the off-heap instruction stream and are
+    // thus process-independent. See also: FinalizeEmbeddedCodeTargets.
+    if (RelocInfo::IsCodeTargetMode(it.rinfo()->rmode())) {
+      Address target_address = it.rinfo()->target_address();
+      if (OffHeapInstructionStream::PcIsOffHeap(isolate, target_address))
+        continue;
+
+      Tagged<Code> target = Code::FromTargetAddress(target_address);
+      if (Builtins::IsIsolateIndependentBuiltin(target)) {
+        continue;
+      }
+    }
+    return false;
+  }
+  return true;
 #elif defined(V8_TARGET_ARCH_X64) || defined(V8_TARGET_ARCH_ARM64) ||  \
     defined(V8_TARGET_ARCH_ARM) || defined(V8_TARGET_ARCH_S390X) ||    \
     defined(V8_TARGET_ARCH_IA32) || defined(V8_TARGET_ARCH_RISCV64) || \
