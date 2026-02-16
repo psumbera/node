@@ -40,6 +40,24 @@ constexpr DoubleRegList kLiftoffAssemblerFpCacheRegs = {xmm0, xmm1, xmm2, xmm3,
 // For the "WasmLiftoffFrameSetup" builtin.
 constexpr Register kLiftoffFrameSetupFunctionReg = r12;
 
+#elif V8_TARGET_ARCH_SPARC64
+
+// Keep SPARC64 register selection separate from x64 even though the current
+// register model mirrors x64 naming.
+// r10: kScratchRegister (MacroAssembler)
+// r11: kScratchRegister2 (Liftoff)
+// r13: kRootRegister
+// r14: kPtrComprCageBaseRegister
+constexpr RegList kLiftoffAssemblerGpCacheRegs = {rax, rcx, rdx, rbx, rsi,
+                                                  rdi, r8,  r9,  r12, r15};
+
+constexpr DoubleRegList kLiftoffAssemblerFpCacheRegs = {xmm0, xmm1, xmm2,
+                                                        xmm3, xmm4, xmm5,
+                                                        xmm6, xmm7};
+
+// For the "WasmLiftoffFrameSetup" builtin.
+constexpr Register kLiftoffFrameSetupFunctionReg = r12;
+
 #elif V8_TARGET_ARCH_MIPS64
 
 constexpr RegList kLiftoffAssemblerGpCacheRegs = {a0, a1, a2, a3, a4, a5, a6,
