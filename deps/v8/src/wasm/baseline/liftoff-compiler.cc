@@ -24,7 +24,9 @@
 #include "src/tracing/trace-event.h"
 #include "src/utils/ostreams.h"
 #include "src/utils/utils.h"
+#if !V8_TARGET_ARCH_SPARC64
 #include "src/wasm/baseline/liftoff-assembler-inl.h"
+#endif
 #include "src/wasm/baseline/liftoff-register.h"
 #include "src/wasm/basic-block-calculator.h"
 #include "src/wasm/compilation-environment-inl.h"
@@ -41,6 +43,19 @@
 #include "src/wasm/wasm-tracing.h"
 
 namespace v8::internal::wasm {
+
+#if V8_TARGET_ARCH_SPARC64
+WasmCompilationResult ExecuteLiftoffCompilation(CompilationEnv*,
+                                                const FunctionBody&,
+                                                const LiftoffOptions&) {
+  return {};
+}
+
+std::unique_ptr<DebugSideTable> GenerateLiftoffDebugSideTable(
+    const WasmCode*) {
+  return nullptr;
+}
+#else
 
 using VarState = LiftoffAssembler::VarState;
 constexpr auto kRegister = VarState::kRegister;
@@ -10919,5 +10934,7 @@ std::unique_ptr<DebugSideTable> GenerateLiftoffDebugSideTable(
   DCHECK(!decoder.interface().did_bailout());
   return debug_sidetable_builder.GenerateDebugSideTable();
 }
+
+#endif  // V8_TARGET_ARCH_SPARC64
 
 }  // namespace v8::internal::wasm
