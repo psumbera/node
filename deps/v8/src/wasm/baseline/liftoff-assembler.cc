@@ -13,9 +13,7 @@
 #include "src/compiler/linkage.h"
 #include "src/compiler/wasm-compiler.h"
 #include "src/utils/ostreams.h"
-#if !V8_TARGET_ARCH_SPARC64
 #include "src/wasm/baseline/liftoff-assembler-inl.h"
-#endif
 #include "src/wasm/baseline/liftoff-register.h"
 #include "src/wasm/baseline/parallel-move-inl.h"
 #include "src/wasm/object-access.h"
@@ -23,10 +21,6 @@
 #include "src/wasm/wasm-opcodes.h"
 
 namespace v8::internal::wasm {
-
-#if V8_TARGET_ARCH_SPARC64
-// Liftoff assembler is not implemented on sparc64.
-#else
 
 using VarState = LiftoffAssembler::VarState;
 using ValueKindSig = LiftoffAssembler::ValueKindSig;
@@ -1227,7 +1221,5 @@ bool CompatibleStackSlotTypes(ValueKind a, ValueKind b) {
   return a == b || (is_object_reference(a) && is_object_reference(b));
 }
 #endif
-
-#endif  // V8_TARGET_ARCH_SPARC64
 
 }  // namespace v8::internal::wasm

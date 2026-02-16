@@ -29,6 +29,8 @@
 #include "src/wasm/baseline/riscv/liftoff-assembler-riscv64-inl.h"
 #elif V8_TARGET_ARCH_RISCV32
 #include "src/wasm/baseline/riscv/liftoff-assembler-riscv32-inl.h"
+#elif V8_TARGET_ARCH_SPARC64
+#include "src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h"
 #else
 #error Unsupported architecture.
 #endif
