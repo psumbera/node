@@ -552,7 +552,8 @@ void SignalHandler::FillRegisterState(void* context, RegisterState* state) {
 #if V8_HOST_ARCH_SPARC64
   state->pc = reinterpret_cast<void*>(mcontext.gregs[REG_PC]);
   state->sp = reinterpret_cast<void*>(mcontext.gregs[REG_O6]);
-  state->fp = reinterpret_cast<void*>(mcontext.gregs[REG_I6]);
+  // Solaris SPARC headers may not expose REG_I6; REG_FP remains available.
+  state->fp = reinterpret_cast<void*>(mcontext.gregs[REG_FP]);
 #else
   state->pc = reinterpret_cast<void*>(mcontext.gregs[REG_PC]);
   state->sp = reinterpret_cast<void*>(mcontext.gregs[REG_SP]);
