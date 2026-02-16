@@ -550,10 +550,19 @@ void SignalHandler::FillRegisterState(void* context, RegisterState* state) {
 #endif  // V8_HOST_ARCH_*
 #elif V8_OS_SOLARIS
 #if V8_HOST_ARCH_SPARC64
+  // Keep SPARC register decoding separate from the generic Solaris path.
+  // Solaris/SPARCV9 exposes O6 as the stack pointer but may not define a
+  // dedicated frame-pointer index macro in <sys/regset.h>.
   state->pc = reinterpret_cast<void*>(mcontext.gregs[REG_PC]);
   state->sp = reinterpret_cast<void*>(mcontext.gregs[REG_O6]);
-  // Solaris SPARC headers may not expose REG_I6; REG_FP remains available.
+#if defined(REG_I6)
+  state->fp = reinterpret_cast<void*>(mcontext.gregs[REG_I6]);
+#elif defined(REG_FP)
   state->fp = reinterpret_cast<void*>(mcontext.gregs[REG_FP]);
+#else
+  // Fall back to O6 when no explicit frame-pointer register index is exposed.
+  state->fp = reinterpret_cast<void*>(mcontext.gregs[REG_O6]);
+#endif
 #else
   state->pc = reinterpret_cast<void*>(mcontext.gregs[REG_PC]);
   state->sp = reinterpret_cast<void*>(mcontext.gregs[REG_SP]);
