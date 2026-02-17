@@ -229,7 +229,7 @@ constexpr int kOptimizationPriorityExecutedOnceSentinel = 127;
 // priority was not specified.
 constexpr int kOptimizationPriorityNotSpecifiedSentinel = -1;
 
-#if V8_TARGET_ARCH_X64
+#if V8_TARGET_ARCH_X64 || V8_TARGET_ARCH_SPARC64
 constexpr int32_t kOSRTargetOffset = 4 * kSystemPointerSize;
 #endif
 
