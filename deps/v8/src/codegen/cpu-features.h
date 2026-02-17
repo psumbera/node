@@ -112,7 +112,10 @@ enum CpuFeature {
   SSE3,
   AVX,
   AVX2,
+  AVX_VNNI,
+  AVX_VNNI_INT8,
   FMA3,
+  F16C,
 #endif
 
   NUMBER_OF_CPU_FEATURES
