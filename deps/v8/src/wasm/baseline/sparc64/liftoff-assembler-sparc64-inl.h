@@ -2497,8 +2497,7 @@ void LiftoffAssembler::emit_i64_set_cond(Condition cond, Register dst,
 }
 
 namespace liftoff {
-template <void (SharedMacroAssemblerBase::*cmp_op)(DoubleRegister,
-                                                   DoubleRegister)>
+template <void (Assembler::*cmp_op)(DoubleRegister, DoubleRegister)>
 void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
                       DoubleRegister lhs, DoubleRegister rhs) {
   Label cont;
@@ -2525,15 +2524,13 @@ void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
 void LiftoffAssembler::emit_f32_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&MacroAssembler::ucomiss>(this, cond, dst, lhs,
-                                                      rhs);
+  liftoff::EmitFloatSetCond<&Assembler::ucomiss>(this, cond, dst, lhs, rhs);
 }
 
 void LiftoffAssembler::emit_f64_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&MacroAssembler::ucomisd>(this, cond, dst, lhs,
-                                                      rhs);
+  liftoff::EmitFloatSetCond<&Assembler::ucomisd>(this, cond, dst, lhs, rhs);
 }
 
 bool LiftoffAssembler::emit_select(LiftoffRegister dst, Register condition,

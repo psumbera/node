@@ -1856,6 +1856,8 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instr(XMMRegister dst, XMMRegister src1, Operand src2) {     \
     vinstr(0x##opcode, dst, src1, src2, k##prefix, k##escape, kWIG);   \
   }
+  SSE_INSTRUCTION_LIST_SS(AVX_SCALAR)
+  SSE2_INSTRUCTION_LIST_SD(AVX_SCALAR)
 #undef AVX_SCALAR
 
 #undef AVX_3
@@ -1872,6 +1874,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     vinstr(0x##opcode, ext_reg, dst, src, k##prefix, k##escape, kWIG); \
     emit(imm8);                                                        \
   }
+  SSE2_INSTRUCTION_LIST_SHIFT_IMM(AVX_SSE2_SHIFT_IMM)
 #undef AVX_SSE2_SHIFT_IMM
 
   void vmovlhps(XMMRegister dst, XMMRegister src1, XMMRegister src2) {
