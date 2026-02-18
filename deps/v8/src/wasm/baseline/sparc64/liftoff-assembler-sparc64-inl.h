@@ -3201,7 +3201,7 @@ void LiftoffAssembler::emit_v128_anytrue(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i8x16_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::pcmpeqb>(this, dst, src);
+  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqb>(this, dst, src);
 }
 
 void LiftoffAssembler::emit_i8x16_bitmask(LiftoffRegister dst,
@@ -3325,7 +3325,7 @@ void LiftoffAssembler::emit_i16x8_neg(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i16x8_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::pcmpeqw>(this, dst, src);
+  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqw>(this, dst, src);
 }
 
 void LiftoffAssembler::emit_i16x8_bitmask(LiftoffRegister dst,
@@ -3540,7 +3540,7 @@ void LiftoffAssembler::emit_i32x4_neg(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::pcmpeqd>(this, dst, src);
+  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqd>(this, dst, src);
 }
 
 void LiftoffAssembler::emit_i32x4_bitmask(LiftoffRegister dst,
@@ -3708,7 +3708,7 @@ void LiftoffAssembler::emit_i64x2_neg(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i64x2_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::pcmpeqq>(this, dst, src, SSE4_1);
+  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqq>(this, dst, src, SSE4_1);
 }
 
 void LiftoffAssembler::emit_i64x2_shl(LiftoffRegister dst, LiftoffRegister lhs,
@@ -3825,12 +3825,12 @@ void LiftoffAssembler::emit_i64x2_uconvert_i32x4_high(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_f32x4_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  absps(dst.fp(), src.fp(), kScratchRegister);
+  Absps(dst.fp(), src.fp(), kScratchRegister);
 }
 
 void LiftoffAssembler::emit_f32x4_neg(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  negps(dst.fp(), src.fp(), kScratchRegister);
+  Negps(dst.fp(), src.fp(), kScratchRegister);
 }
 
 void LiftoffAssembler::emit_f32x4_sqrt(LiftoffRegister dst,
@@ -3931,12 +3931,12 @@ void LiftoffAssembler::emit_f32x4_relaxed_max(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_f64x2_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  abspd(dst.fp(), src.fp(), kScratchRegister);
+  Abspd(dst.fp(), src.fp(), kScratchRegister);
 }
 
 void LiftoffAssembler::emit_f64x2_neg(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  negpd(dst.fp(), src.fp(), kScratchRegister);
+  Negpd(dst.fp(), src.fp(), kScratchRegister);
 }
 
 void LiftoffAssembler::emit_f64x2_sqrt(LiftoffRegister dst,
@@ -4191,17 +4191,17 @@ void LiftoffAssembler::emit_i16x8_rounding_average_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i8x16_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsb(dst.fp(), src.fp());
+  Pabsb(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i16x8_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsw(dst.fp(), src.fp());
+  Pabsw(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i32x4_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsd(dst.fp(), src.fp());
+  Pabsd(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i64x2_abs(LiftoffRegister dst,
@@ -4410,7 +4410,7 @@ bool LiftoffAssembler::emit_f16x8_abs(LiftoffRegister dst,
     return false;
   }
   CpuFeatureScope avx_scope(this, AVX);
-  absph(dst.fp(), src.fp(), kScratchRegister);
+  Absph(dst.fp(), src.fp(), kScratchRegister);
   return true;
 }
 
@@ -4420,7 +4420,7 @@ bool LiftoffAssembler::emit_f16x8_neg(LiftoffRegister dst,
     return false;
   }
   CpuFeatureScope avx_scope(this, AVX);
-  negph(dst.fp(), src.fp(), kScratchRegister);
+  Negph(dst.fp(), src.fp(), kScratchRegister);
   return true;
 }
 
@@ -4433,7 +4433,7 @@ bool LiftoffAssembler::emit_f16x8_sqrt(LiftoffRegister dst,
   CpuFeatureScope avx_scope(this, AVX);
   YMMRegister ydst = YMMRegister::from_code(dst.fp().code());
   vcvtph2ps(ydst, src.fp());
-  vsqrtps(ydst, ydst);
+  Sqrtps(ydst, ydst);
   vcvtps2ph(dst.fp(), ydst, 0);
   return true;
 }
@@ -4616,7 +4616,7 @@ bool LiftoffAssembler::emit_f16x8_sconvert_i16x8(LiftoffRegister dst,
   CpuFeatureScope avx2_scope(this, AVX2);
   YMMRegister ydst = YMMRegister::from_code(dst.fp().code());
   vpmovsxwd(ydst, src.fp());
-  vcvtdq2ps(ydst, ydst);
+  Cvtdq2ps(ydst, ydst);
   vcvtps2ph(dst.fp(), ydst, 0);
   return true;
 }
@@ -4633,7 +4633,7 @@ bool LiftoffAssembler::emit_f16x8_uconvert_i16x8(LiftoffRegister dst,
   CpuFeatureScope avx2_scope(this, AVX2);
   YMMRegister ydst = YMMRegister::from_code(dst.fp().code());
   vpmovzxwd(ydst, src.fp());
-  vcvtdq2ps(ydst, ydst);
+  Cvtdq2ps(ydst, ydst);
   vcvtps2ph(dst.fp(), ydst, 0);
   return true;
 }
@@ -4663,13 +4663,13 @@ bool LiftoffAssembler::emit_f16x8_demote_f64x2_zero(LiftoffRegister dst,
   LiftoffRegister ftmp2 =
       GetUnusedRegister(RegClass::kFpReg, LiftoffRegList{dst, src, ftmp});
   F64x2ExtractLane(ftmp.fp(), src.fp(), 1);
-  cvtpd2ph(ftmp2.fp(), ftmp.fp(), tmp.gp());
+  Cvtpd2ph(ftmp2.fp(), ftmp.fp(), tmp.gp());
   // Cvtpd2ph requires dst and src to not overlap.
   if (dst == src) {
     Move(ftmp.fp(), src.fp(), kF64);
-    cvtpd2ph(dst.fp(), ftmp.fp(), tmp.gp());
+    Cvtpd2ph(dst.fp(), ftmp.fp(), tmp.gp());
   } else {
-    cvtpd2ph(dst.fp(), src.fp(), tmp.gp());
+    Cvtpd2ph(dst.fp(), src.fp(), tmp.gp());
   }
   vmovd(tmp.gp(), ftmp2.fp());
   vpinsrw(dst.fp(), dst.fp(), tmp.gp(), 1);
