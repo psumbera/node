@@ -2135,9 +2135,9 @@ inline void EmitTruncateFloatToInt(LiftoffAssembler* assm, Register dst,
   ConvertFloatToIntAndBack<dst_type, src_type>(assm, dst, rounded,
                                                converted_back);
   if (std::is_same_v<double, src_type>) {  // f64
-    __ ucomisd(converted_back, rounded);
+    __ Ucomisd(converted_back, rounded);
   } else {  // f32
-    __ ucomiss(converted_back, rounded);
+    __ Ucomiss(converted_back, rounded);
   }
 
   // Jump to trap if PF is 0 (one of the operands was NaN) or they are not
@@ -2172,9 +2172,9 @@ inline void EmitSatTruncateFloatToInt(LiftoffAssembler* assm, Register dst,
   ConvertFloatToIntAndBack<dst_type, src_type>(assm, dst, rounded,
                                                converted_back);
   if (std::is_same_v<double, src_type>) {  // f64
-    __ ucomisd(converted_back, rounded);
+    __ Ucomisd(converted_back, rounded);
   } else {  // f32
-    __ ucomiss(converted_back, rounded);
+    __ Ucomiss(converted_back, rounded);
   }
 
   // Return 0 if PF is 0 (one of the operands was NaN)
@@ -2190,9 +2190,9 @@ inline void EmitSatTruncateFloatToInt(LiftoffAssembler* assm, Register dst,
 
   // if out-of-bounds, check if src is positive
   if (std::is_same_v<double, src_type>) {  // f64
-    __ ucomisd(src, zero_reg);
+    __ Ucomisd(src, zero_reg);
   } else {  // f32
-    __ ucomiss(src, zero_reg);
+    __ Ucomiss(src, zero_reg);
   }
   __ j(above, &src_positive);
   if (std::is_same_v<int32_t, dst_type> ||
@@ -2239,17 +2239,17 @@ inline void EmitSatTruncateFloatToUInt64(LiftoffAssembler* assm, Register dst,
 
   __ xorpd(zero_reg, zero_reg);
   if (std::is_same_v<double, src_type>) {  // f64
-    __ ucomisd(src, zero_reg);
+    __ Ucomisd(src, zero_reg);
   } else {  // f32
-    __ ucomiss(src, zero_reg);
+    __ Ucomiss(src, zero_reg);
   }
   // Check if NaN
   __ j(parity_even, &neg_or_nan);
   __ j(below, &neg_or_nan);
   if (std::is_same_v<double, src_type>) {  // f64
-    __ cvttsd2uiq(dst, src, &overflow);
+    __ Cvttsd2uiq(dst, src, &overflow);
   } else {  // f32
-    __ cvttss2uiq(dst, src, &overflow);
+    __ Cvttss2uiq(dst, src, &overflow);
   }
   __ jmp(&done);
 
@@ -2315,7 +2315,7 @@ bool LiftoffAssembler::emit_type_conversion(WasmOpcode opcode,
       break;
     case kExprI64UConvertF32: {
       RETURN_FALSE_IF_MISSING_CPU_FEATURE(SSE4_1);
-      cvttss2uiq(dst.gp(), src.fp(), trap);
+      Cvttss2uiq(dst.gp(), src.fp(), trap);
       break;
     }
     case kExprI64SConvertF64:
@@ -2324,7 +2324,7 @@ bool LiftoffAssembler::emit_type_conversion(WasmOpcode opcode,
       break;
     case kExprI64UConvertF64: {
       RETURN_FALSE_IF_MISSING_CPU_FEATURE(SSE4_1);
-      cvttsd2uiq(dst.gp(), src.fp(), trap);
+      Cvttsd2uiq(dst.gp(), src.fp(), trap);
       break;
     }
     case kExprI64SConvertSatF32:
@@ -2360,7 +2360,7 @@ bool LiftoffAssembler::emit_type_conversion(WasmOpcode opcode,
       cvtqsi2ss(dst.fp(), src.gp());
       break;
     case kExprF32UConvertI64:
-      cvtqui2ss(dst.fp(), src.gp());
+      Cvtqui2ss(dst.fp(), src.gp());
       break;
     case kExprF32ConvertF64:
       cvtsd2ss(dst.fp(), src.fp());
@@ -2379,7 +2379,7 @@ bool LiftoffAssembler::emit_type_conversion(WasmOpcode opcode,
       cvtqsi2sd(dst.fp(), src.gp());
       break;
     case kExprF64UConvertI64:
-      cvtqui2sd(dst.fp(), src.gp());
+      Cvtqui2sd(dst.fp(), src.gp());
       break;
     case kExprF64ConvertF32:
       cvtss2sd(dst.fp(), src.fp());
@@ -2497,8 +2497,8 @@ void LiftoffAssembler::emit_i64_set_cond(Condition cond, Register dst,
 }
 
 namespace liftoff {
-template <void (MacroAssembler::*cmp_op)(DoubleRegister,
-                                     DoubleRegister)>
+template <void (SharedMacroAssemblerBase::*cmp_op)(DoubleRegister,
+                                                   DoubleRegister)>
 void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
                       DoubleRegister lhs, DoubleRegister rhs) {
   Label cont;
@@ -2525,14 +2525,14 @@ void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
 void LiftoffAssembler::emit_f32_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&MacroAssembler::ucomiss>(this, cond, dst, lhs,
+  liftoff::EmitFloatSetCond<&MacroAssembler::Ucomiss>(this, cond, dst, lhs,
                                                       rhs);
 }
 
 void LiftoffAssembler::emit_f64_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&MacroAssembler::ucomisd>(this, cond, dst, lhs,
+  liftoff::EmitFloatSetCond<&MacroAssembler::Ucomisd>(this, cond, dst, lhs,
                                                       rhs);
 }
 
@@ -2772,7 +2772,7 @@ void LiftoffAssembler::emit_i8x16_shuffle(LiftoffRegister dst,
     wasm::SimdShuffle::Pack16Lanes(imms, shuffle);
     MacroAssembler::Move(kScratchDoubleReg, make_uint64(imms[3], imms[2]),
                          make_uint64(imms[1], imms[0]));
-    pshufb(dst.fp(), lhs.fp(), kScratchDoubleReg);
+    Pshufb(dst.fp(), lhs.fp(), kScratchDoubleReg);
     return;
   }
 
@@ -2784,7 +2784,7 @@ void LiftoffAssembler::emit_i8x16_shuffle(LiftoffRegister dst,
     mask1[j] |= lane < kSimd128Size ? lane : 0x80;
   }
   MacroAssembler::Move(liftoff::kScratchDoubleReg2, mask1[1], mask1[0]);
-  pshufb(kScratchDoubleReg, lhs.fp(), liftoff::kScratchDoubleReg2);
+  Pshufb(kScratchDoubleReg, lhs.fp(), liftoff::kScratchDoubleReg2);
 
   uint64_t mask2[2] = {};
   for (int i = 15; i >= 0; i--) {
@@ -2795,8 +2795,8 @@ void LiftoffAssembler::emit_i8x16_shuffle(LiftoffRegister dst,
   }
   MacroAssembler::Move(liftoff::kScratchDoubleReg2, mask2[1], mask2[0]);
 
-  pshufb(dst.fp(), rhs.fp(), liftoff::kScratchDoubleReg2);
-  por(dst.fp(), kScratchDoubleReg);
+  Pshufb(dst.fp(), rhs.fp(), liftoff::kScratchDoubleReg2);
+  Por(dst.fp(), kScratchDoubleReg);
 }
 
 void LiftoffAssembler::emit_i8x16_swizzle(LiftoffRegister dst,
@@ -2815,7 +2815,7 @@ void LiftoffAssembler::emit_i8x16_relaxed_swizzle(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_relaxed_trunc_f32x4_s(LiftoffRegister dst,
                                                         LiftoffRegister src) {
-  cvttps2dq(dst.fp(), src.fp());
+  Cvttps2dq(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i32x4_relaxed_trunc_f32x4_u(LiftoffRegister dst,
@@ -2825,7 +2825,7 @@ void LiftoffAssembler::emit_i32x4_relaxed_trunc_f32x4_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_relaxed_trunc_f64x2_s_zero(
     LiftoffRegister dst, LiftoffRegister src) {
-  cvttpd2dq(dst.fp(), src.fp());
+  Cvttpd2dq(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i32x4_relaxed_trunc_f64x2_u_zero(
