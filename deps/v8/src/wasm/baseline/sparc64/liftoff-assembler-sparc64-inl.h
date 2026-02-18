@@ -2135,9 +2135,9 @@ inline void EmitTruncateFloatToInt(LiftoffAssembler* assm, Register dst,
   ConvertFloatToIntAndBack<dst_type, src_type>(assm, dst, rounded,
                                                converted_back);
   if (std::is_same_v<double, src_type>) {  // f64
-    __ Ucomisd(converted_back, rounded);
+    __ ucomisd(converted_back, rounded);
   } else {  // f32
-    __ Ucomiss(converted_back, rounded);
+    __ ucomiss(converted_back, rounded);
   }
 
   // Jump to trap if PF is 0 (one of the operands was NaN) or they are not
@@ -2172,9 +2172,9 @@ inline void EmitSatTruncateFloatToInt(LiftoffAssembler* assm, Register dst,
   ConvertFloatToIntAndBack<dst_type, src_type>(assm, dst, rounded,
                                                converted_back);
   if (std::is_same_v<double, src_type>) {  // f64
-    __ Ucomisd(converted_back, rounded);
+    __ ucomisd(converted_back, rounded);
   } else {  // f32
-    __ Ucomiss(converted_back, rounded);
+    __ ucomiss(converted_back, rounded);
   }
 
   // Return 0 if PF is 0 (one of the operands was NaN)
@@ -2190,9 +2190,9 @@ inline void EmitSatTruncateFloatToInt(LiftoffAssembler* assm, Register dst,
 
   // if out-of-bounds, check if src is positive
   if (std::is_same_v<double, src_type>) {  // f64
-    __ Ucomisd(src, zero_reg);
+    __ ucomisd(src, zero_reg);
   } else {  // f32
-    __ Ucomiss(src, zero_reg);
+    __ ucomiss(src, zero_reg);
   }
   __ j(above, &src_positive);
   if (std::is_same_v<int32_t, dst_type> ||
@@ -2239,9 +2239,9 @@ inline void EmitSatTruncateFloatToUInt64(LiftoffAssembler* assm, Register dst,
 
   __ xorpd(zero_reg, zero_reg);
   if (std::is_same_v<double, src_type>) {  // f64
-    __ Ucomisd(src, zero_reg);
+    __ ucomisd(src, zero_reg);
   } else {  // f32
-    __ Ucomiss(src, zero_reg);
+    __ ucomiss(src, zero_reg);
   }
   // Check if NaN
   __ j(parity_even, &neg_or_nan);
@@ -2525,14 +2525,14 @@ void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
 void LiftoffAssembler::emit_f32_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&MacroAssembler::Ucomiss>(this, cond, dst, lhs,
+  liftoff::EmitFloatSetCond<&MacroAssembler::ucomiss>(this, cond, dst, lhs,
                                                       rhs);
 }
 
 void LiftoffAssembler::emit_f64_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&MacroAssembler::Ucomisd>(this, cond, dst, lhs,
+  liftoff::EmitFloatSetCond<&MacroAssembler::ucomisd>(this, cond, dst, lhs,
                                                       rhs);
 }
 
