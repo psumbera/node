@@ -2497,7 +2497,8 @@ void LiftoffAssembler::emit_i64_set_cond(Condition cond, Register dst,
 }
 
 namespace liftoff {
-template <void (Assembler::*cmp_op)(DoubleRegister, DoubleRegister)>
+template <void (SharedMacroAssemblerBase::*cmp_op)(DoubleRegister,
+                                                   DoubleRegister)>
 void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
                       DoubleRegister lhs, DoubleRegister rhs) {
   Label cont;
@@ -2524,13 +2525,19 @@ void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
 void LiftoffAssembler::emit_f32_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&Assembler::ucomiss>(this, cond, dst, lhs, rhs);
+  liftoff::EmitFloatSetCond<
+      static_cast<void (SharedMacroAssemblerBase::*)(DoubleRegister,
+                                                     DoubleRegister)>(
+          &Assembler::ucomiss)>(this, cond, dst, lhs, rhs);
 }
 
 void LiftoffAssembler::emit_f64_set_cond(Condition cond, Register dst,
                                          DoubleRegister lhs,
                                          DoubleRegister rhs) {
-  liftoff::EmitFloatSetCond<&Assembler::ucomisd>(this, cond, dst, lhs, rhs);
+  liftoff::EmitFloatSetCond<
+      static_cast<void (SharedMacroAssemblerBase::*)(DoubleRegister,
+                                                     DoubleRegister)>(
+          &Assembler::ucomisd)>(this, cond, dst, lhs, rhs);
 }
 
 bool LiftoffAssembler::emit_select(LiftoffRegister dst, Register condition,
@@ -2633,19 +2640,13 @@ void EmitSimdShiftOp(LiftoffAssembler* assm, LiftoffRegister dst,
   }
 }
 
-template <void (Assembler::*avx_op)(XMMRegister, XMMRegister, uint8_t),
-          void (Assembler::*sse_op)(XMMRegister, uint8_t), uint8_t width>
+template <void (Assembler::*sse_op)(XMMRegister, uint8_t), uint8_t width>
 void EmitSimdShiftOpImm(LiftoffAssembler* assm, LiftoffRegister dst,
                         LiftoffRegister operand, int32_t count) {
   constexpr int mask = (1 << width) - 1;
   uint8_t shift = static_cast<uint8_t>(count & mask);
-  if (CpuFeatures::IsSupported(AVX)) {
-    CpuFeatureScope scope(assm, AVX);
-    (assm->*avx_op)(dst.fp(), operand.fp(), shift);
-  } else {
-    if (dst.fp() != operand.fp()) assm->movaps(dst.fp(), operand.fp());
-    (assm->*sse_op)(dst.fp(), shift);
-  }
+  if (dst.fp() != operand.fp()) assm->movaps(dst.fp(), operand.fp());
+  (assm->*sse_op)(dst.fp(), shift);
 }
 
 inline void EmitAnyTrue(LiftoffAssembler* assm, LiftoffRegister dst,
@@ -3380,7 +3381,7 @@ void LiftoffAssembler::emit_i16x8_shl(LiftoffRegister dst, LiftoffRegister lhs,
 
 void LiftoffAssembler::emit_i16x8_shli(LiftoffRegister dst, LiftoffRegister lhs,
                                        int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpsllw, &Assembler::psllw, 4>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::psllw, 4>(
       this, dst, lhs, rhs);
 }
 
@@ -3393,7 +3394,7 @@ void LiftoffAssembler::emit_i16x8_shr_s(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i16x8_shri_s(LiftoffRegister dst,
                                          LiftoffRegister lhs, int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpsraw, &Assembler::psraw, 4>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::psraw, 4>(
       this, dst, lhs, rhs);
 }
 
@@ -3406,7 +3407,7 @@ void LiftoffAssembler::emit_i16x8_shr_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i16x8_shri_u(LiftoffRegister dst,
                                          LiftoffRegister lhs, int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpsrlw, &Assembler::psrlw, 4>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::psrlw, 4>(
       this, dst, lhs, rhs);
 }
 
@@ -3593,7 +3594,7 @@ void LiftoffAssembler::emit_i32x4_shl(LiftoffRegister dst, LiftoffRegister lhs,
 
 void LiftoffAssembler::emit_i32x4_shli(LiftoffRegister dst, LiftoffRegister lhs,
                                        int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpslld, &Assembler::pslld, 5>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::pslld, 5>(
       this, dst, lhs, rhs);
 }
 
@@ -3606,7 +3607,7 @@ void LiftoffAssembler::emit_i32x4_shr_s(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_shri_s(LiftoffRegister dst,
                                          LiftoffRegister lhs, int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpsrad, &Assembler::psrad, 5>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::psrad, 5>(
       this, dst, lhs, rhs);
 }
 
@@ -3619,7 +3620,7 @@ void LiftoffAssembler::emit_i32x4_shr_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_shri_u(LiftoffRegister dst,
                                          LiftoffRegister lhs, int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpsrld, &Assembler::psrld, 5>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::psrld, 5>(
       this, dst, lhs, rhs);
 }
 
@@ -3756,7 +3757,7 @@ void LiftoffAssembler::emit_i64x2_shl(LiftoffRegister dst, LiftoffRegister lhs,
 
 void LiftoffAssembler::emit_i64x2_shli(LiftoffRegister dst, LiftoffRegister lhs,
                                        int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpsllq, &Assembler::psllq, 6>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::psllq, 6>(
       this, dst, lhs, rhs);
 }
 
@@ -3781,7 +3782,7 @@ void LiftoffAssembler::emit_i64x2_shr_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i64x2_shri_u(LiftoffRegister dst,
                                          LiftoffRegister lhs, int32_t rhs) {
-  liftoff::EmitSimdShiftOpImm<&Assembler::vpsrlq, &Assembler::psrlq, 6>(
+  liftoff::EmitSimdShiftOpImm<&Assembler::psrlq, 6>(
       this, dst, lhs, rhs);
 }
 
@@ -4451,7 +4452,7 @@ bool LiftoffAssembler::emit_f16x8_abs(LiftoffRegister dst,
     return false;
   }
   CpuFeatureScope avx_scope(this, AVX);
-  absph(dst.fp(), src.fp(), kScratchRegister);
+  Absph(dst.fp(), src.fp(), kScratchRegister);
   return true;
 }
 
@@ -4461,7 +4462,7 @@ bool LiftoffAssembler::emit_f16x8_neg(LiftoffRegister dst,
     return false;
   }
   CpuFeatureScope avx_scope(this, AVX);
-  negph(dst.fp(), src.fp(), kScratchRegister);
+  Negph(dst.fp(), src.fp(), kScratchRegister);
   return true;
 }
 
@@ -4745,13 +4746,13 @@ bool LiftoffAssembler::emit_f16x8_demote_f64x2_zero(LiftoffRegister dst,
   LiftoffRegister ftmp2 =
       GetUnusedRegister(RegClass::kFpReg, LiftoffRegList{dst, src, ftmp});
   F64x2ExtractLane(ftmp.fp(), src.fp(), 1);
-  cvtpd2ph(ftmp2.fp(), ftmp.fp(), tmp.gp());
+  Cvtpd2ph(ftmp2.fp(), ftmp.fp(), tmp.gp());
   // Cvtpd2ph requires dst and src to not overlap.
   if (dst == src) {
     Move(ftmp.fp(), src.fp(), kF64);
-    cvtpd2ph(dst.fp(), ftmp.fp(), tmp.gp());
+    Cvtpd2ph(dst.fp(), ftmp.fp(), tmp.gp());
   } else {
-    cvtpd2ph(dst.fp(), src.fp(), tmp.gp());
+    Cvtpd2ph(dst.fp(), src.fp(), tmp.gp());
   }
   vmovd(tmp.gp(), ftmp2.fp());
   vpinsrw(dst.fp(), dst.fp(), tmp.gp(), 1);

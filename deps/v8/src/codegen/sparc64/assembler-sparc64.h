@@ -1285,6 +1285,26 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
 #undef DECLARE_SSE_INSTRUCTION
 
+#define DECLARE_SSE_AVX_INSTRUCTION(instruction, escape, opcode)             \
+  void v##instruction(XMMRegister dst, XMMRegister src1, XMMRegister src2) { \
+    vinstr(0x##opcode, dst, src1, src2, kNone, k##escape, kW0);              \
+  }                                                                           \
+  void v##instruction(XMMRegister dst, XMMRegister src1, Operand src2) {     \
+    vinstr(0x##opcode, dst, src1, src2, kNone, k##escape, kW0);              \
+  }                                                                           \
+  void v##instruction(YMMRegister dst, YMMRegister src1, YMMRegister src2) { \
+    vinstr(0x##opcode, dst, src1, src2, kNone, k##escape, kW0,               \
+           kSparcSimdFeature);                                                \
+  }                                                                           \
+  void v##instruction(YMMRegister dst, YMMRegister src1, Operand src2) {     \
+    vinstr(0x##opcode, dst, src1, src2, kNone, k##escape, kW0,               \
+           kSparcSimdFeature);                                                \
+  }
+
+  SSE_UNOP_INSTRUCTION_LIST(DECLARE_SSE_AVX_INSTRUCTION)
+  SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_AVX_INSTRUCTION)
+#undef DECLARE_SSE_AVX_INSTRUCTION
+
   // SSE instructions with prefix and SSE2 instructions
   void sse2_instr(XMMRegister dst, XMMRegister src, uint8_t prefix,
                   uint8_t escape, uint8_t opcode);
