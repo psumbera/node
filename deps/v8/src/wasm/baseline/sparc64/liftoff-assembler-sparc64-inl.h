@@ -3540,7 +3540,7 @@ void LiftoffAssembler::emit_i32x4_neg(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqd>(this, dst, src);
+  liftoff::EmitAllTrue<&Assembler::pcmpeqd>(this, dst, src);
 }
 
 void LiftoffAssembler::emit_i32x4_bitmask(LiftoffRegister dst,
@@ -4191,17 +4191,17 @@ void LiftoffAssembler::emit_i16x8_rounding_average_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i8x16_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsb(dst.fp(), src.fp());
+  Pabsb(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i16x8_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsw(dst.fp(), src.fp());
+  Pabsw(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i32x4_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsd(dst.fp(), src.fp());
+  Pabsd(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i64x2_abs(LiftoffRegister dst,
