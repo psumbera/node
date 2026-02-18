@@ -332,9 +332,23 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
     UNREACHABLE();
   }
 
+  void Andps(XMMRegister dst, XMMRegister src, Operand arg) {
+    USE(dst);
+    USE(src);
+    USE(arg);
+    UNREACHABLE();
+  }
+
   template <typename Dst, typename Arg>
   void Xorps(Dst dst, Arg arg) {
     USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  void Xorps(XMMRegister dst, XMMRegister src, Operand arg) {
+    USE(dst);
+    USE(src);
     USE(arg);
     UNREACHABLE();
   }
