@@ -1,47 +1,9 @@
   /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/wasm/baseline/liftoff-assembler.o ../deps/v8/src/wasm/baseline/liftoff-assembler.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' '-DICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_STATIC' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/inspector-generated-output-root -I../deps/v8/third_party/inspector_protocol -I/builds/psumbera/node-ai/out/Release/obj/gen -I/builds/psumbera/node-ai/out/Release/obj/gen/inspector-generated-output-root/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I../deps/v8/third_party/zlib -I../deps/v8/third_party/zlib/google -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/highway/src -I../deps/v8/third_party/simdutf -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/wasm/baseline/liftoff-assembler.o.d.raw   -c
 In file included from ../deps/v8/src/wasm/baseline/liftoff-assembler-inl.h:33,
                  from ../deps/v8/src/wasm/baseline/liftoff-assembler.cc:16:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In function 'void v8::internal::wasm::liftoff::EmitTruncateFloatToInt(v8::internal::wasm::LiftoffAssembler*, v8::internal::Register, v8::internal::DoubleRegister, v8::internal::Label*)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2138:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomisd'; did you mean 'ucomisd'? [-Wtemplate-body]
- 2138 |     __ Ucomisd(converted_back, rounded);
-      |        ^~~~~~~
-      |        ucomisd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2140:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomiss'; did you mean 'ucomiss'? [-Wtemplate-body]
- 2140 |     __ Ucomiss(converted_back, rounded);
-      |        ^~~~~~~
-      |        ucomiss
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In function 'void v8::internal::wasm::liftoff::EmitSatTruncateFloatToInt(v8::internal::wasm::LiftoffAssembler*, v8::internal::Register, v8::internal::DoubleRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2175:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomisd'; did you mean 'ucomisd'? [-Wtemplate-body]
- 2175 |     __ Ucomisd(converted_back, rounded);
-      |        ^~~~~~~
-      |        ucomisd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2177:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomiss'; did you mean 'ucomiss'? [-Wtemplate-body]
- 2177 |     __ Ucomiss(converted_back, rounded);
-      |        ^~~~~~~
-      |        ucomiss
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2193:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomisd'; did you mean 'ucomisd'? [-Wtemplate-body]
- 2193 |     __ Ucomisd(src, zero_reg);
-      |        ^~~~~~~
-      |        ucomisd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2195:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomiss'; did you mean 'ucomiss'? [-Wtemplate-body]
- 2195 |     __ Ucomiss(src, zero_reg);
-      |        ^~~~~~~
-      |        ucomiss
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In function 'void v8::internal::wasm::liftoff::EmitSatTruncateFloatToUInt64(v8::internal::wasm::LiftoffAssembler*, v8::internal::Register, v8::internal::DoubleRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2242:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomisd'; did you mean 'ucomisd'? [-Wtemplate-body]
- 2242 |     __ Ucomisd(src, zero_reg);
-      |        ^~~~~~~
-      |        ucomisd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2244:8: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'Ucomiss'; did you mean 'ucomiss'? [-Wtemplate-body]
- 2244 |     __ Ucomiss(src, zero_reg);
-      |        ^~~~~~~
-      |        ucomiss
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_f32_set_cond(v8::internal::Condition, v8::internal::Register, v8::internal::DoubleRegister, v8::internal::DoubleRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2528:46: error: 'Ucomiss' is not a member of 'v8::internal::MacroAssembler'
- 2528 |   liftoff::EmitFloatSetCond<&MacroAssembler::Ucomiss>(this, cond, dst, lhs,
-      |                                              ^~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2528:54: error: no matching function for call to 'EmitFloatSetCond<<expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::Condition&, v8::internal::Register&, v8::internal::DoubleRegister&, v8::internal::DoubleRegister&)'
- 2528 |   liftoff::EmitFloatSetCond<&MacroAssembler::Ucomiss>(this, cond, dst, lhs,
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2528:54: error: no matching function for call to 'EmitFloatSetCond<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::ucomiss)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::Condition&, v8::internal::Register&, v8::internal::DoubleRegister&, v8::internal::DoubleRegister&)'
+ 2528 |   liftoff::EmitFloatSetCond<&MacroAssembler::ucomiss>(this, cond, dst, lhs,
       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
  2529 |                                                       rhs);
       |                                                       ~~~~
@@ -50,17 +12,12 @@ In file included from ../deps/v8/src/wasm/baseline/liftoff-assembler-inl.h:33,
  2502 | void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
       |      ^~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2502:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2528:54: error: template argument 1 is invalid
- 2528 |   liftoff::EmitFloatSetCond<&MacroAssembler::Ucomiss>(this, cond, dst, lhs,
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
- 2529 |                                                       rhs);
-      |                                                       ~~~~
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2528:29: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::DoubleRegister, v8::internal::DoubleRegister)' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)'} in a converted constant expression
+ 2528 |   liftoff::EmitFloatSetCond<&MacroAssembler::ucomiss>(this, cond, dst, lhs,
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_f64_set_cond(v8::internal::Condition, v8::internal::Register, v8::internal::DoubleRegister, v8::internal::DoubleRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2535:46: error: 'Ucomisd' is not a member of 'v8::internal::MacroAssembler'
- 2535 |   liftoff::EmitFloatSetCond<&MacroAssembler::Ucomisd>(this, cond, dst, lhs,
-      |                                              ^~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2535:54: error: no matching function for call to 'EmitFloatSetCond<<expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::Condition&, v8::internal::Register&, v8::internal::DoubleRegister&, v8::internal::DoubleRegister&)'
- 2535 |   liftoff::EmitFloatSetCond<&MacroAssembler::Ucomisd>(this, cond, dst, lhs,
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2535:54: error: no matching function for call to 'EmitFloatSetCond<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::ucomisd)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::Condition&, v8::internal::Register&, v8::internal::DoubleRegister&, v8::internal::DoubleRegister&)'
+ 2535 |   liftoff::EmitFloatSetCond<&MacroAssembler::ucomisd>(this, cond, dst, lhs,
       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
  2536 |                                                       rhs);
       |                                                       ~~~~
@@ -69,46 +26,9 @@ In file included from ../deps/v8/src/wasm/baseline/liftoff-assembler-inl.h:33,
  2502 | void EmitFloatSetCond(LiftoffAssembler* assm, Condition cond, Register dst,
       |      ^~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2502:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2535:54: error: template argument 1 is invalid
- 2535 |   liftoff::EmitFloatSetCond<&MacroAssembler::Ucomisd>(this, cond, dst, lhs,
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
- 2536 |                                                       rhs);
-      |                                                       ~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In function 'void v8::internal::wasm::liftoff::EmitAnyTrue(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2657:9: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'ptest'; did you mean 'vptest'?
- 2657 |   assm->ptest(src.fp(), src.fp());
-      |         ^~~~~
-      |         vptest
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In function 'void v8::internal::wasm::liftoff::EmitAllTrue(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2672:9: error: 'class v8::internal::wasm::LiftoffAssembler' has no member named 'ptest'; did you mean 'vptest'? [-Wtemplate-body]
- 2672 |   assm->ptest(tmp, tmp);
-      |         ^~~~~
-      |         vptest
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::LoadTransform(v8::internal::wasm::LiftoffRegister, v8::internal::Register, v8::internal::Register, uintptr_t, v8::internal::wasm::LoadType, v8::internal::wasm::LoadTransformationKind, uint32_t*, bool)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2689:7: error: 'pmovsxbw' was not declared in this scope; did you mean 'vpmovsxbw'?
- 2689 |       pmovsxbw(dst.fp(), src_op);
-      |       ^~~~~~~~
-      |       vpmovsxbw
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2691:7: error: 'pmovzxbw' was not declared in this scope; did you mean 'vpmovzxbw'?
- 2691 |       pmovzxbw(dst.fp(), src_op);
-      |       ^~~~~~~~
-      |       vpmovzxbw
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2693:7: error: 'pmovsxwd' was not declared in this scope; did you mean 'vpmovsxwd'?
- 2693 |       pmovsxwd(dst.fp(), src_op);
-      |       ^~~~~~~~
-      |       vpmovsxwd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2695:7: error: 'pmovzxwd' was not declared in this scope; did you mean 'vpmovzxwd'?
- 2695 |       pmovzxwd(dst.fp(), src_op);
-      |       ^~~~~~~~
-      |       vpmovzxwd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2697:7: error: 'pmovsxdq' was not declared in this scope; did you mean 'vpmovsxdq'?
- 2697 |       pmovsxdq(dst.fp(), src_op);
-      |       ^~~~~~~~
-      |       vpmovsxdq
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2699:7: error: 'pmovzxdq' was not declared in this scope; did you mean 'vpmovzxdq'?
- 2699 |       pmovzxdq(dst.fp(), src_op);
-      |       ^~~~~~~~
-      |       vpmovzxdq
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2535:29: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::DoubleRegister, v8::internal::DoubleRegister)' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)'} in a converted constant expression
+ 2535 |   liftoff::EmitFloatSetCond<&MacroAssembler::ucomisd>(this, cond, dst, lhs,
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::LoadLane(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::Register, v8::internal::Register, uintptr_t, v8::internal::wasm::LoadType, uint8_t, uint32_t*, bool)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2732:11: error: no matching function for call to 'v8::internal::wasm::LiftoffAssembler::pinsrb(v8::internal::DoubleRegister, v8::internal::DoubleRegister, v8::internal::Operand&, uint8_t&, uint32_t*&)'
  2732 |     pinsrb(dst.fp(), src.fp(), src_op, laneidx, protected_load_pc);
@@ -119,50 +39,50 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
                  from ../deps/v8/src/codegen/macro-assembler.h:8,
                  from ../deps/v8/src/wasm/baseline/liftoff-assembler.h:13,
                  from ../deps/v8/src/wasm/baseline/liftoff-assembler.cc:5:
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1671:8: note: candidate 1: 'void v8::internal::Assembler::pinsrb(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
- 1671 |   void pinsrb(XMMRegister dst, Register src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1673:8: note: candidate 1: 'void v8::internal::Assembler::pinsrb(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
+ 1673 |   void pinsrb(XMMRegister dst, Register src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1671:8: note: candidate expects 3 arguments, 5 provided
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1672:8: note: candidate 2: 'void v8::internal::Assembler::pinsrb(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
- 1672 |   void pinsrb(XMMRegister dst, Operand src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1673:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1674:8: note: candidate 2: 'void v8::internal::Assembler::pinsrb(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
+ 1674 |   void pinsrb(XMMRegister dst, Operand src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1672:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1674:8: note: candidate expects 3 arguments, 5 provided
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2734:11: error: no matching function for call to 'v8::internal::wasm::LiftoffAssembler::pinsrw(v8::internal::DoubleRegister, v8::internal::DoubleRegister, v8::internal::Operand&, uint8_t&, uint32_t*&)'
  2734 |     pinsrw(dst.fp(), src.fp(), src_op, laneidx, protected_load_pc);
       |     ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2734:11: note: there are 2 candidates
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1664:8: note: candidate 1: 'void v8::internal::Assembler::pinsrw(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
- 1664 |   void pinsrw(XMMRegister dst, Register src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1666:8: note: candidate 1: 'void v8::internal::Assembler::pinsrw(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
+ 1666 |   void pinsrw(XMMRegister dst, Register src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1664:8: note: candidate expects 3 arguments, 5 provided
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1665:8: note: candidate 2: 'void v8::internal::Assembler::pinsrw(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
- 1665 |   void pinsrw(XMMRegister dst, Operand src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1666:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1667:8: note: candidate 2: 'void v8::internal::Assembler::pinsrw(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
+ 1667 |   void pinsrw(XMMRegister dst, Operand src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1665:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1667:8: note: candidate expects 3 arguments, 5 provided
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2736:11: error: no matching function for call to 'v8::internal::wasm::LiftoffAssembler::pinsrd(v8::internal::DoubleRegister, v8::internal::DoubleRegister, v8::internal::Operand&, uint8_t&, uint32_t*&)'
  2736 |     pinsrd(dst.fp(), src.fp(), src_op, laneidx, protected_load_pc);
       |     ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2736:11: note: there are 2 candidates
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1673:8: note: candidate 1: 'void v8::internal::Assembler::pinsrd(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
- 1673 |   void pinsrd(XMMRegister dst, Register src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1675:8: note: candidate 1: 'void v8::internal::Assembler::pinsrd(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
+ 1675 |   void pinsrd(XMMRegister dst, Register src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1673:8: note: candidate expects 3 arguments, 5 provided
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1674:8: note: candidate 2: 'void v8::internal::Assembler::pinsrd(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
- 1674 |   void pinsrd(XMMRegister dst, Operand src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1675:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1676:8: note: candidate 2: 'void v8::internal::Assembler::pinsrd(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
+ 1676 |   void pinsrd(XMMRegister dst, Operand src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1674:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1676:8: note: candidate expects 3 arguments, 5 provided
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2739:11: error: no matching function for call to 'v8::internal::wasm::LiftoffAssembler::pinsrq(v8::internal::DoubleRegister, v8::internal::DoubleRegister, v8::internal::Operand&, uint8_t&, uint32_t*&)'
  2739 |     pinsrq(dst.fp(), src.fp(), src_op, laneidx, protected_load_pc);
       |     ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2739:11: note: there are 2 candidates
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1675:8: note: candidate 1: 'void v8::internal::Assembler::pinsrq(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
- 1675 |   void pinsrq(XMMRegister dst, Register src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1677:8: note: candidate 1: 'void v8::internal::Assembler::pinsrq(v8::internal::XMMRegister, v8::internal::Register, uint8_t)'
+ 1677 |   void pinsrq(XMMRegister dst, Register src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1675:8: note: candidate expects 3 arguments, 5 provided
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1676:8: note: candidate 2: 'void v8::internal::Assembler::pinsrq(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
- 1676 |   void pinsrq(XMMRegister dst, Operand src, uint8_t imm8);
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1677:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1678:8: note: candidate 2: 'void v8::internal::Assembler::pinsrq(v8::internal::XMMRegister, v8::internal::Operand, uint8_t)'
+ 1678 |   void pinsrq(XMMRegister dst, Operand src, uint8_t imm8);
       |        ^~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1676:8: note: candidate expects 3 arguments, 5 provided
+../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1678:8: note: candidate expects 3 arguments, 5 provided
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_shuffle(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, const uint8_t*, bool)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2799:3: error: 'Por' was not declared in this scope; did you mean 'por'?
  2799 |   Por(dst.fp(), kScratchDoubleReg);
@@ -173,162 +93,6 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
  2828 |   Cvttpd2dq(dst.fp(), src.fp());
       |   ^~~~~~~~~
       |   cvttpd2dq
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_ge_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2934:70: error: 'pminsb' is not a member of 'v8::internal::Assembler'
- 2934 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsb, &Assembler::pminsb>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2934:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminsb), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 2934 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsb, &Assembler::pminsb>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 2935 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2934:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2934:77: error: template argument 2 is invalid
- 2934 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsb, &Assembler::pminsb>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 2935 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_gt_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2979:70: error: 'pmaxuw' is not a member of 'v8::internal::Assembler'
- 2979 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxuw, &Assembler::pmaxuw>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2979:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpmaxuw), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 2979 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxuw, &Assembler::pmaxuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 2980 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2979:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2979:77: error: template argument 2 is invalid
- 2979 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxuw, &Assembler::pmaxuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 2980 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_ge_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3005:70: error: 'pminuw' is not a member of 'v8::internal::Assembler'
- 3005 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminuw, &Assembler::pminuw>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3005:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminuw), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3005 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminuw, &Assembler::pminuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3006 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3005:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3005:77: error: template argument 2 is invalid
- 3005 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminuw, &Assembler::pminuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3006 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_gt_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3038:70: error: 'pmaxud' is not a member of 'v8::internal::Assembler'
- 3038 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxud, &Assembler::pmaxud>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3038:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpmaxud), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3038 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxud, &Assembler::pmaxud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3039 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3038:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3038:77: error: template argument 2 is invalid
- 3038 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxud, &Assembler::pmaxud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3039 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_ge_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3052:70: error: 'pminsd' is not a member of 'v8::internal::Assembler'
- 3052 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsd, &Assembler::pminsd>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3052:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminsd), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3052 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsd, &Assembler::pminsd>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3053 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3052:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3052:77: error: template argument 2 is invalid
- 3052 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsd, &Assembler::pminsd>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3053 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_ge_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3064:70: error: 'pminud' is not a member of 'v8::internal::Assembler'
- 3064 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminud, &Assembler::pminud>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3064:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminud), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3064 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminud, &Assembler::pminud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3065 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3064:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3064:77: error: template argument 2 is invalid
- 3064 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminud, &Assembler::pminud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3065 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i64x2_eq(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3071:71: error: 'pcmpeqq' is not a member of 'v8::internal::Assembler'
- 3071 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpcmpeqq, &Assembler::pcmpeqq>(
-      |                                                                       ^~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3071:79: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpcmpeqq), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3071 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpcmpeqq, &Assembler::pcmpeqq>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3072 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                             
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3071:79: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3071:79: error: template argument 2 is invalid
- 3071 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpcmpeqq, &Assembler::pcmpeqq>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3072 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                             
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i64x2_ne(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3077:71: error: 'pcmpeqq' is not a member of 'v8::internal::Assembler'
- 3077 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpcmpeqq, &Assembler::pcmpeqq>(
-      |                                                                       ^~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3077:79: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpcmpeqq), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3077 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpcmpeqq, &Assembler::pcmpeqq>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3078 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                             
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3077:79: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3077:79: error: template argument 2 is invalid
- 3077 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpcmpeqq, &Assembler::pcmpeqq>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3078 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                             
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3079:3: error: 'pcmpeqq' was not declared in this scope; did you mean 'pcmpeqb'?
- 3079 |   pcmpeqq(kScratchDoubleReg, kScratchDoubleReg);
-      |   ^~~~~~~
-      |   pcmpeqb
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_alltrue(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3242:49: error: no matching function for call to 'EmitAllTrue<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::pcmpeqb)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&)'
  3242 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqb>(this, dst, src);
@@ -341,44 +105,6 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3242:24: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' in a converted constant expression
  3242 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqb>(this, dst, src);
       |                        ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_min_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3329:70: error: 'pminsb' is not a member of 'v8::internal::Assembler'
- 3329 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsb, &Assembler::pminsb>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3329:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminsb), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3329 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsb, &Assembler::pminsb>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3330 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3329:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3329:77: error: template argument 2 is invalid
- 3329 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsb, &Assembler::pminsb>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3330 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_max_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3343:70: error: 'pmaxsb' is not a member of 'v8::internal::Assembler'
- 3343 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxsb, &Assembler::pmaxsb>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3343:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpmaxsb), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3343 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxsb, &Assembler::pmaxsb>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3344 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3343:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3343:77: error: template argument 2 is invalid
- 3343 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxsb, &Assembler::pmaxsb>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3344 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_alltrue(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3367:49: error: no matching function for call to 'EmitAllTrue<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::pcmpeqw)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&)'
  3367 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqw>(this, dst, src);
@@ -565,44 +291,6 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
 ../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1364:3: note: in expansion of macro 'SSE2_INSTRUCTION_LIST_SHIFT'
  1364 |   SSE2_INSTRUCTION_LIST_SHIFT(DECLARE_SSE2_SHIFT_AVX_INSTRUCTION)
       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_min_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3473:70: error: 'pminuw' is not a member of 'v8::internal::Assembler'
- 3473 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminuw, &Assembler::pminuw>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3473:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminuw), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3473 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminuw, &Assembler::pminuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3474 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3473:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3473:77: error: template argument 2 is invalid
- 3473 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminuw, &Assembler::pminuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3474 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_max_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3487:70: error: 'pmaxuw' is not a member of 'v8::internal::Assembler'
- 3487 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxuw, &Assembler::pmaxuw>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3487:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpmaxuw), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3487 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxuw, &Assembler::pmaxuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3488 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3487:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3487:77: error: template argument 2 is invalid
- 3487 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxuw, &Assembler::pmaxuw>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3488 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_relaxed_q15mulr_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3538:13: error: no matching function for call to 'v8::internal::wasm::LiftoffAssembler::pmulhrsw(v8::internal::DoubleRegister, v8::internal::DoubleRegister, v8::internal::DoubleRegister)'
  3538 |     pmulhrsw(dst.fp(), src1.fp(), src2.fp());
@@ -830,106 +518,8 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
 ../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1364:3: note: in expansion of macro 'SSE2_INSTRUCTION_LIST_SHIFT'
  1364 |   SSE2_INSTRUCTION_LIST_SHIFT(DECLARE_SSE2_SHIFT_AVX_INSTRUCTION)
       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_mul(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3643:70: error: 'pmulld' is not a member of 'v8::internal::Assembler'
- 3643 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmulld, &Assembler::pmulld>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3643:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpmulld), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3643 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmulld, &Assembler::pmulld>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3644 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3643:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3643:77: error: template argument 2 is invalid
- 3643 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmulld, &Assembler::pmulld>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3644 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_min_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3650:70: error: 'pminsd' is not a member of 'v8::internal::Assembler'
- 3650 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsd, &Assembler::pminsd>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3650:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminsd), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3650 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsd, &Assembler::pminsd>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3651 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3650:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3650:77: error: template argument 2 is invalid
- 3650 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsd, &Assembler::pminsd>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3651 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_min_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3657:70: error: 'pminud' is not a member of 'v8::internal::Assembler'
- 3657 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminud, &Assembler::pminud>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3657:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpminud), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3657 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminud, &Assembler::pminud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3658 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3657:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3657:77: error: template argument 2 is invalid
- 3657 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminud, &Assembler::pminud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3658 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_max_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3664:70: error: 'pmaxsd' is not a member of 'v8::internal::Assembler'
- 3664 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxsd, &Assembler::pmaxsd>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3664:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpmaxsd), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3664 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxsd, &Assembler::pmaxsd>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3665 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3664:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3664:77: error: template argument 2 is invalid
- 3664 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxsd, &Assembler::pmaxsd>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3665 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_max_u(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3671:70: error: 'pmaxud' is not a member of 'v8::internal::Assembler'
- 3671 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxud, &Assembler::pmaxud>(
-      |                                                                      ^~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3671:77: error: no matching function for call to 'EmitSimdCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpmaxud), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3671 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxud, &Assembler::pmaxud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3672 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3671:77: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2578 | void EmitSimdCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2578:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3671:77: error: template argument 2 is invalid
- 3671 |   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpmaxud, &Assembler::pmaxud>(
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
- 3672 |       this, dst, lhs, rhs, SSE4_1);
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                           
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i64x2_alltrue(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3751:41: error: 'pcmpeqq' is not a member of 'v8::internal::MacroAssembler'
- 3751 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqq>(this, dst, src, SSE4_1);
-      |                                         ^~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3751:49: error: no matching function for call to 'EmitAllTrue<<expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3751:49: error: no matching function for call to 'EmitAllTrue<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::pcmpeqq)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
  3751 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqq>(this, dst, src, SSE4_1);
       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3751:49: note: there is 1 candidate
@@ -937,9 +527,9 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
  2662 | inline void EmitAllTrue(LiftoffAssembler* assm, LiftoffRegister dst,
       |             ^~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2662:13: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3751:49: error: template argument 1 is invalid
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3751:24: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' in a converted constant expression
  3751 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqq>(this, dst, src, SSE4_1);
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i64x2_shli(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, int32_t)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3762:72: error: no matching function for call to 'EmitSimdShiftOpImm<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpsllq), (&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::psllq), 6>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, int32_t&)'
  3762 |   liftoff::EmitSimdShiftOpImm<&Assembler::vpsllq, &Assembler::psllq, 6>(
@@ -1056,16 +646,6 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
 ../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1364:3: note: in expansion of macro 'SSE2_INSTRUCTION_LIST_SHIFT'
  1364 |   SSE2_INSTRUCTION_LIST_SHIFT(DECLARE_SSE2_SHIFT_AVX_INSTRUCTION)
       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i64x2_sconvert_i32x4_low(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3848:3: error: 'pmovsxdq' was not declared in this scope; did you mean 'vpmovsxdq'?
- 3848 |   pmovsxdq(dst.fp(), src.fp());
-      |   ^~~~~~~~
-      |   vpmovsxdq
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i64x2_uconvert_i32x4_low(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3858:3: error: 'pmovzxdq' was not declared in this scope; did you mean 'vpmovzxdq'?
- 3858 |   pmovzxdq(dst.fp(), src.fp());
-      |   ^~~~~~~~
-      |   vpmovzxdq
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_f32x4_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3868:3: error: 'absps' was not declared in this scope; did you mean 'Absps'?
  3868 |   absps(dst.fp(), src.fp(), kScratchRegister);
@@ -1238,49 +818,6 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
  3979 |   negpd(dst.fp(), src.fp(), kScratchRegister);
       |   ^~~~~
       |   Negpd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_uconvert_i32x4(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4159:52: error: 'packusdw' is not a member of 'v8::internal::Assembler'
- 4159 |                                        &Assembler::packusdw>(this, dst, lhs,
-      |                                                    ^~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4159:61: error: no matching function for call to 'EmitSimdNonCommutativeBinOp<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::vpackusdw), <expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 4158 |   liftoff::EmitSimdNonCommutativeBinOp<&Assembler::vpackusdw,
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 4159 |                                        &Assembler::packusdw>(this, dst, lhs,
-      |                                        ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
- 4160 |                                                              rhs, SSE4_1);
-      |                                                              ~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4159:61: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2600:6: note: candidate 1: 'template<void (v8::internal::Assembler::* avx_op)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::XMMRegister), void (v8::internal::Assembler::* sse_op)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitSimdNonCommutativeBinOp(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2600 | void EmitSimdNonCommutativeBinOp(
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2600:6: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4159:61: error: template argument 2 is invalid
- 4158 |   liftoff::EmitSimdNonCommutativeBinOp<&Assembler::vpackusdw,
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 4159 |                                        &Assembler::packusdw>(this, dst, lhs,
-      |                                        ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
- 4160 |                                                              rhs, SSE4_1);
-      |                                                              ~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_sconvert_i8x16_low(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4165:3: error: 'pmovsxbw' was not declared in this scope; did you mean 'vpmovsxbw'?
- 4165 |   pmovsxbw(dst.fp(), src.fp());
-      |   ^~~~~~~~
-      |   vpmovsxbw
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_uconvert_i8x16_low(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4175:3: error: 'pmovzxbw' was not declared in this scope; did you mean 'vpmovzxbw'?
- 4175 |   pmovzxbw(dst.fp(), src.fp());
-      |   ^~~~~~~~
-      |   vpmovzxbw
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_sconvert_i16x8_low(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4185:3: error: 'pmovsxwd' was not declared in this scope; did you mean 'vpmovsxwd'?
- 4185 |   pmovsxwd(dst.fp(), src.fp());
-      |   ^~~~~~~~
-      |   vpmovsxwd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_uconvert_i16x8_low(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4195:3: error: 'pmovzxwd' was not declared in this scope; did you mean 'vpmovzxwd'?
- 4195 |   pmovzxwd(dst.fp(), src.fp());
-      |   ^~~~~~~~
-      |   vpmovzxwd
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_s128_and_not(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4218:52: error: 'vandnps' is not a member of 'v8::internal::Assembler'
  4218 |   liftoff::EmitSimdNonCommutativeBinOp<&Assembler::vandnps, &Assembler::andnps>(
