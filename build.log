@@ -5,140 +5,29 @@ In file included from ../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.h:1
                  from ../deps/v8/src/baseline/baseline-assembler-inl.h:8,
                  from ../deps/v8/src/baseline/baseline.cc:12:
 ../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In member function 'void v8::internal::SharedMacroAssembler<Impl>::Abspd(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register)':
-../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:732:92: error: no matches converting function 'andps' to type 'using v8::internal::SharedMacroAssembler<Impl>::FloatInstruction = void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)' {aka 'void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)'} [-Wtemplate-body]
-  732 |     FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::andps),
-      |                                                                                            ^
-In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
-                 from ../deps/v8/src/codegen/macro-assembler-base.h:12,
-                 from ../deps/v8/src/codegen/macro-assembler.h:8:
-../deps/v8/src/codegen/sparc64/sse-instr.h:26:5: note: candidates are: 'void v8::internal::Assembler::andps(v8::internal::XMMRegister, v8::internal::Operand)'
-   26 |   V(andps, 0F, 54)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1280:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1280 |   void instruction(XMMRegister dst, Operand src) {           \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/sse-instr.h:26:5: note:                 'void v8::internal::Assembler::andps(v8::internal::XMMRegister, v8::internal::XMMRegister)'
-   26 |   V(andps, 0F, 54)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1277:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1277 |   void instruction(XMMRegister dst, XMMRegister src) {       \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:732:57: error: 'Andps' is not a member of 'v8::internal::SharedMacroAssemblerBase' [-Wtemplate-body]
+  732 |     FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Andps,
+      |                                                         ^~~~~
 ../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In member function 'void v8::internal::SharedMacroAssembler<Impl>::Absps(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register)':
-../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:737:92: error: no matches converting function 'andps' to type 'using v8::internal::SharedMacroAssembler<Impl>::FloatInstruction = void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)' {aka 'void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)'} [-Wtemplate-body]
-  737 |     FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::andps),
-      |                                                                                            ^
-../deps/v8/src/codegen/sparc64/sse-instr.h:26:5: note: candidates are: 'void v8::internal::Assembler::andps(v8::internal::XMMRegister, v8::internal::Operand)'
-   26 |   V(andps, 0F, 54)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1280:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1280 |   void instruction(XMMRegister dst, Operand src) {           \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/sse-instr.h:26:5: note:                 'void v8::internal::Assembler::andps(v8::internal::XMMRegister, v8::internal::XMMRegister)'
-   26 |   V(andps, 0F, 54)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1277:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1277 |   void instruction(XMMRegister dst, XMMRegister src) {       \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:737:57: error: 'Andps' is not a member of 'v8::internal::SharedMacroAssemblerBase' [-Wtemplate-body]
+  737 |     FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Andps,
+      |                                                         ^~~~~
 ../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In member function 'void v8::internal::SharedMacroAssembler<Impl>::Absph(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register)':
-../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:742:92: error: no matches converting function 'andps' to type 'using v8::internal::SharedMacroAssembler<Impl>::FloatInstruction = void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)' {aka 'void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)'} [-Wtemplate-body]
-  742 |     FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::andps),
-      |                                                                                            ^
-../deps/v8/src/codegen/sparc64/sse-instr.h:26:5: note: candidates are: 'void v8::internal::Assembler::andps(v8::internal::XMMRegister, v8::internal::Operand)'
-   26 |   V(andps, 0F, 54)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1280:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1280 |   void instruction(XMMRegister dst, Operand src) {           \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/sse-instr.h:26:5: note:                 'void v8::internal::Assembler::andps(v8::internal::XMMRegister, v8::internal::XMMRegister)'
-   26 |   V(andps, 0F, 54)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1277:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1277 |   void instruction(XMMRegister dst, XMMRegister src) {       \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:742:57: error: 'Andps' is not a member of 'v8::internal::SharedMacroAssemblerBase' [-Wtemplate-body]
+  742 |     FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Andps,
+      |                                                         ^~~~~
 ../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In member function 'void v8::internal::SharedMacroAssembler<Impl>::Negpd(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register)':
-../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:747:92: error: no matches converting function 'xorps' to type 'using v8::internal::SharedMacroAssembler<Impl>::FloatInstruction = void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)' {aka 'void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)'} [-Wtemplate-body]
-  747 |     FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::xorps),
-      |                                                                                            ^
-../deps/v8/src/codegen/sparc64/sse-instr.h:29:5: note: candidates are: 'void v8::internal::Assembler::xorps(v8::internal::XMMRegister, v8::internal::Operand)'
-   29 |   V(xorps, 0F, 57)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1280:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1280 |   void instruction(XMMRegister dst, Operand src) {           \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/sse-instr.h:29:5: note:                 'void v8::internal::Assembler::xorps(v8::internal::XMMRegister, v8::internal::XMMRegister)'
-   29 |   V(xorps, 0F, 57)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1277:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1277 |   void instruction(XMMRegister dst, XMMRegister src) {       \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:747:57: error: 'Xorps' is not a member of 'v8::internal::SharedMacroAssemblerBase' [-Wtemplate-body]
+  747 |     FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Xorps,
+      |                                                         ^~~~~
 ../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In member function 'void v8::internal::SharedMacroAssembler<Impl>::Negps(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register)':
-../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:752:92: error: no matches converting function 'xorps' to type 'using v8::internal::SharedMacroAssembler<Impl>::FloatInstruction = void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)' {aka 'void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)'} [-Wtemplate-body]
-  752 |     FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::xorps),
-      |                                                                                            ^
-../deps/v8/src/codegen/sparc64/sse-instr.h:29:5: note: candidates are: 'void v8::internal::Assembler::xorps(v8::internal::XMMRegister, v8::internal::Operand)'
-   29 |   V(xorps, 0F, 57)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1280:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1280 |   void instruction(XMMRegister dst, Operand src) {           \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/sse-instr.h:29:5: note:                 'void v8::internal::Assembler::xorps(v8::internal::XMMRegister, v8::internal::XMMRegister)'
-   29 |   V(xorps, 0F, 57)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1277:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1277 |   void instruction(XMMRegister dst, XMMRegister src) {       \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:752:57: error: 'Xorps' is not a member of 'v8::internal::SharedMacroAssemblerBase' [-Wtemplate-body]
+  752 |     FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Xorps,
+      |                                                         ^~~~~
 ../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In member function 'void v8::internal::SharedMacroAssembler<Impl>::Negph(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register)':
-../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:757:92: error: no matches converting function 'xorps' to type 'using v8::internal::SharedMacroAssembler<Impl>::FloatInstruction = void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)' {aka 'void (class v8::internal::SharedMacroAssemblerBase::*)(class v8::internal::XMMRegister, class v8::internal::XMMRegister, class v8::internal::Operand)'} [-Wtemplate-body]
-  757 |     FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::xorps),
-      |                                                                                            ^
-../deps/v8/src/codegen/sparc64/sse-instr.h:29:5: note: candidates are: 'void v8::internal::Assembler::xorps(v8::internal::XMMRegister, v8::internal::Operand)'
-   29 |   V(xorps, 0F, 57)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1280:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1280 |   void instruction(XMMRegister dst, Operand src) {           \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/sse-instr.h:29:5: note:                 'void v8::internal::Assembler::xorps(v8::internal::XMMRegister, v8::internal::XMMRegister)'
-   29 |   V(xorps, 0F, 57)                    \
-      |     ^~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1277:8: note: in definition of macro 'DECLARE_SSE_INSTRUCTION'
- 1277 |   void instruction(XMMRegister dst, XMMRegister src) {       \
-      |        ^~~~~~~~~~~
-../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1285:3: note: in expansion of macro 'SSE_BINOP_INSTRUCTION_LIST'
- 1285 |   SSE_BINOP_INSTRUCTION_LIST(DECLARE_SSE_INSTRUCTION)
-      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:757:57: error: 'Xorps' is not a member of 'v8::internal::SharedMacroAssemblerBase' [-Wtemplate-body]
+  757 |     FloatUnop(dst, src, tmp, &SharedMacroAssemblerBase::Xorps,
+      |                                                         ^~~~~
 gmake[1]: *** [tools/v8_gypfiles/v8_base_without_compiler.target.mk:1097: /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/baseline/baseline.o] Error 1
 rm 7b0a5ed5e2e52bad7d184aa9087d59987bb4e91d3b967f9c985bd7c3aa2ab0e9.intermediate c82365e7b75f813d3a0d028148176e4f8c69f9d3f20071b3fd80fc213f2cb3b5.intermediate
 gmake: *** [Makefile:143: node] Error 2
