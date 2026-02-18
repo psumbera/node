@@ -326,6 +326,20 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
   }
 
   template <typename Dst, typename Arg>
+  void Andps(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
+  void Xorps(Dst dst, Arg arg) {
+    USE(dst);
+    USE(arg);
+    UNREACHABLE();
+  }
+
+  template <typename Dst, typename Arg>
   void Pcmpeqd(Dst dst, Arg arg) {
     USE(dst);
     USE(arg);
