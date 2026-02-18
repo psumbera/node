@@ -2629,7 +2629,7 @@ inline void EmitAnyTrue(LiftoffAssembler* assm, LiftoffRegister dst,
   assm->setcc(not_equal, dst.gp());
 }
 
-template <void (SharedMacroAssemblerBase::*pcmp)(XMMRegister, XMMRegister)>
+template <void (Assembler::*pcmp)(XMMRegister, XMMRegister)>
 inline void EmitAllTrue(LiftoffAssembler* assm, LiftoffRegister dst,
                         LiftoffRegister src,
                         std::optional<CpuFeature> feature = std::nullopt) {
@@ -2767,7 +2767,7 @@ void LiftoffAssembler::emit_i8x16_shuffle(LiftoffRegister dst,
   MacroAssembler::Move(liftoff::kScratchDoubleReg2, mask2[1], mask2[0]);
 
   Pshufb(dst.fp(), rhs.fp(), liftoff::kScratchDoubleReg2);
-  Por(dst.fp(), kScratchDoubleReg);
+  por(dst.fp(), kScratchDoubleReg);
 }
 
 void LiftoffAssembler::emit_i8x16_swizzle(LiftoffRegister dst,
@@ -2796,7 +2796,7 @@ void LiftoffAssembler::emit_i32x4_relaxed_trunc_f32x4_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_relaxed_trunc_f64x2_s_zero(
     LiftoffRegister dst, LiftoffRegister src) {
-  Cvttpd2dq(dst.fp(), src.fp());
+  cvttpd2dq(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i32x4_relaxed_trunc_f64x2_u_zero(
@@ -3201,7 +3201,7 @@ void LiftoffAssembler::emit_v128_anytrue(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i8x16_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqb>(this, dst, src);
+  liftoff::EmitAllTrue<&Assembler::pcmpeqb>(this, dst, src);
 }
 
 void LiftoffAssembler::emit_i8x16_bitmask(LiftoffRegister dst,
@@ -3325,7 +3325,7 @@ void LiftoffAssembler::emit_i16x8_neg(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i16x8_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqw>(this, dst, src);
+  liftoff::EmitAllTrue<&Assembler::pcmpeqw>(this, dst, src);
 }
 
 void LiftoffAssembler::emit_i16x8_bitmask(LiftoffRegister dst,
@@ -3495,7 +3495,7 @@ void LiftoffAssembler::emit_i16x8_relaxed_q15mulr_s(LiftoffRegister dst,
                                                     LiftoffRegister src1,
                                                     LiftoffRegister src2) {
   if (CpuFeatures::IsSupported(AVX) || dst == src1) {
-    pmulhrsw(dst.fp(), src1.fp(), src2.fp());
+    vpmulhrsw(dst.fp(), src1.fp(), src2.fp());
   } else {
     movdqa(dst.fp(), src1.fp());
     pmulhrsw(dst.fp(), src2.fp());
@@ -3708,7 +3708,7 @@ void LiftoffAssembler::emit_i64x2_neg(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i64x2_alltrue(LiftoffRegister dst,
                                           LiftoffRegister src) {
-  liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqq>(this, dst, src, SSE4_1);
+  liftoff::EmitAllTrue<&Assembler::pcmpeqq>(this, dst, src, SSE4_1);
 }
 
 void LiftoffAssembler::emit_i64x2_shl(LiftoffRegister dst, LiftoffRegister lhs,
@@ -4191,17 +4191,17 @@ void LiftoffAssembler::emit_i16x8_rounding_average_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i8x16_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  Pabsb(dst.fp(), src.fp());
+  pabsb(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i16x8_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  Pabsw(dst.fp(), src.fp());
+  pabsw(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i32x4_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  Pabsd(dst.fp(), src.fp());
+  pabsd(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i64x2_abs(LiftoffRegister dst,
@@ -4433,7 +4433,7 @@ bool LiftoffAssembler::emit_f16x8_sqrt(LiftoffRegister dst,
   CpuFeatureScope avx_scope(this, AVX);
   YMMRegister ydst = YMMRegister::from_code(dst.fp().code());
   vcvtph2ps(ydst, src.fp());
-  Sqrtps(ydst, ydst);
+  sqrtps(ydst, ydst);
   vcvtps2ph(dst.fp(), ydst, 0);
   return true;
 }

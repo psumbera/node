@@ -729,32 +729,32 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
 
  public:
   void Abspd(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &Assembler::andps,
+    FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::andps),
               ExternalReference::address_of_double_abs_constant());
   }
 
   void Absps(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &Assembler::andps,
+    FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::andps),
               ExternalReference::address_of_float_abs_constant());
   }
 
   void Absph(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &Assembler::andps,
+    FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::andps),
               ExternalReference::address_of_fp16_abs_constant());
   }
 
   void Negpd(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &Assembler::xorps,
+    FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::xorps),
               ExternalReference::address_of_double_neg_constant());
   }
 
   void Negps(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &Assembler::xorps,
+    FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::xorps),
               ExternalReference::address_of_float_neg_constant());
   }
 
   void Negph(XMMRegister dst, XMMRegister src, Register tmp) {
-    FloatUnop(dst, src, tmp, &Assembler::xorps,
+    FloatUnop(dst, src, tmp, static_cast<FloatInstruction>(&SharedMacroAssemblerBase::xorps),
               ExternalReference::address_of_fp16_neg_constant());
   }
 #undef FLOAT_UNOP
