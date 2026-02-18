@@ -12,29 +12,35 @@ In file included from ../deps/v8/src/wasm/baseline/liftoff-assembler-inl.h:33,
       |   ^~~~~~~~~
       |   cvttpd2dq
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_alltrue(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3204:49: error: no matching function for call to 'EmitAllTrue<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::pcmpeqb)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&)'
- 3204 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqb>(this, dst, src);
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3204:41: error: 'Pcmpeqb' is not a member of 'v8::internal::MacroAssembler'
+ 3204 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqb>(this, dst, src);
+      |                                         ^~~~~~~
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3204:49: error: no matching function for call to 'EmitAllTrue<<expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&)'
+ 3204 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqb>(this, dst, src);
       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3204:49: note: there is 1 candidate
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: candidate 1: 'template<void (v8::internal::SharedMacroAssemblerBase::* pcmp)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitAllTrue(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
  2633 | inline void EmitAllTrue(LiftoffAssembler* assm, LiftoffRegister dst,
       |             ^~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3204:24: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' in a converted constant expression
- 3204 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqb>(this, dst, src);
-      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3204:49: error: template argument 1 is invalid
+ 3204 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqb>(this, dst, src);
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_alltrue(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3328:49: error: no matching function for call to 'EmitAllTrue<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::pcmpeqw)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&)'
- 3328 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqw>(this, dst, src);
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3328:41: error: 'Pcmpeqw' is not a member of 'v8::internal::MacroAssembler'
+ 3328 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqw>(this, dst, src);
+      |                                         ^~~~~~~
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3328:49: error: no matching function for call to 'EmitAllTrue<<expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&)'
+ 3328 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqw>(this, dst, src);
       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3328:49: note: there is 1 candidate
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: candidate 1: 'template<void (v8::internal::SharedMacroAssemblerBase::* pcmp)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitAllTrue(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
  2633 | inline void EmitAllTrue(LiftoffAssembler* assm, LiftoffRegister dst,
       |             ^~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3328:24: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' in a converted constant expression
- 3328 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqw>(this, dst, src);
-      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3328:49: error: template argument 1 is invalid
+ 3328 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqw>(this, dst, src);
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_relaxed_q15mulr_s(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3498:13: error: no matching function for call to 'v8::internal::wasm::LiftoffAssembler::pmulhrsw(v8::internal::DoubleRegister, v8::internal::DoubleRegister, v8::internal::DoubleRegister)'
  3498 |     pmulhrsw(dst.fp(), src1.fp(), src2.fp());
@@ -81,95 +87,115 @@ In file included from ../deps/v8/src/codegen/assembler-arch.h:15,
 ../deps/v8/src/codegen/sparc64/assembler-sparc64.h:1418:3: note: in expansion of macro 'SSSE3_INSTRUCTION_LIST'
  1418 |   SSSE3_INSTRUCTION_LIST(DECLARE_SSSE3_INSTRUCTION)
       |   ^~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_alltrue(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3543:49: error: no matching function for call to 'EmitAllTrue<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::pcmpeqd)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&)'
- 3543 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqd>(this, dst, src);
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3543:49: note: there is 1 candidate
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: candidate 1: 'template<void (v8::internal::SharedMacroAssemblerBase::* pcmp)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitAllTrue(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
- 2633 | inline void EmitAllTrue(LiftoffAssembler* assm, LiftoffRegister dst,
-      |             ^~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3543:24: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' in a converted constant expression
- 3543 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqd>(this, dst, src);
-      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i64x2_alltrue(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3711:49: error: no matching function for call to 'EmitAllTrue<(&((v8::internal::wasm::LiftoffAssembler*)this)->*v8::internal::Assembler::pcmpeqq)>(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
- 3711 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqq>(this, dst, src, SSE4_1);
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3711:41: error: 'Pcmpeqq' is not a member of 'v8::internal::MacroAssembler'
+ 3711 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqq>(this, dst, src, SSE4_1);
+      |                                         ^~~~~~~
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3711:49: error: no matching function for call to 'EmitAllTrue<<expression error> >(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister&, v8::internal::wasm::LiftoffRegister&, v8::internal::CpuFeature)'
+ 3711 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqq>(this, dst, src, SSE4_1);
       |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3711:49: note: there is 1 candidate
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: candidate 1: 'template<void (v8::internal::SharedMacroAssemblerBase::* pcmp)(v8::internal::XMMRegister, v8::internal::XMMRegister)> void v8::internal::wasm::liftoff::EmitAllTrue(v8::internal::wasm::LiftoffAssembler*, v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister, std::optional<v8::internal::CpuFeature>)'
  2633 | inline void EmitAllTrue(LiftoffAssembler* assm, LiftoffRegister dst,
       |             ^~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:2633:13: note: template argument deduction/substitution failed:
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3711:24: error: conversion from 'void (v8::internal::Assembler::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' to 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister)' in a converted constant expression
- 3711 |   liftoff::EmitAllTrue<&MacroAssembler::pcmpeqq>(this, dst, src, SSE4_1);
-      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_f32x4_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3828:3: error: 'absps' was not declared in this scope; did you mean 'Absps'?
- 3828 |   absps(dst.fp(), src.fp(), kScratchRegister);
-      |   ^~~~~
-      |   Absps
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_f32x4_neg(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3833:3: error: 'negps' was not declared in this scope; did you mean 'Negps'?
- 3833 |   negps(dst.fp(), src.fp(), kScratchRegister);
-      |   ^~~~~
-      |   Negps
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_f64x2_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3934:3: error: 'abspd' was not declared in this scope; did you mean 'Abspd'?
- 3934 |   abspd(dst.fp(), src.fp(), kScratchRegister);
-      |   ^~~~~
-      |   Abspd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_f64x2_neg(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3939:3: error: 'negpd' was not declared in this scope; did you mean 'Negpd'?
- 3939 |   negpd(dst.fp(), src.fp(), kScratchRegister);
-      |   ^~~~~
-      |   Negpd
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3711:49: error: template argument 1 is invalid
+ 3711 |   liftoff::EmitAllTrue<&MacroAssembler::Pcmpeqq>(this, dst, src, SSE4_1);
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4194:3: error: 'pabsb' was not declared in this scope; did you mean 'vpabsb'?
- 4194 |   pabsb(dst.fp(), src.fp());
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4194:3: error: 'Pabsb' was not declared in this scope; did you mean 'vpabsb'?
+ 4194 |   Pabsb(dst.fp(), src.fp());
       |   ^~~~~
       |   vpabsb
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4199:3: error: 'pabsw' was not declared in this scope; did you mean 'vpabsw'?
- 4199 |   pabsw(dst.fp(), src.fp());
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4199:3: error: 'Pabsw' was not declared in this scope; did you mean 'vpabsw'?
+ 4199 |   Pabsw(dst.fp(), src.fp());
       |   ^~~~~
       |   vpabsw
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4204:3: error: 'pabsd' was not declared in this scope; did you mean 'vpabsd'?
- 4204 |   pabsd(dst.fp(), src.fp());
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4204:3: error: 'Pabsd' was not declared in this scope; did you mean 'vpabsd'?
+ 4204 |   Pabsd(dst.fp(), src.fp());
       |   ^~~~~
       |   vpabsd
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'bool v8::internal::wasm::LiftoffAssembler::emit_f16x8_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4413:3: error: 'absph' was not declared in this scope; did you mean 'Absph'?
- 4413 |   absph(dst.fp(), src.fp(), kScratchRegister);
-      |   ^~~~~
-      |   Absph
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'bool v8::internal::wasm::LiftoffAssembler::emit_f16x8_neg(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4423:3: error: 'negph' was not declared in this scope; did you mean 'Negph'?
- 4423 |   negph(dst.fp(), src.fp(), kScratchRegister);
-      |   ^~~~~
-      |   Negph
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'bool v8::internal::wasm::LiftoffAssembler::emit_f16x8_sqrt(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4436:3: error: 'vsqrtps' was not declared in this scope; did you mean 'sqrtps'?
- 4436 |   vsqrtps(ydst, ydst);
-      |   ^~~~~~~
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4436:3: error: 'Sqrtps' was not declared in this scope; did you mean 'sqrtps'?
+ 4436 |   Sqrtps(ydst, ydst);
+      |   ^~~~~~
       |   sqrtps
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'bool v8::internal::wasm::LiftoffAssembler::emit_f16x8_sconvert_i16x8(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4619:3: error: 'vcvtdq2ps' was not declared in this scope; did you mean 'cvtdq2ps'?
- 4619 |   vcvtdq2ps(ydst, ydst);
-      |   ^~~~~~~~~
-      |   cvtdq2ps
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'bool v8::internal::wasm::LiftoffAssembler::emit_f16x8_uconvert_i16x8(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4636:3: error: 'vcvtdq2ps' was not declared in this scope; did you mean 'cvtdq2ps'?
- 4636 |   vcvtdq2ps(ydst, ydst);
-      |   ^~~~~~~~~
-      |   cvtdq2ps
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'bool v8::internal::wasm::LiftoffAssembler::emit_f16x8_demote_f64x2_zero(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4666:3: error: 'cvtpd2ph' was not declared in this scope; did you mean 'Cvtpd2ph'?
- 4666 |   cvtpd2ph(ftmp2.fp(), ftmp.fp(), tmp.gp());
-      |   ^~~~~~~~
-      |   Cvtpd2ph
+In file included from ../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.h:14,
+                 from ../deps/v8/src/codegen/macro-assembler.h:63:
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In instantiation of 'void v8::internal::SharedMacroAssembler<Impl>::Absps(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register) [with Impl = v8::internal::MacroAssembler]':
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3828:8:   required from here
+ 3828 |   Absps(dst.fp(), src.fp(), kScratchRegister);
+      |   ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:737:30: error: cannot convert '<unresolved overloaded function type>' to 'v8::internal::SharedMacroAssembler<v8::internal::MacroAssembler>::FloatInstruction' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)'}
+  737 |     FloatUnop(dst, src, tmp, &Assembler::andps,
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              <unresolved overloaded function type>
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:1155:35: note: initializing argument 4 of 'void v8::internal::SharedMacroAssembler<Impl>::FloatUnop(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register, FloatInstruction, v8::internal::ExternalReference) [with Impl = v8::internal::MacroAssembler; FloatInstruction = void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)]'
+ 1155 |                  FloatInstruction op, ExternalReference ext) {
+      |                  ~~~~~~~~~~~~~~~~~^~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In instantiation of 'void v8::internal::SharedMacroAssembler<Impl>::Negps(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register) [with Impl = v8::internal::MacroAssembler]':
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3833:8:   required from here
+ 3833 |   Negps(dst.fp(), src.fp(), kScratchRegister);
+      |   ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:752:30: error: cannot convert '<unresolved overloaded function type>' to 'v8::internal::SharedMacroAssembler<v8::internal::MacroAssembler>::FloatInstruction' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)'}
+  752 |     FloatUnop(dst, src, tmp, &Assembler::xorps,
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              <unresolved overloaded function type>
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:1155:35: note: initializing argument 4 of 'void v8::internal::SharedMacroAssembler<Impl>::FloatUnop(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register, FloatInstruction, v8::internal::ExternalReference) [with Impl = v8::internal::MacroAssembler; FloatInstruction = void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)]'
+ 1155 |                  FloatInstruction op, ExternalReference ext) {
+      |                  ~~~~~~~~~~~~~~~~~^~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In instantiation of 'void v8::internal::SharedMacroAssembler<Impl>::Abspd(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register) [with Impl = v8::internal::MacroAssembler]':
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3934:8:   required from here
+ 3934 |   Abspd(dst.fp(), src.fp(), kScratchRegister);
+      |   ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:732:30: error: cannot convert '<unresolved overloaded function type>' to 'v8::internal::SharedMacroAssembler<v8::internal::MacroAssembler>::FloatInstruction' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)'}
+  732 |     FloatUnop(dst, src, tmp, &Assembler::andps,
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              <unresolved overloaded function type>
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:1155:35: note: initializing argument 4 of 'void v8::internal::SharedMacroAssembler<Impl>::FloatUnop(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register, FloatInstruction, v8::internal::ExternalReference) [with Impl = v8::internal::MacroAssembler; FloatInstruction = void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)]'
+ 1155 |                  FloatInstruction op, ExternalReference ext) {
+      |                  ~~~~~~~~~~~~~~~~~^~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In instantiation of 'void v8::internal::SharedMacroAssembler<Impl>::Negpd(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register) [with Impl = v8::internal::MacroAssembler]':
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:3939:8:   required from here
+ 3939 |   Negpd(dst.fp(), src.fp(), kScratchRegister);
+      |   ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:747:30: error: cannot convert '<unresolved overloaded function type>' to 'v8::internal::SharedMacroAssembler<v8::internal::MacroAssembler>::FloatInstruction' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)'}
+  747 |     FloatUnop(dst, src, tmp, &Assembler::xorps,
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              <unresolved overloaded function type>
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:1155:35: note: initializing argument 4 of 'void v8::internal::SharedMacroAssembler<Impl>::FloatUnop(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register, FloatInstruction, v8::internal::ExternalReference) [with Impl = v8::internal::MacroAssembler; FloatInstruction = void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)]'
+ 1155 |                  FloatInstruction op, ExternalReference ext) {
+      |                  ~~~~~~~~~~~~~~~~~^~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In instantiation of 'void v8::internal::SharedMacroAssembler<Impl>::Absph(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register) [with Impl = v8::internal::MacroAssembler]':
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4413:8:   required from here
+ 4413 |   Absph(dst.fp(), src.fp(), kScratchRegister);
+      |   ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:742:30: error: cannot convert '<unresolved overloaded function type>' to 'v8::internal::SharedMacroAssembler<v8::internal::MacroAssembler>::FloatInstruction' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)'}
+  742 |     FloatUnop(dst, src, tmp, &Assembler::andps,
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              <unresolved overloaded function type>
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:1155:35: note: initializing argument 4 of 'void v8::internal::SharedMacroAssembler<Impl>::FloatUnop(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register, FloatInstruction, v8::internal::ExternalReference) [with Impl = v8::internal::MacroAssembler; FloatInstruction = void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)]'
+ 1155 |                  FloatInstruction op, ExternalReference ext) {
+      |                  ~~~~~~~~~~~~~~~~~^~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h: In instantiation of 'void v8::internal::SharedMacroAssembler<Impl>::Negph(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register) [with Impl = v8::internal::MacroAssembler]':
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4423:8:   required from here
+ 4423 |   Negph(dst.fp(), src.fp(), kScratchRegister);
+      |   ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:757:30: error: cannot convert '<unresolved overloaded function type>' to 'v8::internal::SharedMacroAssembler<v8::internal::MacroAssembler>::FloatInstruction' {aka 'void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)'}
+  757 |     FloatUnop(dst, src, tmp, &Assembler::xorps,
+      |                              ^~~~~~~~~~~~~~~~~
+      |                              |
+      |                              <unresolved overloaded function type>
+../deps/v8/src/codegen/shared-sparc64/macro-assembler-shared-sparc64.h:1155:35: note: initializing argument 4 of 'void v8::internal::SharedMacroAssembler<Impl>::FloatUnop(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Register, FloatInstruction, v8::internal::ExternalReference) [with Impl = v8::internal::MacroAssembler; FloatInstruction = void (v8::internal::SharedMacroAssemblerBase::*)(v8::internal::XMMRegister, v8::internal::XMMRegister, v8::internal::Operand)]'
+ 1155 |                  FloatInstruction op, ExternalReference ext) {
+      |                  ~~~~~~~~~~~~~~~~~^~
 gmake[1]: *** [tools/v8_gypfiles/v8_base_without_compiler.target.mk:1097: /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/wasm/baseline/liftoff-assembler.o] Error 1
 rm 7b0a5ed5e2e52bad7d184aa9087d59987bb4e91d3b967f9c985bd7c3aa2ab0e9.intermediate c82365e7b75f813d3a0d028148176e4f8c69f9d3f20071b3fd80fc213f2cb3b5.intermediate
 gmake: *** [Makefile:143: node] Error 2
