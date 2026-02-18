@@ -1440,6 +1440,8 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
     sse4_instr(dst, src, 0x##prefix, 0x##escape1, 0x##escape2, 0x##opcode); \
   }
 
+  SSE4_INSTRUCTION_LIST(DECLARE_SSE4_INSTRUCTION)
+  SSE4_UNOP_INSTRUCTION_LIST(DECLARE_SSE4_INSTRUCTION)
   DECLARE_SSE4_INSTRUCTION(pblendvb, 66, 0F, 38, 10)
   DECLARE_SSE4_INSTRUCTION(blendvps, 66, 0F, 38, 14)
   DECLARE_SSE4_INSTRUCTION(blendvpd, 66, 0F, 38, 15)
