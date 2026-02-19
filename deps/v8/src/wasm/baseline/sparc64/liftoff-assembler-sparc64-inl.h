@@ -4191,17 +4191,17 @@ void LiftoffAssembler::emit_i16x8_rounding_average_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i8x16_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  Pabsb(dst.fp(), src.fp());
+  pabsb(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i16x8_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  Pabsw(dst.fp(), src.fp());
+  pabsw(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i32x4_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  Pabsd(dst.fp(), src.fp());
+  pabsd(dst.fp(), src.fp());
 }
 
 void LiftoffAssembler::emit_i64x2_abs(LiftoffRegister dst,
