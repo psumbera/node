@@ -4191,17 +4191,29 @@ void LiftoffAssembler::emit_i16x8_rounding_average_u(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i8x16_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsb(dst.fp(), src.fp());
+  if (dst != src) movaps(dst.fp(), src.fp());
+  pxor(kScratchDoubleReg, kScratchDoubleReg);
+  pcmpgtb(kScratchDoubleReg, src.fp());
+  pxor(dst.fp(), kScratchDoubleReg);
+  psubb(dst.fp(), kScratchDoubleReg);
 }
 
 void LiftoffAssembler::emit_i16x8_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsw(dst.fp(), src.fp());
+  if (dst != src) movaps(dst.fp(), src.fp());
+  pxor(kScratchDoubleReg, kScratchDoubleReg);
+  pcmpgtw(kScratchDoubleReg, src.fp());
+  pxor(dst.fp(), kScratchDoubleReg);
+  psubw(dst.fp(), kScratchDoubleReg);
 }
 
 void LiftoffAssembler::emit_i32x4_abs(LiftoffRegister dst,
                                       LiftoffRegister src) {
-  pabsd(dst.fp(), src.fp());
+  if (dst != src) movaps(dst.fp(), src.fp());
+  pxor(kScratchDoubleReg, kScratchDoubleReg);
+  pcmpgtd(kScratchDoubleReg, src.fp());
+  pxor(dst.fp(), kScratchDoubleReg);
+  psubd(dst.fp(), kScratchDoubleReg);
 }
 
 void LiftoffAssembler::emit_i64x2_abs(LiftoffRegister dst,
