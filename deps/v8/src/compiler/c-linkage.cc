@@ -63,6 +63,16 @@ namespace {
 #define CALLEE_SAVE_REGISTERS C_CALL_CALLEE_SAVE_REGISTERS
 #define CALLEE_SAVE_FP_REGISTERS C_CALL_CALLEE_SAVE_FP_REGISTERS
 
+#elif V8_TARGET_ARCH_SPARC64
+// ===========================================================================
+// == sparc64 ================================================================
+// ===========================================================================
+// Keep SPARC64 linkage separate from x64. SPARCV9 does not use x64 SSE
+// register conventions for C calls.
+#define PARAM_REGISTERS rdi, rsi, rdx, rcx, r8, r9
+#define CALLEE_SAVE_REGISTERS C_CALL_CALLEE_SAVE_REGISTERS
+#define CALLEE_SAVE_FP_REGISTERS C_CALL_CALLEE_SAVE_FP_REGISTERS
+
 #elif V8_TARGET_ARCH_MIPS64
 // ===========================================================================
 // == mips64 =================================================================
