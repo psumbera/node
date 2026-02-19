@@ -632,6 +632,7 @@ class V8_EXPORT_PRIVATE NativeModule final {
 
 #if V8_TARGET_ARCH_X64 || V8_TARGET_ARCH_S390X || V8_TARGET_ARCH_ARM64 || \
     V8_TARGET_ARCH_PPC64 || V8_TARGET_ARCH_LOONG64 ||                     \
+    V8_TARGET_ARCH_SPARC64 ||                                              \
     V8_TARGET_ARCH_RISCV64 || V8_TARGET_ARCH_MIPS64
   static constexpr bool kNeedsFarJumpsBetweenCodeSpaces = true;
 #else
