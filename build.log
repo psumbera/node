@@ -1,88 +1,23 @@
-  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/maglev/maglev-compilation-info.o ../deps/v8/src/maglev/maglev-compilation-info.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I/builds/psumbera/node-ai/out/Release/obj/gen -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/maglev/maglev-compilation-info.o.d.raw   -c
-In file included from ../deps/v8/src/maglev/maglev-graph-labeller.h:10,
-                 from ../deps/v8/src/maglev/maglev-compilation-info.cc:20:
-../deps/v8/src/maglev/maglev-ir.h: In function 'constexpr bool v8::internal::maglev::IsSafeInteger(double)':
-../deps/v8/src/maglev/maglev-ir.h:771:21: warning: call to non-'constexpr' function 'bool std::isfinite(double)' [-Winvalid-constexpr]
-  771 |   if (!std::isfinite(value)) return false;
-      |        ~~~~~~~~~~~~~^~~~~~~
-In file included from /usr/include/math.h:21,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/std_abs.h:46,
-                 from /usr/gcc/15/include/c++/15.2.0/cstdlib:87,
-                 from /usr/gcc/15/include/c++/15.2.0/ext/string_conversions.h:45,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/basic_string.h:4444,
-                 from /usr/gcc/15/include/c++/15.2.0/string:56,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/locale_classes.h:42,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/ios_base.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/ios:46,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/ostream.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/unique_ptr.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/memory:80,
-                 from ../deps/v8/src/maglev/maglev-compilation-info.h:8,
-                 from ../deps/v8/src/maglev/maglev-compilation-info.cc:5:
-/usr/include/iso/math_c99.h:710:21: note: 'bool std::isfinite(double)' declared here
-  710 |         inline bool isfinite(double __X) { return __builtin_isfinite(__X); }
-      |                     ^~~~~~~~
-  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/maglev/maglev-compilation-unit.o ../deps/v8/src/maglev/maglev-compilation-unit.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I/builds/psumbera/node-ai/out/Release/obj/gen -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/maglev/maglev-compilation-unit.o.d.raw   -c
-In file included from ../deps/v8/src/maglev/maglev-graph-labeller.h:10,
-                 from ../deps/v8/src/maglev/maglev-compilation-unit.cc:10:
-../deps/v8/src/maglev/maglev-ir.h: In function 'constexpr bool v8::internal::maglev::IsSafeInteger(double)':
-../deps/v8/src/maglev/maglev-ir.h:771:21: warning: call to non-'constexpr' function 'bool std::isfinite(double)' [-Winvalid-constexpr]
-  771 |   if (!std::isfinite(value)) return false;
-      |        ~~~~~~~~~~~~~^~~~~~~
-In file included from /usr/include/math.h:21,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/std_abs.h:46,
-                 from /usr/gcc/15/include/c++/15.2.0/cstdlib:87,
-                 from /usr/gcc/15/include/c++/15.2.0/ext/string_conversions.h:45,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/basic_string.h:4444,
-                 from /usr/gcc/15/include/c++/15.2.0/string:56,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/locale_classes.h:42,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/ios_base.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/ios:46,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/ostream.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/ostream:42,
-                 from ../deps/v8/src/common/globals.h:12,
-                 from ../deps/v8/src/maglev/maglev-compilation-unit.h:8,
-                 from ../deps/v8/src/maglev/maglev-compilation-unit.cc:5:
-/usr/include/iso/math_c99.h:710:21: note: 'bool std::isfinite(double)' declared here
-  710 |         inline bool isfinite(double __X) { return __builtin_isfinite(__X); }
-      |                     ^~~~~~~~
-  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/maglev/maglev-graph-builder.o ../deps/v8/src/maglev/maglev-graph-builder.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I/builds/psumbera/node-ai/out/Release/obj/gen -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/maglev/maglev-graph-builder.o.d.raw   -c
-../deps/v8/src/maglev/maglev-graph-builder.cc:121:2: error: #error "V8 does not support this architecture."
-  121 | #error "V8 does not support this architecture."
-      |  ^~~~~
-../deps/v8/src/maglev/maglev-graph-builder.cc:138:2: error: #error "V8 does not support this architecture."
-  138 | #error "V8 does not support this architecture."
-      |  ^~~~~
-In file included from ../deps/v8/src/maglev/maglev-interpreter-frame-state.h:16,
-                 from ../deps/v8/src/maglev/maglev-basic-block.h:13,
-                 from ../deps/v8/src/maglev/maglev-graph-builder.h:30,
-                 from ../deps/v8/src/maglev/maglev-graph-builder.cc:5:
-../deps/v8/src/maglev/maglev-ir.h: In function 'constexpr bool v8::internal::maglev::IsSafeInteger(double)':
-../deps/v8/src/maglev/maglev-ir.h:771:21: warning: call to non-'constexpr' function 'bool std::isfinite(double)' [-Winvalid-constexpr]
-  771 |   if (!std::isfinite(value)) return false;
-      |        ~~~~~~~~~~~~~^~~~~~~
-In file included from /usr/include/math.h:21,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/std_abs.h:46,
-                 from /usr/gcc/15/include/c++/15.2.0/cstdlib:87,
-                 from /usr/gcc/15/include/c++/15.2.0/ext/string_conversions.h:45,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/basic_string.h:4444,
-                 from /usr/gcc/15/include/c++/15.2.0/string:56,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/locale_classes.h:42,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/ios_base.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/ios:46,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/ostream.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/bits/unique_ptr.h:43,
-                 from /usr/gcc/15/include/c++/15.2.0/memory:80,
-                 from ../deps/v8/include/v8config.h:24,
-                 from ../deps/v8/src/base/base-export.h:8,
-                 from ../deps/v8/src/maglev/maglev-graph-builder.h:12:
-/usr/include/iso/math_c99.h:710:21: note: 'bool std::isfinite(double)' declared here
-  710 |         inline bool isfinite(double __X) { return __builtin_isfinite(__X); }
-      |                     ^~~~~~~~
-../deps/v8/src/maglev/maglev-graph-builder.cc: In function 'bool v8::internal::maglev::{anonymous}::IsSupported(CpuOperation)':
-../deps/v8/src/maglev/maglev-graph-builder.cc:140:3: error: expected primary-expression before '}' token
-  140 |   }
-      |   ^
-gmake[1]: *** [tools/v8_gypfiles/v8_compiler.target.mk:375: /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/maglev/maglev-graph-builder.o] Error 1
+  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/compiler/c-linkage.o ../deps/v8/src/compiler/c-linkage.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I/builds/psumbera/node-ai/out/Release/obj/gen -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/compiler/c-linkage.o.d.raw   -c
+../deps/v8/src/compiler/c-linkage.cc: In static member function 'static v8::internal::compiler::CallDescriptor* v8::internal::compiler::Linkage::GetSimplifiedCDescriptor(v8::internal::Zone*, const v8::internal::MachineSignature*, v8::internal::compiler::CallDescriptor::Flags, v8::internal::compiler::Operator::Properties)':
+../deps/v8/src/compiler/c-linkage.cc:333:41: error: 'CALLEE_SAVE_REGISTERS' was not declared in this scope; did you mean 'C_CALL_CALLEE_SAVE_REGISTERS'?
+  333 |   const RegList kCalleeSaveRegisters = {CALLEE_SAVE_REGISTERS};
+      |                                         ^~~~~~~~~~~~~~~~~~~~~
+      |                                         C_CALL_CALLEE_SAVE_REGISTERS
+../deps/v8/src/compiler/c-linkage.cc:333:62: error: could not convert '{<expression error>}' from '<brace-enclosed initializer list>' to 'const v8::internal::RegList' {aka 'const v8::internal::RegListBase<v8::internal::Register>'}
+  333 |   const RegList kCalleeSaveRegisters = {CALLEE_SAVE_REGISTERS};
+      |                                                              ^
+      |                                                              |
+      |                                                              <brace-enclosed initializer list>
+../deps/v8/src/compiler/c-linkage.cc:334:49: error: 'CALLEE_SAVE_FP_REGISTERS' was not declared in this scope; did you mean 'C_CALL_CALLEE_SAVE_FP_REGISTERS'?
+  334 |   const DoubleRegList kCalleeSaveFPRegisters = {CALLEE_SAVE_FP_REGISTERS};
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                 C_CALL_CALLEE_SAVE_FP_REGISTERS
+../deps/v8/src/compiler/c-linkage.cc:334:73: error: could not convert '{<expression error>}' from '<brace-enclosed initializer list>' to 'const v8::internal::DoubleRegList' {aka 'const v8::internal::RegListBase<v8::internal::XMMRegister>'}
+  334 |   const DoubleRegList kCalleeSaveFPRegisters = {CALLEE_SAVE_FP_REGISTERS};
+      |                                                                         ^
+      |                                                                         |
+      |                                                                         <brace-enclosed initializer list>
+gmake[1]: *** [tools/v8_gypfiles/v8_compiler.target.mk:375: /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/compiler/c-linkage.o] Error 1
 rm 7b0a5ed5e2e52bad7d184aa9087d59987bb4e91d3b967f9c985bd7c3aa2ab0e9.intermediate c82365e7b75f813d3a0d028148176e4f8c69f9d3f20071b3fd80fc213f2cb3b5.intermediate
 gmake: *** [Makefile:143: node] Error 2
