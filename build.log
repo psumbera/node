@@ -2,18 +2,18 @@
 In file included from ../deps/v8/src/wasm/baseline/liftoff-assembler-inl.h:33,
                  from ../deps/v8/src/wasm/baseline/liftoff-assembler.cc:16:
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i8x16_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4194:3: error: 'pabsb' was not declared in this scope; did you mean 'vpabsb'?
- 4194 |   pabsb(dst.fp(), src.fp());
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4194:3: error: 'Pabsb' was not declared in this scope; did you mean 'vpabsb'?
+ 4194 |   Pabsb(dst.fp(), src.fp());
       |   ^~~~~
       |   vpabsb
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i16x8_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4199:3: error: 'pabsw' was not declared in this scope; did you mean 'vpabsw'?
- 4199 |   pabsw(dst.fp(), src.fp());
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4199:3: error: 'Pabsw' was not declared in this scope; did you mean 'vpabsw'?
+ 4199 |   Pabsw(dst.fp(), src.fp());
       |   ^~~~~
       |   vpabsw
 ../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h: In member function 'void v8::internal::wasm::LiftoffAssembler::emit_i32x4_abs(v8::internal::wasm::LiftoffRegister, v8::internal::wasm::LiftoffRegister)':
-../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4204:3: error: 'pabsd' was not declared in this scope; did you mean 'vpabsd'?
- 4204 |   pabsd(dst.fp(), src.fp());
+../deps/v8/src/wasm/baseline/sparc64/liftoff-assembler-sparc64-inl.h:4204:3: error: 'Pabsd' was not declared in this scope; did you mean 'vpabsd'?
+ 4204 |   Pabsd(dst.fp(), src.fp());
       |   ^~~~~
       |   vpabsd
 gmake[1]: *** [tools/v8_gypfiles/v8_base_without_compiler.target.mk:1097: /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/wasm/baseline/liftoff-assembler.o] Error 1
