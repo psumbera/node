@@ -232,14 +232,23 @@ bool JumpTableAssembler::EmitJumpSlot(Address target) {
 }
 
 void JumpTableAssembler::EmitFarJumpSlot(Address target) {
-  static_assert(kJumpTableSlotSize == kFarJumpTableSlotSize);
-  EmitJumpSlot(target);
+  const uint8_t inst[kFarJumpTableSlotSize] = {
+      0xff, 0x25, 0x02, 0, 0, 0,        // jmp [rip+0x2]
+      0x66, 0x90,                       // Nop(2)
+      0,    0,    0,    0, 0, 0, 0, 0,  // target
+  };
+
+  emit<uint64_t>(*reinterpret_cast<const uint64_t*>(inst));
+  emit<uint64_t>(target);
 }
 
 // static
 void JumpTableAssembler::PatchFarJumpSlot(WritableJitAllocation& jit_allocation,
                                           Address slot, Address target) {
-  UNREACHABLE();
+  // The slot needs to be pointer-size aligned so we can atomically update it.
+  DCHECK(IsAligned(slot, kSystemPointerSize));
+  // Offset of the target is at 8 bytes, see {EmitFarJumpSlot}.
+  jit_allocation.WriteValue(slot + kSystemPointerSize, target, kRelaxedStore);
 }
 
 void JumpTableAssembler::SkipUntil(int offset) {
