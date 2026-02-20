@@ -1,57 +1,44 @@
-  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_initializers/deps/v8/src/ic/unary-op-assembler.o ../deps/v8/src/ic/unary-op-assembler.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_initializers/deps/v8/src/ic/unary-op-assembler.o.d.raw   -c
-../deps/v8/src/compiler/backend/sparc64/code-generator-sparc64.cc:7738:6: error: no declaration matches 'void v8::internal::compiler::CodeGenerator::AssembleArchBinarySearchSwitchRange(v8::internal::Register, v8::internal::compiler::RpoNumber, std::pair<int, v8::internal::Label*>*, std::pair<int, v8::internal::Label*>*, std::optional<int>&)'
- 7738 | void CodeGenerator::AssembleArchBinarySearchSwitchRange(
-      |      ^~~~~~~~~~~~~
-In file included from ../deps/v8/src/compiler/backend/code-generator-impl.h:9,
-                 from ../deps/v8/src/compiler/backend/sparc64/code-generator-sparc64.cc:21:
-../deps/v8/src/compiler/backend/code-generator.h:235:8: note: candidate is: 'void v8::internal::compiler::CodeGenerator::AssembleArchBinarySearchSwitchRange(v8::internal::Register, v8::internal::compiler::RpoNumber, std::pair<int, v8::internal::Label*>*, std::pair<int, v8::internal::Label*>*)'
-  235 |   void AssembleArchBinarySearchSwitchRange(Register input, RpoNumber def_block,
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/compiler/backend/code-generator.h:77:25: note: 'class v8::internal::compiler::CodeGenerator' defined here
-   77 | class V8_EXPORT_PRIVATE CodeGenerator final : public GapResolver::Assembler {
-      |                         ^~~~~~~~~~~~~
-../deps/v8/src/compiler/backend/sparc64/code-generator-sparc64.cc: In member function 'void v8::internal::compiler::CodeGenerator::AssembleArchBinarySearchSwitch(v8::internal::compiler::Instruction*)':
-../deps/v8/src/compiler/backend/sparc64/code-generator-sparc64.cc:7774:38: error: no matching function for call to 'v8::internal::compiler::CodeGenerator::AssembleArchBinarySearchSwitchRange(v8::internal::Register&, v8::internal::compiler::RpoNumber, std::pair<int, v8::internal::Label*>*, std::pair<int, v8::internal::Label*>*, std::optional<int>&)'
- 7774 |   AssembleArchBinarySearchSwitchRange(input, i.InputRpo(1), cases.data(),
-      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 7775 |                                       cases.data() + cases.size(),
-      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- 7776 |                                       last_cmp_value);
-      |                                       ~~~~~~~~~~~~~~~
-../deps/v8/src/compiler/backend/sparc64/code-generator-sparc64.cc:7774:38: note: there is 1 candidate
-../deps/v8/src/compiler/backend/code-generator.h:235:8: note: candidate 1: 'void v8::internal::compiler::CodeGenerator::AssembleArchBinarySearchSwitchRange(v8::internal::Register, v8::internal::compiler::RpoNumber, std::pair<int, v8::internal::Label*>*, std::pair<int, v8::internal::Label*>*)'
-  235 |   void AssembleArchBinarySearchSwitchRange(Register input, RpoNumber def_block,
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/compiler/backend/code-generator.h:235:8: note: candidate expects 4 arguments, 5 provided
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc: In member function 'void v8::internal::compiler::InstructionSelector::VisitI8x16Shuffle(v8::internal::compiler::turboshaft::OpIndex)':
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:5303:15: error: 'ShuffleEntry' in namespace 'v8::internal::wasm' does not name a template type
- 5303 |   const wasm::ShuffleEntry<kSimd128Size>* arch_shuffle;
-      |               ^~~~~~~~~~~~
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:5322:33: error: 'TryMatchArchShuffle' is not a member of 'v8::internal::wasm::SimdShuffle'
- 5322 |   } else if (wasm::SimdShuffle::TryMatchArchShuffle(shuffle, is_swizzle,
-      |                                 ^~~~~~~~~~~~~~~~~~~
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:5323:54: error: 'arch_shuffle' was not declared in this scope
- 5323 |                                                     &arch_shuffle)) {
-      |                                                      ^~~~~~~~~~~~
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc: At global scope:
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:5908:6: error: no declaration matches 'bool v8::internal::compiler::InstructionSelector::CanOptimizeF64x2PromoteLowF32x4(v8::internal::compiler::turboshaft::OpIndex)'
- 5908 | bool InstructionSelector::CanOptimizeF64x2PromoteLowF32x4(OpIndex node) {
-      |      ^~~~~~~~~~~~~~~~~~~
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:5908:6: note: no functions named 'bool v8::internal::compiler::InstructionSelector::CanOptimizeF64x2PromoteLowF32x4(v8::internal::compiler::turboshaft::OpIndex)'
-In file included from ../deps/v8/src/compiler/backend/instruction-selector-impl.h:9,
-                 from ../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:20:
-../deps/v8/src/compiler/backend/instruction-selector.h:393:25: note: 'class v8::internal::compiler::InstructionSelector' defined here
-  393 | class V8_EXPORT_PRIVATE InstructionSelector final
-      |                         ^~~~~~~~~~~~~~~~~~~
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc: In member function 'void v8::internal::compiler::InstructionSelector::VisitF64x2PromoteLowF32x4(v8::internal::compiler::turboshaft::OpIndex)':
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:5920:7: error: 'CanOptimizeF64x2PromoteLowF32x4' was not declared in this scope; did you mean 'VisitF64x2PromoteLowF32x4'?
- 5920 |   if (CanOptimizeF64x2PromoteLowF32x4(node)) {
-      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |       VisitF64x2PromoteLowF32x4
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc: In static member function 'static v8::internal::compiler::MachineOperatorBuilder::Flags v8::internal::compiler::InstructionSelector::SupportedMachineOperatorFlags()':
-../deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.cc:6020:32: error: 'POPCNT' was not declared in this scope
- 6020 |   if (CpuFeatures::IsSupported(POPCNT)) {
-      |                                ^~~~~~
-gmake[1]: *** [tools/v8_gypfiles/v8_compiler.target.mk:379: /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/compiler/backend/sparc64/code-generator-sparc64.o] Error 1
-gmake[1]: *** Waiting for unfinished jobs....
-gmake[1]: *** [tools/v8_gypfiles/v8_compiler.target.mk:379: /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/compiler/backend/sparc64/instruction-selector-sparc64.o] Error 1
+  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/mksnapshot -rdynamic -pthreads -fPIC -m64 -Wl,-z,allextract  -Wl,--start-group /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/builtins-effects-dummy.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/embedded-empty.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/embedded-file-writer.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-aix.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-base.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-mac.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-win.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-zos.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/mksnapshot.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/snapshot-empty.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/static-roots-gen.o /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_init.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_libbase.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_libplatform.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libabseil.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_zlib.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libhighway.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libsimdutf.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers_slow.a -lz -luv -lcares -lnghttp2 -L/usr/openssl/3/lib -lcrypto -lssl -licui18n -licuuc -lnsl -lrt -Wl,--end-group
+ld: fatal: symbol '_ZN2v88internal13EhFrameWriter30WriteReturnAddressRegisterCodeEv' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal13EhFrameWriter22WriteInitialStateInCieEv' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal13EhFrameWriter19RegisterToDwarfCodeENS0_8RegisterE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal19EhFrameDisassembler25DwarfRegisterCodeToStringEi' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal16EhFrameConstants20kDataAlignmentFactorE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame.o) type=OBJT; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame-sparc64.o) type=OBJT);
+ld: fatal: symbol '_ZN2v88internal16EhFrameConstants20kCodeAlignmentFactorE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame.o) type=OBJT; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(eh-frame-sparc64.o) type=OBJT);
+ld: fatal: symbol '_ZN2v88internal8compiler13CodeGenerator31AssemblePlaceHolderForLazyDeoptEPNS1_11InstructionE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler13CodeGenerator35AssembleArchBinarySearchSwitchRangeENS0_8RegisterENS1_9RpoNumberEPSt4pairIiPNS0_5LabelEES9_' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector15VisitI64x2SplatENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector21VisitWord64AtomicLoadENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector21VisitI64x2ExtractLaneENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector21VisitI64x2ReplaceLaneENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector22VisitWord64AtomicStoreENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector20VisitWord64AtomicAddENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector20VisitWord64AtomicSubENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector20VisitWord64AtomicAndENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector19VisitWord64AtomicOrENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector20VisitWord64AtomicXorENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector25VisitWord64AtomicExchangeENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+ld: fatal: symbol '_ZN2v88internal8compiler19InstructionSelector32VisitWord64AtomicCompareExchangeENS1_10turboshaft7OpIndexE' is multiply-defined:
+	(file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector.o) type=FUNC; file /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(instruction-selector-sparc64.o) type=FUNC);
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [tools/v8_gypfiles/mksnapshot.target.mk:237: /builds/psumbera/node-ai/out/Release/mksnapshot] Error 1
+gmake: *** [Makefile:143: node] Error 2
