@@ -17,6 +17,8 @@
 #include "src/compiler/backend/s390/unwinding-info-writer-s390.h"
 #elif V8_TARGET_ARCH_PPC64
 #include "src/compiler/backend/ppc/unwinding-info-writer-ppc.h"
+#elif V8_TARGET_ARCH_SPARC64
+#include "src/compiler/backend/sparc64/unwinding-info-writer-sparc64.h"
 #else
 
 // Placeholder for unsupported architectures.

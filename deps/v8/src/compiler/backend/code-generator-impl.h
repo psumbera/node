@@ -149,6 +149,20 @@ class InstructionOperandConverter {
   }
 #endif
 
+#if defined(V8_TARGET_ARCH_SPARC64)
+  Simd256Register InputSimd256Register(size_t index) {
+    return ToSimd256Register(instr_->InputAt(index));
+  }
+
+  Simd256Register OutputSimd256Register() {
+    return ToSimd256Register(instr_->Output());
+  }
+
+  Simd256Register TempSimd256Register(size_t index) {
+    return ToSimd256Register(instr_->TempAt(index));
+  }
+#endif
+
   // -- Conversions for operands -----------------------------------------------
 
   Label* ToLabel(InstructionOperand* op) {

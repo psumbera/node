@@ -387,14 +387,19 @@ using RecordWriteModeField = FlagsConditionField::Next<RecordWriteMode, 3>;
 
 // LaneSizeField and AccessModeField are helper types to encode/decode a lane
 // size, an access mode, or both inside the overlapping MiscField.
-#ifdef V8_TARGET_ARCH_X64
+#if defined(V8_TARGET_ARCH_X64)
+enum LaneSize { kL8 = 0, kL16 = 1, kL32 = 2, kL64 = 3 };
+enum VectorLength { kV128 = 0, kV256 = 1, kV512 = 3 };
+using LaneSizeField = FlagsConditionField::Next<LaneSize, 2>;
+using VectorLengthField = LaneSizeField::Next<VectorLength, 2>;
+#elif defined(V8_TARGET_ARCH_SPARC64)
 enum LaneSize { kL8 = 0, kL16 = 1, kL32 = 2, kL64 = 3 };
 enum VectorLength { kV128 = 0, kV256 = 1, kV512 = 3 };
 using LaneSizeField = FlagsConditionField::Next<LaneSize, 2>;
 using VectorLengthField = LaneSizeField::Next<VectorLength, 2>;
 #else
 using LaneSizeField = FlagsConditionField::Next<int, 8>;
-#endif  // V8_TARGET_ARCH_X64
+#endif  // defined(V8_TARGET_ARCH_X64)
 
 // Denotes whether the instruction needs to emit an accompanying landing pad for
 // the trap handler.
@@ -405,7 +410,10 @@ using AccessModeField =
 // does not overlap with other fields it is used with.
 static_assert(AtomicStoreRecordWriteModeField::kLastUsedBit >=
               RecordWriteModeField::kLastUsedBit);
-#ifdef V8_TARGET_ARCH_X64
+#if defined(V8_TARGET_ARCH_X64)
+static_assert(AtomicStoreRecordWriteModeField::kLastUsedBit >=
+              VectorLengthField::kLastUsedBit);
+#elif defined(V8_TARGET_ARCH_SPARC64)
 static_assert(AtomicStoreRecordWriteModeField::kLastUsedBit >=
               VectorLengthField::kLastUsedBit);
 #else

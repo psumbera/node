@@ -2439,19 +2439,14 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
       __ fprem();
       // The following 2 instruction implicitly use rax.
       __ fnstsw_ax();
-      if (CpuFeatures::IsSupported(SAHF)) {
-        CpuFeatureScope sahf_scope(masm(), SAHF);
-        __ sahf();
-      } else {
-        __ shrl(rax, Immediate(8));
-        __ andl(rax, Immediate(0xFF));
-        __ pushq(rax);
-        unwinding_info_writer_.MaybeIncreaseBaseOffsetAt(__ pc_offset(),
-                                                         kSystemPointerSize);
-        __ popfq();
-        unwinding_info_writer_.MaybeIncreaseBaseOffsetAt(__ pc_offset(),
-                                                         -kSystemPointerSize);
-      }
+      __ shrl(rax, Immediate(8));
+      __ andl(rax, Immediate(0xFF));
+      __ pushq(rax);
+      unwinding_info_writer_.MaybeIncreaseBaseOffsetAt(__ pc_offset(),
+                                                       kSystemPointerSize);
+      __ popfq();
+      unwinding_info_writer_.MaybeIncreaseBaseOffsetAt(__ pc_offset(),
+                                                       -kSystemPointerSize);
       __ j(parity_even, &mod_loop);
       // Move output to stack and clean up.
       __ fstp(1);
