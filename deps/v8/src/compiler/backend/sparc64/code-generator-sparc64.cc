@@ -124,7 +124,7 @@ bool ShouldAlignForJCCErratum(Instruction* instr,
   return false;
 }
 
-// Adds X64 specific methods for decoding operands.
+// Adds SPARC64-specific methods for decoding operands.
 class X64OperandConverter : public InstructionOperandConverter {
  public:
   X64OperandConverter(CodeGenerator* gen, Instruction* instr)
@@ -139,6 +139,18 @@ class X64OperandConverter : public InstructionOperandConverter {
   }
 
   Operand OutputOperand() { return ToOperand(instr_->Output()); }
+
+  Simd256Register InputSimd256Register(size_t index) {
+    return ToSimd256Register(instr_->InputAt(index));
+  }
+
+  Simd256Register OutputSimd256Register() {
+    return ToSimd256Register(instr_->Output());
+  }
+
+  Simd256Register TempSimd256Register(size_t index) {
+    return ToSimd256Register(instr_->TempAt(index));
+  }
 
   Immediate ToImmediate(InstructionOperand* operand) {
     Constant constant = ToConstant(operand);
@@ -156,6 +168,11 @@ class X64OperandConverter : public InstructionOperandConverter {
       return Immediate(0);
     }
     return Immediate(constant.ToInt32(), constant.rmode());
+  }
+
+  Simd256Register ToSimd256Register(InstructionOperand* op) {
+    DCHECK(op->IsSimd256Register());
+    return Simd256Register::from_code(LocationOperand::cast(op)->register_code());
   }
 
   Operand ToOperand(InstructionOperand* op, int extra = 0) {

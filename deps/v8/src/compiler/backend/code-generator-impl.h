@@ -135,7 +135,7 @@ class InstructionOperandConverter {
     return ToSimd128Register(instr_->TempAt(index));
   }
 
-#if defined(V8_TARGET_ARCH_X64) || defined(V8_TARGET_ARCH_SPARC64)
+#if defined(V8_TARGET_ARCH_X64)
   Simd256Register InputSimd256Register(size_t index) {
     return ToSimd256Register(instr_->InputAt(index));
   }
@@ -181,7 +181,7 @@ class InstructionOperandConverter {
     return loc_op->GetSimd128Register();
   }
 
-#if defined(V8_TARGET_ARCH_X64) || defined(V8_TARGET_ARCH_SPARC64)
+#if defined(V8_TARGET_ARCH_X64)
   Simd256Register ToSimd256Register(InstructionOperand* op) {
     return LocationOperand::cast(op)->GetSimd256Register();
   }
