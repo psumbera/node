@@ -1895,6 +1895,12 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void vcvtdq2pd(YMMRegister dst, Operand src) {
     vinstr(0xe6, dst, xmm0, src, kF3, k0F, kWIG, kSparcSimdFeature);
   }
+  void cvtdq2ps(YMMRegister dst, YMMRegister src) {
+    vinstr(0x5b, dst, ymm0, src, kNoPrefix, k0F, kWIG, kSparcSimdFeature);
+  }
+  void cvtdq2ps(YMMRegister dst, Operand src) {
+    vinstr(0x5b, dst, ymm0, src, kNoPrefix, k0F, kWIG, kSparcSimdFeature);
+  }
   void vcvttps2dq(XMMRegister dst, XMMRegister src) {
     vinstr(0x5b, dst, xmm0, src, kF3, k0F, kWIG);
   }
