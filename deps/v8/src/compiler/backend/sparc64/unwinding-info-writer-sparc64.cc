@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include "src/compiler/backend/x64/unwinding-info-writer-x64.h"
+#include "src/compiler/backend/sparc64/unwinding-info-writer-sparc64.h"
 #include "src/compiler/backend/instruction.h"
 
 namespace v8 {
