@@ -553,7 +553,9 @@ class LocationOperand : public InstructionOperand {
     DCHECK(IsSimd256Register());
     return Simd128Register::from_code(register_code());
   }
+#endif
 
+#if defined(V8_TARGET_ARCH_X64) || defined(V8_TARGET_ARCH_SPARC64)
   Simd256Register GetSimd256Register() const {
     DCHECK(IsSimd256Register());
     return Simd256Register::from_code(register_code());

@@ -1214,7 +1214,7 @@ void EmitTSANRelaxedLoadOOLIfNeeded(Zone* zone, CodeGenerator* codegen,
 
 #define ASSEMBLE_SIMD_INSTR(opcode, dst_operand, index)      \
   do {                                                       \
-    if (instr->InputAt(index)->CanBeSimd128Register()) {     \
+    if (instr->InputAt(index)->IsSimd128Register()) {     \
       __ opcode(dst_operand, i.InputSimd128Register(index)); \
     } else {                                                 \
       __ opcode(dst_operand, i.InputOperand(index));         \
@@ -1223,7 +1223,7 @@ void EmitTSANRelaxedLoadOOLIfNeeded(Zone* zone, CodeGenerator* codegen,
 
 #define ASSEMBLE_SIMD_IMM_INSTR(opcode, dst_operand, index, imm)  \
   do {                                                            \
-    if (instr->InputAt(index)->CanBeSimd128Register()) {          \
+    if (instr->InputAt(index)->IsSimd128Register()) {          \
       __ opcode(dst_operand, i.InputSimd128Register(index), imm); \
     } else {                                                      \
       __ opcode(dst_operand, i.InputOperand(index), imm);         \
@@ -1236,7 +1236,7 @@ void EmitTSANRelaxedLoadOOLIfNeeded(Zone* zone, CodeGenerator* codegen,
     uint8_t input_index = instr->InputCount() == 2 ? 1 : 0;        \
     if (CpuFeatures::IsSupported(AVX)) {                           \
       CpuFeatureScope avx_scope(masm(), AVX);                      \
-      DCHECK(instr->InputAt(input_index)->CanBeSimd128Register()); \
+      DCHECK(instr->InputAt(input_index)->IsSimd128Register()); \
       __ v##opcode(dst, i.InputSimd128Register(0),                 \
                    i.InputSimd128Register(input_index));           \
     } else {                                                       \
@@ -1251,7 +1251,7 @@ void EmitTSANRelaxedLoadOOLIfNeeded(Zone* zone, CodeGenerator* codegen,
     XMMRegister src = i.InputSimd128Register(0);              \
     if (CpuFeatures::IsSupported(AVX)) {                      \
       CpuFeatureScope avx_scope(masm(), AVX);                 \
-      DCHECK(instr->InputAt(1)->CanBeSimd128Register());      \
+      DCHECK(instr->InputAt(1)->IsSimd128Register());      \
       __ v##opcode(dst, src, i.InputSimd128Register(1), imm); \
     } else {                                                  \
       DCHECK_EQ(dst, src);                                    \
@@ -3491,7 +3491,7 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
           DCHECK_GE(stack_decrement, kSystemPointerSize);
           __ AllocateStackSpace(stack_decrement);
           __ Movsd(Operand(rsp, 0), i.InputDoubleRegister(1));
-        } else if (input->CanBeSimd128Register()) {
+        } else if (input->IsSimd128Register()) {
           DCHECK_GE(stack_decrement, kSimd128Size);
           __ AllocateStackSpace(stack_decrement);
           // TODO(bbudge) Use Movaps when slots are aligned.
