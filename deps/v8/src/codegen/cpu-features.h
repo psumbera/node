@@ -115,6 +115,7 @@ enum CpuFeature {
   AVX_VNNI,
   AVX_VNNI_INT8,
   FMA3,
+  INTEL_JCC_ERRATUM_MITIGATION,
   F16C,
 #endif
 
