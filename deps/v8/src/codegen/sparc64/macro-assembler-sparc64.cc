@@ -2299,7 +2299,7 @@ void MacroAssembler::I64x4Mul(YMMRegister dst, YMMRegister lhs, YMMRegister rhs,
     vpbroadcast##suffix(dst, src);                                           \
   }
 
-MACRO_ASM_X64_ISPLAT_LIST(DEFINE_ISPLAT)
+MACRO_ASM_SPARC64_ISPLAT_LIST(DEFINE_ISPLAT)
 
 #undef DEFINE_ISPLAT
 
@@ -2639,75 +2639,61 @@ void MacroAssembler::I16x8TruncF16x8U(YMMRegister dst, XMMRegister src,
 void MacroAssembler::F16x8Qfma(YMMRegister dst, XMMRegister src1,
                                XMMRegister src2, XMMRegister src3,
                                YMMRegister tmp, YMMRegister tmp2) {
-  CpuFeatureScope fma3_scope(this, FMA3);
   CpuFeatureScope f16c_scope(this, F16C);
+  CpuFeatureScope avx_scope(this, AVX);
 
-  if (dst.code() == src2.code()) {
-    vcvtph2ps(dst, dst);
-    vcvtph2ps(tmp, src1);
-    vcvtph2ps(tmp2, src3);
-    vfmadd213ps(dst, tmp, tmp2);
-  } else if (dst.code() == src3.code()) {
-    vcvtph2ps(dst, dst);
-    vcvtph2ps(tmp, src2);
-    vcvtph2ps(tmp2, src1);
-    vfmadd231ps(dst, tmp, tmp2);
-  } else {
-    vcvtph2ps(dst, src1);
-    vcvtph2ps(tmp, src2);
-    vcvtph2ps(tmp2, src3);
-    vfmadd213ps(dst, tmp, tmp2);
-  }
+  vcvtph2ps(dst, src1);
+  vcvtph2ps(tmp, src2);
+  vcvtph2ps(tmp2, src3);
+  vmulps(dst, dst, tmp);
+  vaddps(dst, dst, tmp2);
   vcvtps2ph(dst, dst, 0);
 }
 
 void MacroAssembler::F16x8Qfms(YMMRegister dst, XMMRegister src1,
                                XMMRegister src2, XMMRegister src3,
                                YMMRegister tmp, YMMRegister tmp2) {
-  CpuFeatureScope fma3_scope(this, FMA3);
   CpuFeatureScope f16c_scope(this, F16C);
+  CpuFeatureScope avx_scope(this, AVX);
 
-  if (dst.code() == src2.code()) {
-    vcvtph2ps(dst, dst);
-    vcvtph2ps(tmp, src1);
-    vcvtph2ps(tmp2, src3);
-    vfnmadd213ps(dst, tmp, tmp2);
-  } else if (dst.code() == src3.code()) {
-    vcvtph2ps(dst, dst);
-    vcvtph2ps(tmp, src2);
-    vcvtph2ps(tmp2, src1);
-    vfnmadd231ps(dst, tmp, tmp2);
-  } else {
-    vcvtph2ps(dst, src1);
-    vcvtph2ps(tmp, src2);
-    vcvtph2ps(tmp2, src3);
-    vfnmadd213ps(dst, tmp, tmp2);
-  }
+  vcvtph2ps(dst, src1);
+  vcvtph2ps(tmp, src2);
+  vcvtph2ps(tmp2, src3);
+  vmulps(dst, dst, tmp);
+  vsubps(dst, tmp2, dst);
   vcvtps2ph(dst, dst, 0);
 }
 
 void MacroAssembler::F32x8Qfma(YMMRegister dst, YMMRegister src1,
                                YMMRegister src2, YMMRegister src3,
                                YMMRegister tmp) {
-  QFMA(ps);
+  CpuFeatureScope avx_scope(this, AVX);
+  vmulps(tmp, src1, src2);
+  vaddps(dst, tmp, src3);
 }
 
 void MacroAssembler::F32x8Qfms(YMMRegister dst, YMMRegister src1,
                                YMMRegister src2, YMMRegister src3,
                                YMMRegister tmp) {
-  QFMS(ps);
+  CpuFeatureScope avx_scope(this, AVX);
+  vmulps(tmp, src1, src2);
+  vsubps(dst, src3, tmp);
 }
 
 void MacroAssembler::F64x4Qfma(YMMRegister dst, YMMRegister src1,
                                YMMRegister src2, YMMRegister src3,
                                YMMRegister tmp) {
-  QFMA(pd);
+  CpuFeatureScope avx_scope(this, AVX);
+  vmulpd(tmp, src1, src2);
+  vaddpd(dst, tmp, src3);
 }
 
 void MacroAssembler::F64x4Qfms(YMMRegister dst, YMMRegister src1,
                                YMMRegister src2, YMMRegister src3,
                                YMMRegister tmp) {
-  QFMS(pd);
+  CpuFeatureScope avx_scope(this, AVX);
+  vmulpd(tmp, src1, src2);
+  vsubpd(dst, src3, tmp);
 }
 
 void MacroAssembler::I32x8DotI8x32I7x32AddS(YMMRegister dst, YMMRegister src1,
