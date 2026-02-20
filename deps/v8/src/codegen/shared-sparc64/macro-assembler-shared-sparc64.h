@@ -251,7 +251,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
     }
   };
 
-#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64 || V8_TARGET_ARCH_SPARC64
 #define AVX_OP(macro_name, name)                                        \
   template <typename Dst, typename Arg, typename... Args>               \
   void macro_name(Dst dst, Arg arg, Args... args) {                     \
@@ -427,7 +427,7 @@ class V8_EXPORT_PRIVATE SharedMacroAssemblerBase : public MacroAssemblerBase {
   }
 #endif
 
-#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
+#if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64 || V8_TARGET_ARCH_SPARC64
   // Keep this list sorted by required extension, then instruction name.
   AVX_OP(Addpd, addpd)
   AVX_OP(Addps, addps)

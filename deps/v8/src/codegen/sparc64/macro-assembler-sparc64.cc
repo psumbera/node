@@ -3504,12 +3504,7 @@ void MacroAssembler::Call(ExternalReference ext) {
 
 void MacroAssembler::Call(Operand op) {
   // TODO(350324877): can we DCHECK that the sandboxing mode is correct here?
-  if (!CpuFeatures::IsSupported(INTEL_ATOM)) {
-    call(op);
-  } else {
-    movq(kScratchRegister, op);
-    call(kScratchRegister);
-  }
+  call(op);
 }
 
 void MacroAssembler::Call(Address destination, RelocInfo::Mode rmode) {
@@ -3858,11 +3853,6 @@ void MacroAssembler::Pinsrq(XMMRegister dst, XMMRegister src1, Operand src2,
 }
 
 void MacroAssembler::Lzcntl(Register dst, Register src) {
-  if (CpuFeatures::IsSupported(LZCNT)) {
-    CpuFeatureScope scope(this, LZCNT);
-    lzcntl(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsrl(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3872,11 +3862,6 @@ void MacroAssembler::Lzcntl(Register dst, Register src) {
 }
 
 void MacroAssembler::Lzcntl(Register dst, Operand src) {
-  if (CpuFeatures::IsSupported(LZCNT)) {
-    CpuFeatureScope scope(this, LZCNT);
-    lzcntl(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsrl(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3886,11 +3871,6 @@ void MacroAssembler::Lzcntl(Register dst, Operand src) {
 }
 
 void MacroAssembler::Lzcntq(Register dst, Register src) {
-  if (CpuFeatures::IsSupported(LZCNT)) {
-    CpuFeatureScope scope(this, LZCNT);
-    lzcntq(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsrq(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3900,11 +3880,6 @@ void MacroAssembler::Lzcntq(Register dst, Register src) {
 }
 
 void MacroAssembler::Lzcntq(Register dst, Operand src) {
-  if (CpuFeatures::IsSupported(LZCNT)) {
-    CpuFeatureScope scope(this, LZCNT);
-    lzcntq(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsrq(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3914,11 +3889,6 @@ void MacroAssembler::Lzcntq(Register dst, Operand src) {
 }
 
 void MacroAssembler::Tzcntq(Register dst, Register src) {
-  if (CpuFeatures::IsSupported(BMI1)) {
-    CpuFeatureScope scope(this, BMI1);
-    tzcntq(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsfq(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3928,11 +3898,6 @@ void MacroAssembler::Tzcntq(Register dst, Register src) {
 }
 
 void MacroAssembler::Tzcntq(Register dst, Operand src) {
-  if (CpuFeatures::IsSupported(BMI1)) {
-    CpuFeatureScope scope(this, BMI1);
-    tzcntq(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsfq(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3942,11 +3907,6 @@ void MacroAssembler::Tzcntq(Register dst, Operand src) {
 }
 
 void MacroAssembler::Tzcntl(Register dst, Register src) {
-  if (CpuFeatures::IsSupported(BMI1)) {
-    CpuFeatureScope scope(this, BMI1);
-    tzcntl(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsfl(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3955,11 +3915,6 @@ void MacroAssembler::Tzcntl(Register dst, Register src) {
 }
 
 void MacroAssembler::Tzcntl(Register dst, Operand src) {
-  if (CpuFeatures::IsSupported(BMI1)) {
-    CpuFeatureScope scope(this, BMI1);
-    tzcntl(dst, src);
-    return;
-  }
   Label not_zero_src;
   bsfl(dst, src);
   j(not_zero, &not_zero_src, Label::kNear);
@@ -3968,39 +3923,19 @@ void MacroAssembler::Tzcntl(Register dst, Operand src) {
 }
 
 void MacroAssembler::Popcntl(Register dst, Register src) {
-  if (CpuFeatures::IsSupported(POPCNT)) {
-    CpuFeatureScope scope(this, POPCNT);
-    popcntl(dst, src);
-    return;
-  }
-  UNREACHABLE();
+  popcntl(dst, src);
 }
 
 void MacroAssembler::Popcntl(Register dst, Operand src) {
-  if (CpuFeatures::IsSupported(POPCNT)) {
-    CpuFeatureScope scope(this, POPCNT);
-    popcntl(dst, src);
-    return;
-  }
-  UNREACHABLE();
+  popcntl(dst, src);
 }
 
 void MacroAssembler::Popcntq(Register dst, Register src) {
-  if (CpuFeatures::IsSupported(POPCNT)) {
-    CpuFeatureScope scope(this, POPCNT);
-    popcntq(dst, src);
-    return;
-  }
-  UNREACHABLE();
+  popcntq(dst, src);
 }
 
 void MacroAssembler::Popcntq(Register dst, Operand src) {
-  if (CpuFeatures::IsSupported(POPCNT)) {
-    CpuFeatureScope scope(this, POPCNT);
-    popcntq(dst, src);
-    return;
-  }
-  UNREACHABLE();
+  popcntq(dst, src);
 }
 
 void MacroAssembler::PushStackHandler() {
@@ -4162,7 +4097,7 @@ void MacroAssembler::CmpInstanceTypeRange(Register map,
 void MacroAssembler::TestCodeIsMarkedForDeoptimization(Register code) {
   const int kByteWithDeoptBitOffset = 0 * kByteSize;
   const int kByteWithDeoptBitOffsetInBits = kByteWithDeoptBitOffset * 8;
-  static_assert(V8_TARGET_LITTLE_ENDIAN == 1);
+  static_assert(!V8_TARGET_BIG_ENDIAN);
   static_assert(FIELD_SIZE(Code::kFlagsOffset) * kBitsPerByte == 32);
   static_assert(Code::kMarkedForDeoptimizationBit >
                 kByteWithDeoptBitOffsetInBits);

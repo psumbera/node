@@ -1821,6 +1821,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instr(YMMRegister dst, Operand src2) {     \
     vps(0x##opcode, dst, ymm0, src2);                \
   }
+  SSE_UNOP_INSTRUCTION_LIST(AVX_SSE_UNOP)
 #undef AVX_SSE_UNOP
 
 #define AVX_SSE_BINOP(instr, escape, opcode)                           \
@@ -1836,6 +1837,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void v##instr(YMMRegister dst, YMMRegister src1, Operand src2) {     \
     vps(0x##opcode, dst, src1, src2);                                  \
   }
+  SSE_BINOP_INSTRUCTION_LIST(AVX_SSE_BINOP)
 #undef AVX_SSE_BINOP
 
 #define AVX_3(instr, opcode, impl, SIMDRegister)                       \
