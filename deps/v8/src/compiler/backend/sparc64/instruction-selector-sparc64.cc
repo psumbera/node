@@ -5300,7 +5300,6 @@ void InstructionSelector::VisitI8x16Shuffle(OpIndex node) {
   uint8_t shuffle32x4[4];
   uint8_t shuffle16x8[8];
   int index;
-  const wasm::ShuffleEntry<kSimd128Size>* arch_shuffle;
   bool needs_swap;
   if (wasm::SimdShuffle::TryMatchConcat(shuffle, &offset)) {
     if (wasm::SimdShuffle::TryMatch32x4Rotate(shuffle, shuffle32x4,
@@ -5319,15 +5318,6 @@ void InstructionSelector::VisitI8x16Shuffle(OpIndex node) {
       // palignr takes a single imm8 offset.
       imms[imm_count++] = offset;
     }
-  } else if (wasm::SimdShuffle::TryMatchArchShuffle(shuffle, is_swizzle,
-                                                    &arch_shuffle)) {
-    opcode = arch_shuffle->opcode;
-    src0_needs_reg = arch_shuffle->src0_needs_reg;
-    // SSE can't take advantage of both operands in registers and needs
-    // same-as-first.
-    src1_needs_reg = arch_shuffle->src1_needs_reg;
-    no_same_as_first =
-        IsSupported(AVX) && arch_shuffle->no_same_as_first_if_avx;
   } else if (wasm::SimdShuffle::TryMatch32x4Shuffle(shuffle, shuffle32x4)) {
     uint8_t shuffle_mask = wasm::SimdShuffle::PackShuffle4(shuffle32x4);
     if (is_swizzle) {
@@ -6017,10 +6007,6 @@ InstructionSelector::SupportedMachineOperatorFlags() {
       MachineOperatorBuilder::kWord32Rol | MachineOperatorBuilder::kWord64Rol |
       MachineOperatorBuilder::kWord32Select |
       MachineOperatorBuilder::kWord64Select;
-  if (CpuFeatures::IsSupported(POPCNT)) {
-    flags |= MachineOperatorBuilder::kWord32Popcnt |
-             MachineOperatorBuilder::kWord64Popcnt;
-  }
   if (CpuFeatures::IsSupported(SSE4_1)) {
     flags |= MachineOperatorBuilder::kFloat32RoundDown |
              MachineOperatorBuilder::kFloat64RoundDown |
