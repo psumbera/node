@@ -468,7 +468,8 @@ void CodeGenerator::AssembleCode() {
   result_ = kSuccess;
 }
 
-#if !defined(V8_TARGET_ARCH_X64) && !defined(V8_TARGET_ARCH_RISCV64)
+#if !defined(V8_TARGET_ARCH_X64) && !defined(V8_TARGET_ARCH_RISCV64) && \
+    !defined(V8_TARGET_ARCH_SPARC64)
 void CodeGenerator::AssembleArchBinarySearchSwitchRange(
     Register input, RpoNumber def_block, std::pair<int32_t, Label*>* begin,
     std::pair<int32_t, Label*>* end) {
@@ -1146,7 +1147,7 @@ Label* CodeGenerator::AddJumpTable(base::Vector<Label*> targets) {
   return jump_tables_->label();
 }
 
-#ifndef V8_TARGET_ARCH_X64
+#if !defined(V8_TARGET_ARCH_X64) && !defined(V8_TARGET_ARCH_SPARC64)
 void CodeGenerator::AssemblePlaceHolderForLazyDeopt(Instruction* instr) {
   UNREACHABLE();
 }
