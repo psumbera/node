@@ -4081,15 +4081,9 @@ void MacroAssembler::CmpInstanceTypeRange(Register map,
 }
 
 void MacroAssembler::TestCodeIsMarkedForDeoptimization(Register code) {
-  const int kByteWithDeoptBitOffset = 0 * kByteSize;
-  const int kByteWithDeoptBitOffsetInBits = kByteWithDeoptBitOffset * 8;
-  static_assert(!V8_TARGET_BIG_ENDIAN);
   static_assert(FIELD_SIZE(Code::kFlagsOffset) * kBitsPerByte == 32);
-  static_assert(Code::kMarkedForDeoptimizationBit >
-                kByteWithDeoptBitOffsetInBits);
-  testb(FieldOperand(code, Code::kFlagsOffset + kByteWithDeoptBitOffset),
-        Immediate(1 << (Code::kMarkedForDeoptimizationBit -
-                        kByteWithDeoptBitOffsetInBits)));
+  testl(FieldOperand(code, Code::kFlagsOffset),
+        Immediate(1 << Code::kMarkedForDeoptimizationBit));
 }
 
 void MacroAssembler::TestCodeIsTurbofanned(Register code) {
