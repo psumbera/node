@@ -92,6 +92,9 @@
     'binutils_dir%': '',
 
     'conditions': [
+      ['target_arch=="sparcv9"', {
+        'v8_target_arch%': 'sparc64',
+      }],
       ['OS in "linux openharmony" and host_arch=="x64"', {
         'binutils_dir%': 'third_party/binutils/Linux_x64/Release/bin',
       }],

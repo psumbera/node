@@ -377,6 +377,11 @@
             '<(V8_ROOT)/src/builtins/x64/builtins-x64.cc',
           ],
         }],
+        ['v8_target_arch=="sparc64"', {
+          'sources': [
+            '<(V8_ROOT)/src/builtins/sparc64/builtins-sparc64.cc',
+          ],
+        }],
         ['v8_target_arch=="arm"', {
           'sources': [
             '<(V8_ROOT)/src/builtins/arm/builtins-arm.cc',
@@ -914,6 +919,14 @@
               '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "v8_compiler_sources =.*?v8_current_cpu == \\"x64\\".*?v8_compiler_sources \\+= ")',
             ],
           }],
+          ['v8_target_arch=="sparc64"', {
+            'sources': [
+              '<(V8_ROOT)/src/compiler/backend/sparc64/code-generator-sparc64.cc',
+              '<(V8_ROOT)/src/compiler/backend/sparc64/instruction-scheduler-sparc64.cc',
+              '<(V8_ROOT)/src/compiler/backend/sparc64/instruction-selector-sparc64.cc',
+              '<(V8_ROOT)/src/compiler/backend/sparc64/unwinding-info-writer-sparc64.cc',
+            ],
+          }],
           ['v8_target_arch=="arm"', {
             'sources': [
               '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "v8_compiler_sources =.*?v8_current_cpu == \\"arm\\".*?v8_compiler_sources \\+= ")',
@@ -1160,7 +1173,7 @@
             '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"v8_base_without_compiler.*?v8_enable_maglev.*?sources \\+= ")',
           ],
           'conditions': [
-            ['v8_target_arch=="arm"', {
+        ['v8_target_arch=="arm"', {
               'sources': [
                 '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"v8_base_without_compiler.*?v8_enable_maglev.*?v8_current_cpu == \\"arm\\".*?sources \\+= ")',
               ],
@@ -1228,6 +1241,18 @@
                 }],
               ],
             }],
+          ],
+        }],
+        ['v8_target_arch=="sparc64"', {
+          'sources': [
+            '<(V8_ROOT)/src/codegen/sparc64/assembler-sparc64.cc',
+            '<(V8_ROOT)/src/codegen/sparc64/cpu-sparc64.cc',
+            '<(V8_ROOT)/src/codegen/sparc64/macro-assembler-sparc64.cc',
+            '<(V8_ROOT)/src/deoptimizer/sparc64/deoptimizer-sparc64.cc',
+            '<(V8_ROOT)/src/diagnostics/sparc64/disasm-sparc64.cc',
+            '<(V8_ROOT)/src/diagnostics/sparc64/eh-frame-sparc64.cc',
+            '<(V8_ROOT)/src/diagnostics/sparc64/unwinder-sparc64.cc',
+            '<(V8_ROOT)/src/execution/sparc64/frame-constants-sparc64.cc',
           ],
         }],
         ['v8_target_arch=="arm"', {
