@@ -19,6 +19,8 @@
 #include "src/compiler/backend/loong64/instruction-codes-loong64.h"
 #elif V8_TARGET_ARCH_X64
 #include "src/compiler/backend/x64/instruction-codes-x64.h"
+#elif V8_TARGET_ARCH_SPARC64
+#include "src/compiler/backend/sparc64/instruction-codes-sparc64.h"
 #elif V8_TARGET_ARCH_PPC64
 #include "src/compiler/backend/ppc/instruction-codes-ppc.h"
 #elif V8_TARGET_ARCH_S390X
