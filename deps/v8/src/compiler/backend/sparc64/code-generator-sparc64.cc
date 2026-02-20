@@ -7737,14 +7737,8 @@ void CodeGenerator::AssembleArchConditionalBranch(Instruction* instr,
 
 void CodeGenerator::AssembleArchBinarySearchSwitchRange(
     Register input, RpoNumber def_block, std::pair<int32_t, Label*>* begin,
-    std::pair<int32_t, Label*>* end, std::optional<int32_t>& last_cmp_value) {
+    std::pair<int32_t, Label*>* end) {
   if (end - begin < kBinarySearchSwitchMinimalCases) {
-    if (last_cmp_value && *last_cmp_value == begin->first) {
-      // No need to do another repeat cmp.
-      masm()->j(equal, begin->second);
-      ++begin;
-    }
-
     while (begin != end) {
       masm()->JumpIfEqual(input, begin->first, begin->second);
       ++begin;
@@ -7755,12 +7749,9 @@ void CodeGenerator::AssembleArchBinarySearchSwitchRange(
   auto middle = begin + (end - begin) / 2;
   Label less_label;
   masm()->JumpIfLessThan(input, middle->first, &less_label);
-  last_cmp_value = middle->first;
-  AssembleArchBinarySearchSwitchRange(input, def_block, middle, end,
-                                      last_cmp_value);
+  AssembleArchBinarySearchSwitchRange(input, def_block, middle, end);
   masm()->bind(&less_label);
-  AssembleArchBinarySearchSwitchRange(input, def_block, begin, middle,
-                                      last_cmp_value);
+  AssembleArchBinarySearchSwitchRange(input, def_block, begin, middle);
 }
 
 void CodeGenerator::AssembleArchBinarySearchSwitch(Instruction* instr) {
@@ -7770,10 +7761,8 @@ void CodeGenerator::AssembleArchBinarySearchSwitch(Instruction* instr) {
   for (size_t index = 2; index < instr->InputCount(); index += 2) {
     cases.push_back({i.InputInt32(index + 0), GetLabel(i.InputRpo(index + 1))});
   }
-  std::optional<int32_t> last_cmp_value;
   AssembleArchBinarySearchSwitchRange(input, i.InputRpo(1), cases.data(),
-                                      cases.data() + cases.size(),
-                                      last_cmp_value);
+                                      cases.data() + cases.size());
 }
 
 void CodeGenerator::AssembleArchTableSwitch(Instruction* instr) {

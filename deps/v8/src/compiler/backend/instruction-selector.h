@@ -1505,7 +1505,11 @@ class V8_EXPORT_PRIVATE InstructionSelector final
 #endif  // V8_TARGET_ARCH_X64
 #endif  // V8_ENABLE_WASM_SIMD256_REVEC
 
-#ifdef V8_TARGET_ARCH_X64
+#if defined(V8_TARGET_ARCH_X64)
+  bool CanOptimizeF64x2PromoteLowF32x4(turboshaft::OpIndex node);
+#endif
+
+#if defined(V8_TARGET_ARCH_SPARC64)
   bool CanOptimizeF64x2PromoteLowF32x4(turboshaft::OpIndex node);
 #endif
 
