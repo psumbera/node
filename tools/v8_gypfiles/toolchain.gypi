@@ -291,6 +291,11 @@
           }],
         ],
       }],
+      ['v8_target_arch=="sparc64"', {
+        'defines': [
+          'V8_TARGET_ARCH_SPARC64',
+        ],
+      }],
       ['v8_target_arch=="riscv64"', {
         'defines': [
           'V8_TARGET_ARCH_RISCV64',
