@@ -6,7 +6,7 @@
 
 #include "src/execution/sparc64/frame-constants-sparc64.h"
 
-#include "src/codegen/x64/assembler-x64-inl.h"
+#include "src/codegen/sparc64/assembler-sparc64-inl.h"
 #include "src/execution/frame-constants.h"
 #include "src/execution/frames.h"
 
