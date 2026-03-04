@@ -1,154 +1,1199 @@
-  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/mksnapshot -rdynamic -pthreads -fPIC -m64 -Wl,-z,allextract  -Wl,--start-group /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/builtins-effects-dummy.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/embedded-empty.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/embedded-file-writer.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-aix.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-base.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-generic.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-mac.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-win.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/embedded/platform-embedded-file-writer-zos.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/mksnapshot.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/snapshot-empty.o /builds/psumbera/node-ai/out/Release/obj.target/mksnapshot/deps/v8/src/snapshot/static-roots-gen.o /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_init.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_libbase.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_libplatform.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libabseil.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_zlib.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libhighway.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libsimdutf.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers_slow.a -lz -luv -lcares -lnghttp2 -L/usr/openssl/3/lib -lcrypto -lssl -licui18n -licuuc -lnsl -lrt -Wl,--end-group
-Undefined			first referenced
- symbol  			    in file
-_ZN2v88internal24SharedMacroAssemblerBase15S128Load16SplatENS0_11XMMRegisterENS0_7OperandES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins33Generate_DeoptimizationEntry_LazyEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZNK6disasm13NameConverter17NameOfCPURegisterEi /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(translated-state.o)
-_ZN2v88internal15JavaScriptFrame16context_registerEv /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal8Builtins31Generate_FunctionPrototypeApplyEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins21Generate_CallFunctionEPNS0_14MacroAssemblerENS0_19ConvertReceiverModeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-call-gen.o)
-_ZN2v88internal24SharedMacroAssemblerBase8I64x2MulENS0_11XMMRegisterES2_S2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal16FrameDescription11SetCallerFpEjl /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal16FrameDescription11SetCallerPcEjl /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal24SharedMacroAssemblerBase8I8x16ShlENS0_11XMMRegisterES2_hNS0_8RegisterES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase8I8x16ShlENS0_11XMMRegisterES2_NS0_8RegisterES3_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins30Generate_CallBoundFunctionImplEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-call-gen.o)
-_ZN2v88internal8Builtins46Generate_DeoptimizationEntry_LazyAfterFastCallEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal11Deoptimizer19kEagerDeoptExitSizeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal8Builtins30Generate_WasmLiftoffFrameSetupEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins26Generate_NotifyDeoptimizedEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins26Generate_ConstructFunctionEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins16Generate_JSEntryEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins39Generate_InterpreterEnterAtNextBytecodeEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase14S128Load8SplatENS0_11XMMRegisterENS0_7OperandES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins38Generate_CallOrConstructForwardVarargsEPNS0_14MacroAssemblerENS1_19CallOrConstructModeENS0_7BuiltinE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-call-gen.o)
-_ZN2v88internal24SharedMacroAssemblerBase9I8x16ShrSENS0_11XMMRegisterES2_hS2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins21Generate_ReflectApplyEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase19I16x8DotI8x16I7x16SENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal15JavaScriptFrame11fp_registerEv /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal8Builtins31Generate_RestartFrameTrampolineEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins39Generate_BaselineOutOfLinePrologueDeoptEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins21Generate_WasmFXResumeEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase8I64x2GtSENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins16Generate_AdaptorEPNS0_14MacroAssemblerEim /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins22Generate_CallApiGetterEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase8BlendvpdENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase8BlendvpsENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins25Generate_ReflectConstructEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase22I32x4DotI8x16I7x16AddSENS0_11XMMRegisterES2_S2_S2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins15Generate_CEntryEPNS0_14MacroAssemblerEiNS0_8ArgvModeEbb /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-internal-gen.o)
-_ZN2v88internal11Deoptimizer18kLazyDeoptExitSizeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal24SharedMacroAssemblerBase22I64x2SConvertI32x4HighENS0_11XMMRegisterES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase8I64x2GeSENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins38Generate_JSToWasmStressSwitchStacksAsmEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins30Generate_FunctionPrototypeCallEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase7S128NotENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins23Generate_WasmDebugBreakEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins36Generate_ConstructForwardAllArgsImplEPNS0_14MacroAssemblerENS1_17ForwardWhichFrameE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-constructor-gen.o)
-_ZN2v88internal8Builtins34Generate_ResumeGeneratorTrampolineEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase8I64x2AbsENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase8I64x2NegENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins35Generate_InterpreterEnterAtBytecodeEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZNK6disasm13NameConverter13NameOfAddressEPh /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(disassembler.o)
-_ZN2v88internal8Builtins27Generate_WasmOnStackReplaceEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins21Generate_DirectCEntryEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal27RegExpMacroAssemblerSPARC6420CheckStackGuardStateEPmmmm /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(external-reference.o)
-_ZN2v88internal24SharedMacroAssemblerBase3AndENS0_8RegisterENS0_9ImmediateE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator-sparc64.o)
-_ZNK6disasm13NameConverter17NameOfXMMRegisterEi /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(disassembler.o)
-_ZN2v88internal8Builtins45Generate_InterpreterPushArgsThenConstructImplEPNS0_14MacroAssemblerENS0_23InterpreterPushArgsModeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-interpreter-gen.o)
-_ZN2v88internal33BuiltinContinuationFrameConstants16PaddingSlotCountEi /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal24SharedMacroAssemblerBase10I16x8SplatENS0_11XMMRegisterENS0_8RegisterE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase10I8x16SplatENS0_11XMMRegisterENS0_8RegisterES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins26Generate_JSEntryTrampolineEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase8PblendvbENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins18Generate_ConstructEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase9I64x2ShrSENS0_11XMMRegisterES2_hS2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal11Deoptimizer33kAdaptShadowStackOffsetToSubtractE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal8Builtins29Generate_JSRunMicrotasksEntryEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins31Generate_CallOrConstructVarargsEPNS0_14MacroAssemblerENS0_7BuiltinE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-call-gen.o)
-_ZN2v88internal8Builtins35Generate_JSConstructEntryTrampolineEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins38Generate_InterpreterOnStackReplacementEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase9I64x2ShrSENS0_11XMMRegisterES2_NS0_8RegisterES2_S2_S3_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase9I8x16ShrSENS0_11XMMRegisterES2_NS0_8RegisterES3_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase9I8x16ShrUENS0_11XMMRegisterES2_NS0_8RegisterES3_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase11I64x2ExtMulENS0_11XMMRegisterES2_S2_S2_bb /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase22I64x2UConvertI32x4HighENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase8F32x4MinENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase8F64x2MinENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins22Generate_WasmFXSuspendEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins19Generate_WasmRejectEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins13Generate_CallEPNS0_14MacroAssemblerENS0_19ConvertReceiverModeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-call-gen.o)
-_ZN2v88internal8Builtins24Generate_WasmCompileLazyEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins20Generate_WasmSuspendEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal25UnoptimizedFrameConstants22RegisterStackSlotCountEi /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(frames.o)
-_ZN2v88internal8Builtins31Generate_JSConstructStubGenericEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZNK6disasm13NameConverter14NameOfConstantEPh /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(disassembler.o)
-_ZN2v88internal8Builtins53Generate_InterpreterPushArgsThenFastConstructFunctionEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase9F32x4QfmaENS0_11XMMRegisterES2_S2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase9F32x4QfmsENS0_11XMMRegisterES2_S2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal11Deoptimizer11PatchToJumpEmm /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(debug.o)
-_ZN2v88internal8Builtins35Generate_InterpreterEntryTrampolineEPNS0_14MacroAssemblerENS1_30InterpreterEntryTrampolineModeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-interpreter-gen.o)
-_ZN2v88internal14RegisterValues17SetDoubleRegisterEjNS0_7Float64E /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZTVN6disasm13NameConverterE        /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(translated-state.o)
-_ZN2v88internal24SharedMacroAssemblerBase22I32x4UConvertI16x8HighENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase16I16x8ExtMulHighSENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase16I16x8ExtMulHighUENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase11I32x4ExtMulENS0_11XMMRegisterES2_S2_S2_bb /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal11Deoptimizer7ZapCodeEmmRNS0_13RelocIteratorE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(code.o)
-_ZN2v88internal8Builtins32Generate_WasmHandleStackOverflowEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins40Generate_InterpreterPushArgsThenCallImplEPNS0_14MacroAssemblerENS0_19ConvertReceiverModeENS0_23InterpreterPushArgsModeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-interpreter-gen.o)
-_ZN2v88internal8Builtins36Generate_ContinueToJavaScriptBuiltinEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase22I16x8SConvertI8x16HighENS0_11XMMRegisterES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZNK6disasm13NameConverter21NameOfByteCPURegisterEi /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(disassembler.o)
-_ZN2v88internal24SharedMacroAssemblerBase22I16x8UConvertI8x16HighENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins21Generate_WasmFXReturnEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase9I8x16ShrUENS0_11XMMRegisterES2_hNS0_8RegisterES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins32Generate_RunMicrotasksTrampolineEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZNK2v88internal14RegisterValues16GetFloatRegisterEj /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal16FrameDescription5SetPcEl /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal24SharedMacroAssemblerBase16F64x2ReplaceLaneENS0_11XMMRegisterES2_S2_h /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins27Generate_JSToWasmWrapperAsmEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase10S128SelectENS0_11XMMRegisterES2_S2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins34Generate_WasmTrapHandlerLandingPadEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN6disasm12Disassembler18ConstantPoolSizeAtEPh /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(disassembler.o)
-_ZN2v88internal24SharedMacroAssemblerBase16I16x8Q15MulRSatSENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase9F64x2QfmsENS0_11XMMRegisterES2_S2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase9F64x2QfmaENS0_11XMMRegisterES2_S2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase10I16x8SplatENS0_11XMMRegisterENS0_7OperandE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator-sparc64.o)
-_ZN2v88internal24SharedMacroAssemblerBase15S128Load32SplatENS0_11XMMRegisterENS0_7OperandE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins25Generate_JSConstructEntryEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase22I32x4SConvertI16x8HighENS0_11XMMRegisterES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZNK2v88internal14RegisterValues17GetDoubleRegisterEj /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(deoptimizer.o)
-_ZN2v88internal24SharedMacroAssemblerBase15S128Store32LaneENS0_7OperandENS0_11XMMRegisterEh /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase15S128Store64LaneENS0_7OperandENS0_11XMMRegisterEh /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase25I32x4ExtAddPairwiseI16x8UENS0_11XMMRegisterES2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase8F64x2MaxENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins36Generate_ConstructedNonConstructableEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase8F32x4MaxENS0_11XMMRegisterES2_S2_S2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins46Generate_ContinueToJavaScriptBuiltinWithResultEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase14I16x8ExtMulLowENS0_11XMMRegisterES2_S2_S2_b /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal24SharedMacroAssemblerBase16F32x4ExtractLaneENS0_11XMMRegisterES2_h /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins27Generate_WasmToJsWrapperAsmEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins19Generate_WasmResumeEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins44Generate_ContinueToCodeStubBuiltinWithResultEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins38Generate_WasmReturnPromiseOnSuspendAsmEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins31Generate_ConstructBoundFunctionEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal11CpuFeatures11FlushICacheEPvm /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(flush-instruction-cache.o)
-_ZN2v88internal8Builtins28Generate_CallApiCallbackImplEPNS0_14MacroAssemblerENS0_19CallApiCallbackModeE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(builtins-call-gen.o)
-_ZN2v88internal24SharedMacroAssemblerBase6ShufpsENS0_11XMMRegisterES2_S2_h /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator-sparc64.o)
-PushAllRegistersAndIterateStack     /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(stack.o)
-_ZN2v88internal8Builtins34Generate_ContinueToCodeStubBuiltinEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins32Generate_JSBuiltinsConstructStubEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins34Generate_DeoptimizationEntry_EagerEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase10F32x4SplatENS0_11XMMRegisterES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN2v88internal8Builtins34Generate_BaselineOutOfLinePrologueEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase16F64x2ExtractLaneENS0_11XMMRegisterES2_h /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(liftoff-compiler.o)
-_ZN6disasm12Disassembler17InstructionDecodeEN2v84base6VectorIcEEPh /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_base_without_compiler.a(disassembler.o)
-_ZN2v88internal8Builtins35Generate_BaselineOnStackReplacementEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins18Generate_DoubleToIEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal8Builtins49Generate_InterpreterOnStackReplacement_ToBaselineEPNS0_14MacroAssemblerE /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_initializers.a(setup-builtins-internal.o)
-_ZN2v88internal24SharedMacroAssemblerBase10I8x16SplatENS0_11XMMRegisterENS0_7OperandES2_ /builds/psumbera/node-ai/out/Release/obj.target/tools/v8_gypfiles/libv8_compiler.a(code-generator-sparc64.o)
-ld: fatal: symbol referencing errors
-collect2: error: ld returned 1 exit status
-gmake[1]: *** [tools/v8_gypfiles/mksnapshot.target.mk:237: /builds/psumbera/node-ai/out/Release/mksnapshot] Error 1
+  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/execution/sparc64/frame-constants-sparc64.o ../deps/v8/src/execution/sparc64/frame-constants-sparc64.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-DV8_TARGET_ARCH_SPARC64' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' '-DICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_STATIC' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/inspector-generated-output-root -I../deps/v8/third_party/inspector_protocol -I/builds/psumbera/node-ai/out/Release/obj/gen -I/builds/psumbera/node-ai/out/Release/obj/gen/inspector-generated-output-root/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I../deps/v8/third_party/zlib -I../deps/v8/third_party/zlib/google -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/highway/src -I../deps/v8/third_party/simdutf -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/execution/sparc64/frame-constants-sparc64.o.d.raw   -c
+In file included from ../deps/v8/src/codegen/x64/assembler-x64.h:50,
+                 from ../deps/v8/src/codegen/x64/assembler-x64-inl.h:8,
+                 from ../deps/v8/src/execution/sparc64/frame-constants-sparc64.cc:9:
+../deps/v8/src/codegen/x64/constants-x64.h:18:15: error: redefinition of 'constexpr const int v8::internal::kRootRegisterBias'
+   18 | constexpr int kRootRegisterBias = 128;
+      |               ^~~~~~~~~~~~~~~~~
+In file included from ../deps/v8/src/codegen/constants-arch.h:25,
+                 from ../deps/v8/src/objects/objects.h:18,
+                 from ../deps/v8/src/objects/tagged-value.h:8,
+                 from ../deps/v8/src/objects/tagged-field.h:13,
+                 from ../deps/v8/src/objects/slots.h:11,
+                 from ../deps/v8/src/objects/heap-object.h:12,
+                 from ../deps/v8/src/objects/struct.h:8,
+                 from ../deps/v8/src/objects/code.h:10,
+                 from ../deps/v8/src/codegen/reloc-info.h:11,
+                 from ../deps/v8/src/codegen/assembler.h:54,
+                 from ../deps/v8/src/codegen/x64/assembler-x64.h:46:
+../deps/v8/src/codegen/sparc64/constants-sparc64.h:18:15: note: 'constexpr const int v8::internal::kRootRegisterBias' previously defined here
+   18 | constexpr int kRootRegisterBias = 128;
+      |               ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/constants-x64.h:22:18: error: redefinition of 'constexpr const std::size_t v8::internal::kMaxPCRelativeCodeRangeInMB'
+   22 | constexpr size_t kMaxPCRelativeCodeRangeInMB = 2048;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/constants-sparc64.h:22:18: note: 'constexpr const std::size_t v8::internal::kMaxPCRelativeCodeRangeInMB' previously defined here
+   22 | constexpr size_t kMaxPCRelativeCodeRangeInMB = 2048;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../deps/v8/src/codegen/x64/assembler-x64.h:52:
+../deps/v8/src/codegen/x64/register-x64.h:54:6: error: multiple definition of 'enum v8::internal::RegisterCode'
+   54 | enum RegisterCode {
+      |      ^~~~~~~~~~~~
+In file included from ../deps/v8/src/codegen/register-arch.h:15,
+                 from ../deps/v8/src/codegen/register.h:8,
+                 from ../deps/v8/src/execution/sparc64/frame-constants-sparc64.h:10,
+                 from ../deps/v8/src/execution/sparc64/frame-constants-sparc64.cc:7:
+../deps/v8/src/codegen/sparc64/register-sparc64.h:54:6: note: previous definition here
+   54 | enum RegisterCode {
+      |      ^~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:61:7: error: redefinition of 'class v8::internal::Register'
+   61 | class Register : public RegisterBase<Register, kRegAfterLast> {
+      |       ^~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:61:7: note: previous definition of 'class v8::internal::Register'
+   61 | class Register : public RegisterBase<Register, kRegAfterLast> {
+      |       ^~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:78:7: error: redefinition of 'class v8::internal::TaggedRegister'
+   78 | class TaggedRegister {
+      |       ^~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:78:7: note: previous definition of 'class v8::internal::TaggedRegister'
+   78 | class TaggedRegister {
+      |       ^~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:93:13: error: redefinition of 'template<class RegT> RegT v8::internal::ReassignRegister(RegT&)'
+   93 | inline RegT ReassignRegister(RegT& source) {
+      |             ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:93:13: note: 'template<class RegT> RegT v8::internal::ReassignRegister(RegT&)' previously declared here
+   93 | inline RegT ReassignRegister(RegT& source) {
+      |             ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:14:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rax'
+   14 |   V(rax)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:14:5: note: 'constexpr const v8::internal::Register v8::internal::rax' previously defined here
+   14 |   V(rax)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:15:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rcx'
+   15 |   V(rcx)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:15:5: note: 'constexpr const v8::internal::Register v8::internal::rcx' previously defined here
+   15 |   V(rcx)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:16:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rdx'
+   16 |   V(rdx)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:16:5: note: 'constexpr const v8::internal::Register v8::internal::rdx' previously defined here
+   16 |   V(rdx)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:17:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rbx'
+   17 |   V(rbx)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:17:5: note: 'constexpr const v8::internal::Register v8::internal::rbx' previously defined here
+   17 |   V(rbx)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:18:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rsp'
+   18 |   V(rsp)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:18:5: note: 'constexpr const v8::internal::Register v8::internal::rsp' previously defined here
+   18 |   V(rsp)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:19:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rbp'
+   19 |   V(rbp)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:19:5: note: 'constexpr const v8::internal::Register v8::internal::rbp' previously defined here
+   19 |   V(rbp)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:20:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rsi'
+   20 |   V(rsi)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:20:5: note: 'constexpr const v8::internal::Register v8::internal::rsi' previously defined here
+   20 |   V(rsi)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:21:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::rdi'
+   21 |   V(rdi)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:21:5: note: 'constexpr const v8::internal::Register v8::internal::rdi' previously defined here
+   21 |   V(rdi)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:22:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r8'
+   22 |   V(r8)                      \
+      |     ^~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:22:5: note: 'constexpr const v8::internal::Register v8::internal::r8' previously defined here
+   22 |   V(r8)                      \
+      |     ^~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:23:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r9'
+   23 |   V(r9)                      \
+      |     ^~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:23:5: note: 'constexpr const v8::internal::Register v8::internal::r9' previously defined here
+   23 |   V(r9)                      \
+      |     ^~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:24:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r10'
+   24 |   V(r10)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:24:5: note: 'constexpr const v8::internal::Register v8::internal::r10' previously defined here
+   24 |   V(r10)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:25:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r11'
+   25 |   V(r11)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:25:5: note: 'constexpr const v8::internal::Register v8::internal::r11' previously defined here
+   25 |   V(r11)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:26:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r12'
+   26 |   V(r12)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:26:5: note: 'constexpr const v8::internal::Register v8::internal::r12' previously defined here
+   26 |   V(r12)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:27:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r13'
+   27 |   V(r13)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:27:5: note: 'constexpr const v8::internal::Register v8::internal::r13' previously defined here
+   27 |   V(r13)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:28:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r14'
+   28 |   V(r14)                     \
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:28:5: note: 'constexpr const v8::internal::Register v8::internal::r14' previously defined here
+   28 |   V(r14)                     \
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:29:5: error: redefinition of 'constexpr const v8::internal::Register v8::internal::r15'
+   29 |   V(r15)
+      |     ^~~
+../deps/v8/src/codegen/x64/register-x64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/x64/register-x64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:29:5: note: 'constexpr const v8::internal::Register v8::internal::r15' previously defined here
+   29 |   V(r15)
+      |     ^~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:100:22: note: in definition of macro 'DECLARE_REGISTER'
+  100 |   constexpr Register R = Register::from_code(kRegCode_##R);
+      |                      ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:101:1: note: in expansion of macro 'GENERAL_REGISTERS'
+  101 | GENERAL_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:103:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::no_reg'
+  103 | constexpr Register no_reg = Register::no_reg();
+      |                    ^~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:103:20: note: 'constexpr const v8::internal::Register v8::internal::no_reg' previously defined here
+  103 | constexpr Register no_reg = Register::no_reg();
+      |                    ^~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:105:15: error: redefinition of 'constexpr const int v8::internal::kNumRegs'
+  105 | constexpr int kNumRegs = 16;
+      |               ^~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:105:15: note: 'constexpr const int v8::internal::kNumRegs' previously defined here
+  105 | constexpr int kNumRegs = 16;
+      |               ^~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:119:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kCArgRegs []'
+  119 | constexpr Register kCArgRegs[] = {rdi, rsi, rdx, rcx, r8, r9};
+      |                    ^~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:119:20: note: 'constexpr const v8::internal::Register v8::internal::kCArgRegs [6]' previously defined here
+  119 | constexpr Register kCArgRegs[] = {rdi, rsi, rdx, rcx, r8, r9};
+      |                    ^~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:122:15: error: redefinition of 'constexpr const int v8::internal::kRegisterPassedArguments'
+  122 | constexpr int kRegisterPassedArguments = arraysize(kCArgRegs);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:122:15: note: 'constexpr const int v8::internal::kRegisterPassedArguments' previously defined here
+  122 | constexpr int kRegisterPassedArguments = arraysize(kCArgRegs);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:191:15: error: redefinition of 'constexpr int v8::internal::ArgumentPaddingSlots(int)'
+  191 | constexpr int ArgumentPaddingSlots(int argument_count) {
+      |               ^~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:191:15: note: 'constexpr int v8::internal::ArgumentPaddingSlots(int)' previously defined here
+  191 | constexpr int ArgumentPaddingSlots(int argument_count) {
+      |               ^~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:196:24: error: redefinition of 'constexpr const v8::internal::AliasingKind v8::internal::kFPAliasing'
+  196 | constexpr AliasingKind kFPAliasing = AliasingKind::kOverlap;
+      |                        ^~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:196:24: note: 'constexpr const v8::internal::AliasingKind v8::internal::kFPAliasing' previously defined here
+  196 | constexpr AliasingKind kFPAliasing = AliasingKind::kOverlap;
+      |                        ^~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:197:16: error: redefinition of 'constexpr const bool v8::internal::kSimdMaskRegisters'
+  197 | constexpr bool kSimdMaskRegisters = false;
+      |                ^~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:197:16: note: 'constexpr const bool v8::internal::kSimdMaskRegisters' previously defined here
+  197 | constexpr bool kSimdMaskRegisters = false;
+      |                ^~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:199:6: error: multiple definition of 'enum v8::internal::DoubleRegisterCode'
+  199 | enum DoubleRegisterCode {
+      |      ^~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:199:6: note: previous definition here
+  199 | enum DoubleRegisterCode {
+      |      ^~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:206:6: error: multiple definition of 'enum v8::internal::YMMRegisterCode'
+  206 | enum YMMRegisterCode {
+      |      ^~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:206:6: note: previous definition here
+  206 | enum YMMRegisterCode {
+      |      ^~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:217:7: error: redefinition of 'class v8::internal::XMMRegister'
+  217 | class XMMRegister : public RegisterBase<XMMRegister, kDoubleAfterLast> {
+      |       ^~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:217:7: note: previous definition of 'class v8::internal::XMMRegister'
+  217 | class XMMRegister : public RegisterBase<XMMRegister, kDoubleAfterLast> {
+      |       ^~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:235:7: error: redefinition of 'class v8::internal::YMMRegister'
+  235 | class YMMRegister : public XMMRegister {
+      |       ^~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:235:7: note: previous definition of 'class v8::internal::YMMRegister'
+  235 | class YMMRegister : public XMMRegister {
+      |       ^~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:125:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm0'
+  125 |   V(xmm0)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:125:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm0' previously defined here
+  125 |   V(xmm0)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:126:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm1'
+  126 |   V(xmm1)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:126:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm1' previously defined here
+  126 |   V(xmm1)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:127:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm2'
+  127 |   V(xmm2)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:127:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm2' previously defined here
+  127 |   V(xmm2)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:128:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm3'
+  128 |   V(xmm3)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:128:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm3' previously defined here
+  128 |   V(xmm3)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:129:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm4'
+  129 |   V(xmm4)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:129:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm4' previously defined here
+  129 |   V(xmm4)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:130:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm5'
+  130 |   V(xmm5)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:130:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm5' previously defined here
+  130 |   V(xmm5)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:131:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm6'
+  131 |   V(xmm6)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:131:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm6' previously defined here
+  131 |   V(xmm6)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:132:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm7'
+  132 |   V(xmm7)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:132:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm7' previously defined here
+  132 |   V(xmm7)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:133:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm8'
+  133 |   V(xmm8)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:133:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm8' previously defined here
+  133 |   V(xmm8)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:134:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm9'
+  134 |   V(xmm9)                   \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:134:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm9' previously defined here
+  134 |   V(xmm9)                   \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:135:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm10'
+  135 |   V(xmm10)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:135:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm10' previously defined here
+  135 |   V(xmm10)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:136:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm11'
+  136 |   V(xmm11)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:136:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm11' previously defined here
+  136 |   V(xmm11)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:137:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm12'
+  137 |   V(xmm12)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:137:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm12' previously defined here
+  137 |   V(xmm12)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:138:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm13'
+  138 |   V(xmm13)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:138:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm13' previously defined here
+  138 |   V(xmm13)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:139:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm14'
+  139 |   V(xmm14)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:139:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm14' previously defined here
+  139 |   V(xmm14)                  \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:140:5: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::xmm15'
+  140 |   V(xmm15)
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/x64/register-x64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:140:5: note: 'constexpr const v8::internal::DoubleRegister v8::internal::xmm15' previously defined here
+  140 |   V(xmm15)
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:264:28: note: in definition of macro 'DECLARE_REGISTER'
+  264 |   constexpr DoubleRegister R = DoubleRegister::from_code(kDoubleCode_##R);
+      |                            ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:265:1: note: in expansion of macro 'DOUBLE_REGISTERS'
+  265 | DOUBLE_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:267:26: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::no_dreg'
+  267 | constexpr DoubleRegister no_dreg = DoubleRegister::no_reg();
+      |                          ^~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:267:26: note: 'constexpr const v8::internal::DoubleRegister v8::internal::no_dreg' previously defined here
+  267 | constexpr DoubleRegister no_dreg = DoubleRegister::no_reg();
+      |                          ^~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:163:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm0'
+  163 |   V(ymm0)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:163:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm0' previously defined here
+  163 |   V(ymm0)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:164:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm1'
+  164 |   V(ymm1)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:164:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm1' previously defined here
+  164 |   V(ymm1)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:165:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm2'
+  165 |   V(ymm2)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:165:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm2' previously defined here
+  165 |   V(ymm2)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:166:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm3'
+  166 |   V(ymm3)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:166:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm3' previously defined here
+  166 |   V(ymm3)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:167:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm4'
+  167 |   V(ymm4)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:167:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm4' previously defined here
+  167 |   V(ymm4)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:168:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm5'
+  168 |   V(ymm5)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:168:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm5' previously defined here
+  168 |   V(ymm5)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:169:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm6'
+  169 |   V(ymm6)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:169:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm6' previously defined here
+  169 |   V(ymm6)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:170:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm7'
+  170 |   V(ymm7)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:170:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm7' previously defined here
+  170 |   V(ymm7)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:171:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm8'
+  171 |   V(ymm8)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:171:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm8' previously defined here
+  171 |   V(ymm8)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:172:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm9'
+  172 |   V(ymm9)                \
+      |     ^~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:172:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm9' previously defined here
+  172 |   V(ymm9)                \
+      |     ^~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:173:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm10'
+  173 |   V(ymm10)               \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:173:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm10' previously defined here
+  173 |   V(ymm10)               \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:174:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm11'
+  174 |   V(ymm11)               \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:174:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm11' previously defined here
+  174 |   V(ymm11)               \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:175:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm12'
+  175 |   V(ymm12)               \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:175:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm12' previously defined here
+  175 |   V(ymm12)               \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:176:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm13'
+  176 |   V(ymm13)               \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:176:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm13' previously defined here
+  176 |   V(ymm13)               \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:177:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm14'
+  177 |   V(ymm14)               \
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:177:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm14' previously defined here
+  177 |   V(ymm14)               \
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:178:5: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::ymm15'
+  178 |   V(ymm15)
+      |     ^~~~~
+../deps/v8/src/codegen/x64/register-x64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/x64/register-x64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:178:5: note: 'constexpr const v8::internal::YMMRegister v8::internal::ymm15' previously defined here
+  178 |   V(ymm15)
+      |     ^~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:270:25: note: in definition of macro 'DECLARE_REGISTER'
+  270 |   constexpr YMMRegister R = YMMRegister::from_code(kYMMCode_##R);
+      |                         ^
+../deps/v8/src/codegen/sparc64/register-sparc64.h:271:1: note: in expansion of macro 'YMM_REGISTERS'
+  271 | YMM_REGISTERS(DECLARE_REGISTER)
+      | ^~~~~~~~~~~~~
+In file included from ../deps/v8/src/codegen/register-arch.h:8:
+../deps/v8/src/codegen/register-base.h:83:22: error: redefinition of 'const char* v8::internal::RegisterName(Register)'
+   83 |   inline const char* RegisterName(RegType reg) {                               \
+      |                      ^~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:275:1: note: in expansion of macro 'DEFINE_REGISTER_NAMES'
+  275 | DEFINE_REGISTER_NAMES(Register, GENERAL_REGISTERS)
+      | ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/register-base.h:83:22: note: 'const char* v8::internal::RegisterName(Register)' previously defined here
+   83 |   inline const char* RegisterName(RegType reg) {                               \
+      |                      ^~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:275:1: note: in expansion of macro 'DEFINE_REGISTER_NAMES'
+  275 | DEFINE_REGISTER_NAMES(Register, GENERAL_REGISTERS)
+      | ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/register-base.h:83:22: error: redefinition of 'const char* v8::internal::RegisterName(XMMRegister)'
+   83 |   inline const char* RegisterName(RegType reg) {                               \
+      |                      ^~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:276:1: note: in expansion of macro 'DEFINE_REGISTER_NAMES'
+  276 | DEFINE_REGISTER_NAMES(XMMRegister, DOUBLE_REGISTERS)
+      | ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/register-base.h:83:22: note: 'const char* v8::internal::RegisterName(XMMRegister)' previously defined here
+   83 |   inline const char* RegisterName(RegType reg) {                               \
+      |                      ^~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:276:1: note: in expansion of macro 'DEFINE_REGISTER_NAMES'
+  276 | DEFINE_REGISTER_NAMES(XMMRegister, DOUBLE_REGISTERS)
+      | ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/register-base.h:83:22: error: redefinition of 'const char* v8::internal::RegisterName(YMMRegister)'
+   83 |   inline const char* RegisterName(RegType reg) {                               \
+      |                      ^~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:277:1: note: in expansion of macro 'DEFINE_REGISTER_NAMES'
+  277 | DEFINE_REGISTER_NAMES(YMMRegister, YMM_REGISTERS)
+      | ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/register-base.h:83:22: note: 'const char* v8::internal::RegisterName(YMMRegister)' previously defined here
+   83 |   inline const char* RegisterName(RegType reg) {                               \
+      |                      ^~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:277:1: note: in expansion of macro 'DEFINE_REGISTER_NAMES'
+  277 | DEFINE_REGISTER_NAMES(YMMRegister, YMM_REGISTERS)
+      | ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:280:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kStackPointerRegister'
+  280 | constexpr Register kStackPointerRegister = rsp;
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:280:20: note: 'constexpr const v8::internal::Register v8::internal::kStackPointerRegister' previously defined here
+  280 | constexpr Register kStackPointerRegister = rsp;
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:281:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kReturnRegister0'
+  281 | constexpr Register kReturnRegister0 = rax;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:281:20: note: 'constexpr const v8::internal::Register v8::internal::kReturnRegister0' previously defined here
+  281 | constexpr Register kReturnRegister0 = rax;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:282:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kReturnRegister1'
+  282 | constexpr Register kReturnRegister1 = rdx;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:282:20: note: 'constexpr const v8::internal::Register v8::internal::kReturnRegister1' previously defined here
+  282 | constexpr Register kReturnRegister1 = rdx;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:283:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kReturnRegister2'
+  283 | constexpr Register kReturnRegister2 = r8;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:283:20: note: 'constexpr const v8::internal::Register v8::internal::kReturnRegister2' previously defined here
+  283 | constexpr Register kReturnRegister2 = r8;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:284:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kJSFunctionRegister'
+  284 | constexpr Register kJSFunctionRegister = rdi;
+      |                    ^~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:284:20: note: 'constexpr const v8::internal::Register v8::internal::kJSFunctionRegister' previously defined here
+  284 | constexpr Register kJSFunctionRegister = rdi;
+      |                    ^~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:285:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kContextRegister'
+  285 | constexpr Register kContextRegister = rsi;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:285:20: note: 'constexpr const v8::internal::Register v8::internal::kContextRegister' previously defined here
+  285 | constexpr Register kContextRegister = rsi;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:286:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kAllocateSizeRegister'
+  286 | constexpr Register kAllocateSizeRegister = rdx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:286:20: note: 'constexpr const v8::internal::Register v8::internal::kAllocateSizeRegister' previously defined here
+  286 | constexpr Register kAllocateSizeRegister = rdx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:287:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kInterpreterAccumulatorRegister'
+  287 | constexpr Register kInterpreterAccumulatorRegister = rax;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:287:20: note: 'constexpr const v8::internal::Register v8::internal::kInterpreterAccumulatorRegister' previously defined here
+  287 | constexpr Register kInterpreterAccumulatorRegister = rax;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:288:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kInterpreterBytecodeOffsetRegister'
+  288 | constexpr Register kInterpreterBytecodeOffsetRegister = r9;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:288:20: note: 'constexpr const v8::internal::Register v8::internal::kInterpreterBytecodeOffsetRegister' previously defined here
+  288 | constexpr Register kInterpreterBytecodeOffsetRegister = r9;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:289:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kInterpreterBytecodeArrayRegister'
+  289 | constexpr Register kInterpreterBytecodeArrayRegister = r12;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:289:20: note: 'constexpr const v8::internal::Register v8::internal::kInterpreterBytecodeArrayRegister' previously defined here
+  289 | constexpr Register kInterpreterBytecodeArrayRegister = r12;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:290:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kInterpreterDispatchTableRegister'
+  290 | constexpr Register kInterpreterDispatchTableRegister = r15;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:290:20: note: 'constexpr const v8::internal::Register v8::internal::kInterpreterDispatchTableRegister' previously defined here
+  290 | constexpr Register kInterpreterDispatchTableRegister = r15;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:292:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallArgCountRegister'
+  292 | constexpr Register kJavaScriptCallArgCountRegister = rax;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:292:20: note: 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallArgCountRegister' previously defined here
+  292 | constexpr Register kJavaScriptCallArgCountRegister = rax;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:293:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallCodeStartRegister'
+  293 | constexpr Register kJavaScriptCallCodeStartRegister = rcx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:293:20: note: 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallCodeStartRegister' previously defined here
+  293 | constexpr Register kJavaScriptCallCodeStartRegister = rcx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:294:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallTargetRegister'
+  294 | constexpr Register kJavaScriptCallTargetRegister = kJSFunctionRegister;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:294:20: note: 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallTargetRegister' previously defined here
+  294 | constexpr Register kJavaScriptCallTargetRegister = kJSFunctionRegister;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:295:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallNewTargetRegister'
+  295 | constexpr Register kJavaScriptCallNewTargetRegister = rdx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:295:20: note: 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallNewTargetRegister' previously defined here
+  295 | constexpr Register kJavaScriptCallNewTargetRegister = rdx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:296:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallExtraArg1Register'
+  296 | constexpr Register kJavaScriptCallExtraArg1Register = rbx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:296:20: note: 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallExtraArg1Register' previously defined here
+  296 | constexpr Register kJavaScriptCallExtraArg1Register = rbx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:297:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallDispatchHandleRegister'
+  297 | constexpr Register kJavaScriptCallDispatchHandleRegister = r15;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:297:20: note: 'constexpr const v8::internal::Register v8::internal::kJavaScriptCallDispatchHandleRegister' previously defined here
+  297 | constexpr Register kJavaScriptCallDispatchHandleRegister = r15;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:299:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kRuntimeCallFunctionRegister'
+  299 | constexpr Register kRuntimeCallFunctionRegister = rbx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:299:20: note: 'constexpr const v8::internal::Register v8::internal::kRuntimeCallFunctionRegister' previously defined here
+  299 | constexpr Register kRuntimeCallFunctionRegister = rbx;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:300:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kRuntimeCallArgCountRegister'
+  300 | constexpr Register kRuntimeCallArgCountRegister = rax;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:300:20: note: 'constexpr const v8::internal::Register v8::internal::kRuntimeCallArgCountRegister' previously defined here
+  300 | constexpr Register kRuntimeCallArgCountRegister = rax;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:301:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kRuntimeCallArgvRegister'
+  301 | constexpr Register kRuntimeCallArgvRegister = r15;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:301:20: note: 'constexpr const v8::internal::Register v8::internal::kRuntimeCallArgvRegister' previously defined here
+  301 | constexpr Register kRuntimeCallArgvRegister = r15;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:302:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kWasmImplicitArgRegister'
+  302 | constexpr Register kWasmImplicitArgRegister = rsi;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:302:20: note: 'constexpr const v8::internal::Register v8::internal::kWasmImplicitArgRegister' previously defined here
+  302 | constexpr Register kWasmImplicitArgRegister = rsi;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:303:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kWasmTrapHandlerFaultAddressRegister'
+  303 | constexpr Register kWasmTrapHandlerFaultAddressRegister = r10;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:303:20: note: 'constexpr const v8::internal::Register v8::internal::kWasmTrapHandlerFaultAddressRegister' previously defined here
+  303 | constexpr Register kWasmTrapHandlerFaultAddressRegister = r10;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:308:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kScratchRegister'
+  308 | constexpr Register kScratchRegister = r10;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:308:20: note: 'constexpr const v8::internal::Register v8::internal::kScratchRegister' previously defined here
+  308 | constexpr Register kScratchRegister = r10;
+      |                    ^~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:309:23: error: redefinition of 'constexpr const v8::internal::XMMRegister v8::internal::kScratchDoubleReg'
+  309 | constexpr XMMRegister kScratchDoubleReg = xmm15;
+      |                       ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:309:23: note: 'constexpr const v8::internal::XMMRegister v8::internal::kScratchDoubleReg' previously defined here
+  309 | constexpr XMMRegister kScratchDoubleReg = xmm15;
+      |                       ^~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:310:23: error: redefinition of 'constexpr const v8::internal::YMMRegister v8::internal::kScratchSimd256Reg'
+  310 | constexpr YMMRegister kScratchSimd256Reg = ymm15;
+      |                       ^~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:310:23: note: 'constexpr const v8::internal::YMMRegister v8::internal::kScratchSimd256Reg' previously defined here
+  310 | constexpr YMMRegister kScratchSimd256Reg = ymm15;
+      |                       ^~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:311:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kRootRegister'
+  311 | constexpr Register kRootRegister = r13;  // callee save
+      |                    ^~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:311:20: note: 'constexpr const v8::internal::Register v8::internal::kRootRegister' previously defined here
+  311 | constexpr Register kRootRegister = r13;  // callee save
+      |                    ^~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:315:20: error: redefinition of 'constexpr const v8::internal::Register v8::internal::kPtrComprCageBaseRegister'
+  315 | constexpr Register kPtrComprCageBaseRegister = no_reg;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:315:20: note: 'constexpr const v8::internal::Register v8::internal::kPtrComprCageBaseRegister' previously defined here
+  315 | constexpr Register kPtrComprCageBaseRegister = no_reg;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/x64/register-x64.h:318:26: error: redefinition of 'constexpr const v8::internal::DoubleRegister v8::internal::kFPReturnRegister0'
+  318 | constexpr DoubleRegister kFPReturnRegister0 = xmm0;
+      |                          ^~~~~~~~~~~~~~~~~~
+../deps/v8/src/codegen/sparc64/register-sparc64.h:318:26: note: 'constexpr const v8::internal::DoubleRegister v8::internal::kFPReturnRegister0' previously defined here
+  318 | constexpr DoubleRegister kFPReturnRegister0 = xmm0;
+      |                          ^~~~~~~~~~~~~~~~~~
+gmake[1]: *** [tools/v8_gypfiles/v8_base_without_compiler.target.mk:1104: /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/execution/sparc64/frame-constants-sparc64.o] Error 1
 gmake: *** [Makefile:143: node] Error 2
