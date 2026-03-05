@@ -40,6 +40,90 @@ namespace v8::internal::compiler {
 
 #define __ masm()->
 
+#if V8_TARGET_ARCH_SPARC64
+// SPARC64 assembler exposes SSE-style mnemonics in lowercase. Keep the
+// Sparc backend independent from x64 by mapping the x64-style macro names
+// used in this file to the SPARC64 spellings.
+#define Addps addps
+#define Cvtdq2pd cvtdq2pd
+#define Cvtpd2ps cvtpd2ps
+#define Cvtps2pd cvtps2pd
+#define Cvttpd2dq cvttpd2dq
+#define Divsd divsd
+#define Divss divss
+#define Insertps insertps
+#define Movapd movapd
+#define Movaps movaps
+#define Movddup movddup
+#define Movdqa movdqa
+#define Movdqu movdqu
+#define Movmskpd movmskpd
+#define Movmskps movmskps
+#define Movsd movsd
+#define Movss movss
+#define Movups movups
+#define Pabsb pabsb
+#define Pabsd pabsd
+#define Pabsw pabsw
+#define Packsswb packsswb
+#define Packusdw packusdw
+#define Packuswb packuswb
+#define Palignr palignr
+#define Pblendw pblendw
+#define Pcmpeqb pcmpeqb
+#define Pcmpeqq pcmpeqq
+#define Pcmpeqw pcmpeqw
+#define Pextrb pextrb
+#define Pextrw pextrw
+#define Pmaxub pmaxub
+#define Pmaxud pmaxud
+#define Pmaxuw pmaxuw
+#define Pminsb pminsb
+#define Pminsd pminsd
+#define Pminsw pminsw
+#define Pminub pminub
+#define Pminud pminud
+#define Pminuw pminuw
+#define Pmovmskb pmovmskb
+#define Pmovsxbw pmovsxbw
+#define Pmovsxdq pmovsxdq
+#define Pmovsxwd pmovsxwd
+#define Pmovzxbd pmovzxbd
+#define Pmovzxbw pmovzxbw
+#define Pmovzxdq pmovzxdq
+#define Pmovzxwd pmovzxwd
+#define Pmulhrsw pmulhrsw
+#define Por por
+#define Pshufd pshufd
+#define Pshufhw pshufhw
+#define Pshuflw pshuflw
+#define Psignb psignb
+#define Psignd psignd
+#define Psignw psignw
+#define Psllw psllw
+#define Psrlw psrlw
+#define Psubb psubb
+#define Psubd psubd
+#define Psubw psubw
+#define Ptest ptest
+#define Punpckhbw punpckhbw
+#define Punpckhqdq punpckhqdq
+#define Punpcklbw punpcklbw
+#define Punpcklqdq punpcklqdq
+#define Roundpd roundpd
+#define Roundps roundps
+#define Roundsd roundsd
+#define Roundss roundss
+#define Sqrtpd sqrtpd
+#define Sqrtps sqrtps
+#define Sqrtsd sqrtsd
+#define Subsd subsd
+#define Ucomisd ucomisd
+#define Ucomiss ucomiss
+#define Xorpd xorpd
+#endif  // V8_TARGET_ARCH_SPARC64
+
+
 enum class FirstMacroFusionInstKind {
   // TEST
   kTest,
