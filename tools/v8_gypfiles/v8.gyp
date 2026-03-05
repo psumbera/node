@@ -1245,7 +1245,6 @@
         }],
         ['v8_target_arch=="sparc64"', {
           'sources': [
-            '<(V8_ROOT)/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.cc',
             '<(V8_ROOT)/src/codegen/sparc64/assembler-sparc64.cc',
             '<(V8_ROOT)/src/codegen/sparc64/cpu-sparc64.cc',
             '<(V8_ROOT)/src/codegen/sparc64/macro-assembler-sparc64.cc',
