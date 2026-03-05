@@ -4,6 +4,8 @@
 
 #include "src/regexp/sparc64/regexp-macro-assembler-sparc64.h"
 
+#include "src/objects/objects-inl.h"
+
 namespace v8 {
 namespace internal {
 
