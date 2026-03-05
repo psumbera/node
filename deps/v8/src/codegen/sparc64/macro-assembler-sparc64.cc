@@ -1717,10 +1717,10 @@ int MacroAssembler::PushAll(DoubleRegList registers, int stack_slot_size) {
   int slot = 0;
   for (XMMRegister reg : registers) {
     if (stack_slot_size == kDoubleSize) {
-      Movsd(Operand(rsp, slot), reg);
+      movsd(Operand(rsp, slot), reg);
     } else {
       DCHECK_EQ(stack_slot_size, 2 * kDoubleSize);
-      Movdqu(Operand(rsp, slot), reg);
+      movdqu(Operand(rsp, slot), reg);
     }
     slot += stack_slot_size;
   }
@@ -1733,10 +1733,10 @@ int MacroAssembler::PopAll(DoubleRegList registers, int stack_slot_size) {
   int slot = 0;
   for (XMMRegister reg : registers) {
     if (stack_slot_size == kDoubleSize) {
-      Movsd(reg, Operand(rsp, slot));
+      movsd(reg, Operand(rsp, slot));
     } else {
       DCHECK_EQ(stack_slot_size, 2 * kDoubleSize);
-      Movdqu(reg, Operand(rsp, slot));
+      movdqu(reg, Operand(rsp, slot));
     }
     slot += stack_slot_size;
   }
@@ -1928,7 +1928,7 @@ void MacroAssembler::Cvtqui2ss(XMMRegister dst, Register src) {
   orq(kScratchRegister, Immediate(1));
   bind(&msb_not_set);
   Cvtqsi2ss(dst, kScratchRegister);
-  Addss(dst, dst);
+  addss(dst, dst);
   bind(&done);
 }
 
@@ -1952,7 +1952,7 @@ void MacroAssembler::Cvtqui2sd(XMMRegister dst, Register src) {
   orq(kScratchRegister, Immediate(1));
   bind(&msb_not_set);
   Cvtqsi2sd(dst, kScratchRegister);
-  Addsd(dst, dst);
+  addsd(dst, dst);
   bind(&done);
 }
 
@@ -2110,11 +2110,11 @@ void ConvertFloatToUint64(MacroAssembler* masm, Register dst,
   // and convert it again to see if it is within the uint64 range.
   if (is_double) {
     masm->Move(kScratchDoubleReg, -9223372036854775808.0);
-    masm->Addsd(kScratchDoubleReg, src);
+    masm->addsd(kScratchDoubleReg, src);
     masm->Cvttsd2siq(dst, kScratchDoubleReg);
   } else {
     masm->Move(kScratchDoubleReg, -9223372036854775808.0f);
-    masm->Addss(kScratchDoubleReg, src);
+    masm->addss(kScratchDoubleReg, src);
     masm->Cvttss2siq(dst, kScratchDoubleReg);
   }
   masm->testq(dst, dst);
@@ -2148,11 +2148,11 @@ void ConvertFloatToUint32(MacroAssembler* masm, Register dst,
   // and convert it again to see if it is within the uint32 range.
   if (is_double) {
     masm->Move(kScratchDoubleReg, -2147483648.0);
-    masm->Addsd(kScratchDoubleReg, src);
+    masm->addsd(kScratchDoubleReg, src);
     masm->Cvttsd2si(dst, kScratchDoubleReg);
   } else {
     masm->Move(kScratchDoubleReg, -2147483648.0f);
-    masm->Addss(kScratchDoubleReg, src);
+    masm->addss(kScratchDoubleReg, src);
     masm->Cvttss2si(dst, kScratchDoubleReg);
   }
   masm->testl(dst, dst);
@@ -3150,7 +3150,7 @@ void MacroAssembler::Move(Register dst, Immediate src) {
 
 void MacroAssembler::Move(XMMRegister dst, XMMRegister src) {
   if (dst != src) {
-    Movaps(dst, src);
+    movaps(dst, src);
   }
 }
 
@@ -3192,7 +3192,7 @@ void MacroAssembler::Move(XMMRegister dst, uint32_t src) {
     DCHECK_NE(0u, pop);
     if (pop + ntz + nlz == 32) {
       Pcmpeqd(dst, dst);
-      if (ntz) Pslld(dst, static_cast<uint8_t>(ntz + nlz));
+      if (ntz) pslld(dst, static_cast<uint8_t>(ntz + nlz));
       if (nlz) Psrld(dst, static_cast<uint8_t>(nlz));
     } else {
       movl(kScratchRegister, Immediate(src));
@@ -3203,7 +3203,7 @@ void MacroAssembler::Move(XMMRegister dst, uint32_t src) {
 
 void MacroAssembler::Move(XMMRegister dst, uint64_t src) {
   if (src == 0) {
-    Xorpd(dst, dst);
+    xorpd(dst, dst);
   } else {
     unsigned nlz = base::bits::CountLeadingZeros(src);
     unsigned ntz = base::bits::CountTrailingZeros(src);
@@ -3211,8 +3211,8 @@ void MacroAssembler::Move(XMMRegister dst, uint64_t src) {
     DCHECK_NE(0u, pop);
     if (pop + ntz + nlz == 64) {
       Pcmpeqd(dst, dst);
-      if (ntz) Psllq(dst, static_cast<uint8_t>(ntz + nlz));
-      if (nlz) Psrlq(dst, static_cast<uint8_t>(nlz));
+      if (ntz) psllq(dst, static_cast<uint8_t>(ntz + nlz));
+      if (nlz) psrlq(dst, static_cast<uint8_t>(nlz));
     } else {
       uint32_t lower = static_cast<uint32_t>(src);
       uint32_t upper = static_cast<uint32_t>(src >> 32);
@@ -3229,7 +3229,7 @@ void MacroAssembler::Move(XMMRegister dst, uint64_t src) {
 void MacroAssembler::Move(XMMRegister dst, uint64_t high, uint64_t low) {
   if (high == low) {
     Move(dst, low);
-    Punpcklqdq(dst, dst);
+    punpcklqdq(dst, dst);
     return;
   }
 
@@ -3811,7 +3811,7 @@ void PinsrdPreSse41Helper(MacroAssembler* masm, XMMRegister dst, Op src,
     masm->punpckldq(dst, kScratchDoubleReg);
   } else {
     DCHECK_EQ(0, imm8);
-    masm->Movss(dst, kScratchDoubleReg);
+    masm->movss(dst, kScratchDoubleReg);
   }
 }
 }  // namespace
