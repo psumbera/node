@@ -1,24 +1,80 @@
-  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/regexp/sparc64/regexp-macro-assembler-sparc64.o ../deps/v8/src/regexp/sparc64/regexp-macro-assembler-sparc64.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-DV8_TARGET_ARCH_SPARC64' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' '-DICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_STATIC' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/inspector-generated-output-root -I../deps/v8/third_party/inspector_protocol -I/builds/psumbera/node-ai/out/Release/obj/gen -I/builds/psumbera/node-ai/out/Release/obj/gen/inspector-generated-output-root/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I../deps/v8/third_party/zlib -I../deps/v8/third_party/zlib/google -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/highway/src -I../deps/v8/third_party/simdutf -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/regexp/sparc64/regexp-macro-assembler-sparc64.o.d.raw   -c
-In file included from ../deps/v8/src/handles/handles.h:17,
-                 from ../deps/v8/src/runtime/runtime.h:13,
-                 from ../deps/v8/src/codegen/external-reference.h:9,
-                 from ../deps/v8/src/codegen/assembler.h:51,
-                 from ../deps/v8/src/codegen/assembler-arch.h:8,
-                 from ../deps/v8/src/codegen/macro-assembler-base.h:12,
-                 from ../deps/v8/src/codegen/macro-assembler.h:8,
-                 from ../deps/v8/src/regexp/sparc64/regexp-macro-assembler-sparc64.h:8,
-                 from ../deps/v8/src/regexp/sparc64/regexp-macro-assembler-sparc64.cc:5:
-../deps/v8/src/objects/casting.h: In instantiation of 'bool v8::internal::Is(Tagged<From>) [with T = InstructionStream; U = Object]':
-../deps/v8/src/objects/casting.h:119:15:   required from 'bool v8::internal::NullOrIs(Tagged<From>) [with T = InstructionStream; U = Object]'
-  119 |   return Is<T>(value);
-      |          ~~~~~^~~~~~~
-../deps/v8/src/objects/casting.h:175:3:   required from 'Holder<To> v8::internal::SbxCast(Holder<From>, v8::SourceLocation) [with To = InstructionStream; From = Object; Holder = Tagged]'
-  175 |   SBXCHECK(NullOrIs<To>(value));
-../deps/v8/src/regexp/sparc64/regexp-macro-assembler-sparc64.cc:25:33:   required from here
-   25 |       SbxCast<InstructionStream>(Tagged<Object>(raw_code));
-      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
-../deps/v8/src/objects/casting.h:48:34: error: incomplete type 'v8::internal::CastTraits<v8::internal::InstructionStream>' used in nested name specifier
-   48 |   return CastTraits<T>::AllowFrom(value);
-      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
-gmake[1]: *** [tools/v8_gypfiles/v8_base_without_compiler.target.mk:1108: /builds/psumbera/node-ai/out/Release/obj.target/v8_base_without_compiler/deps/v8/src/regexp/sparc64/regexp-macro-assembler-sparc64.o] Error 1
-gmake: *** [Makefile:143: node] Error 2
+  /usr/gcc/15/bin/g++ -o /builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/compiler/turboshaft/csa-branch-elimination-phase.o ../deps/v8/src/compiler/turboshaft/csa-branch-elimination-phase.cc '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_FILE_OFFSET_BITS=64' '-DNODE_OPENSSL_CONF_NAME=nodejs_conf' '-DOPENSSL_FIPS' '-DICU_NO_USER_DATA_OVERRIDE' '-DV8_GYP_BUILD' '-DV8_TYPED_ARRAY_MAX_SIZE_IN_HEAP=64' '-DBUILDING_V8_SHARED' '-DBUILDING_V8_PLATFORM_SHARED' '-DV8_TLS_USED_IN_LIBRARY' '-D__STDC_FORMAT_MACROS' '-DV8_TARGET_ARCH_SPARC64' '-D__C99FEATURES__=1' '-DV8_EMBEDDER_STRING="-node.12"' '-DENABLE_DISASSEMBLER' '-DV8_PROMISE_INTERNAL_FIELD_COUNT=1' '-DOBJECT_PRINT' '-DV8_INTL_SUPPORT' '-DV8_ATOMIC_OBJECT_FIELD_WRITES' '-DV8_ENABLE_LAZY_SOURCE_POSITIONS' '-DV8_USE_SIPHASH' '-DNDEBUG' '-DV8_WIN64_UNWINDING_INFO' '-DV8_ENABLE_REGEXP_INTERPRETER_THREADED_DISPATCH' '-DV8_USE_ZLIB' '-DV8_ENABLE_LEAPTIERING' '-DV8_ENABLE_SPARKPLUG' '-DV8_ENABLE_TURBOFAN' '-DV8_ENABLE_WEBASSEMBLY' '-DV8_ENABLE_JAVASCRIPT_PROMISE_HOOKS' '-DV8_ENABLE_CONTINUATION_PRESERVED_EMBEDDER_DATA' '-DV8_ALLOCATION_FOLDING' '-DV8_ALLOCATION_SITE_TRACKING' '-DV8_ADVANCED_BIGINT_ALGORITHMS' -I../deps/v8 -I../deps/v8/include -I/usr/openssl/3/include -I/builds/psumbera/node-ai/out/Release/obj/gen/generate-bytecode-output-root -I/builds/psumbera/node-ai/out/Release/obj/gen -I../deps/v8/third_party/fp16/src/include -I../deps/v8/third_party/abseil-cpp  -fvisibility=hidden -fvisibility-inlines-hidden -Wno-unused-parameter -pthreads -fPIC -Wno-strict-overflow -Wno-return-type -Wno-int-in-bool-context -Wno-deprecated -Wno-stringop-overflow -Wno-stringop-overread -Wno-restrict -Wno-array-bounds -Wno-nonnull -Wno-dangling-pointer -flax-vector-conversions -m64 -mcpu=v9 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -fno-strict-aliasing -std=gnu++20 -Wno-invalid-offsetof -MMD -MF /builds/psumbera/node-ai/out/Release/.deps//builds/psumbera/node-ai/out/Release/obj.target/v8_compiler/deps/v8/src/compiler/turboshaft/csa-branch-elimination-phase.o.d.raw   -c
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'int v8::internal::MacroAssembler::PushAll(v8::internal::DoubleRegList, int)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:1720:7: error: 'Movsd' was not declared in this scope; did you mean 'movsd'?
+ 1720 |       Movsd(Operand(rsp, slot), reg);
+      |       ^~~~~
+      |       movsd
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:1723:7: error: 'Movdqu' was not declared in this scope; did you mean 'movdqu'?
+ 1723 |       Movdqu(Operand(rsp, slot), reg);
+      |       ^~~~~~
+      |       movdqu
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'int v8::internal::MacroAssembler::PopAll(v8::internal::DoubleRegList, int)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:1736:7: error: 'Movsd' was not declared in this scope; did you mean 'movsd'?
+ 1736 |       Movsd(reg, Operand(rsp, slot));
+      |       ^~~~~
+      |       movsd
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:1739:7: error: 'Movdqu' was not declared in this scope; did you mean 'movdqu'?
+ 1739 |       Movdqu(reg, Operand(rsp, slot));
+      |       ^~~~~~
+      |       movdqu
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'void v8::internal::MacroAssembler::Cvtqui2ss(v8::internal::XMMRegister, v8::internal::Register)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:1931:3: error: 'Addss' was not declared in this scope; did you mean 'addss'?
+ 1931 |   Addss(dst, dst);
+      |   ^~~~~
+      |   addss
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'void v8::internal::MacroAssembler::Cvtqui2sd(v8::internal::XMMRegister, v8::internal::Register)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:1955:3: error: 'Addsd' was not declared in this scope; did you mean 'addsd'?
+ 1955 |   Addsd(dst, dst);
+      |   ^~~~~
+      |   addsd
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In function 'void v8::internal::{anonymous}::ConvertFloatToUint64(v8::internal::MacroAssembler*, v8::internal::Register, OperandOrXMMRegister, v8::internal::Label*)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:2113:11: error: 'class v8::internal::MacroAssembler' has no member named 'Addsd'; did you mean 'addsd'? [-Wtemplate-body]
+ 2113 |     masm->Addsd(kScratchDoubleReg, src);
+      |           ^~~~~
+      |           addsd
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:2117:11: error: 'class v8::internal::MacroAssembler' has no member named 'Addss'; did you mean 'addss'? [-Wtemplate-body]
+ 2117 |     masm->Addss(kScratchDoubleReg, src);
+      |           ^~~~~
+      |           addss
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In function 'void v8::internal::{anonymous}::ConvertFloatToUint32(v8::internal::MacroAssembler*, v8::internal::Register, OperandOrXMMRegister, v8::internal::Label*)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:2151:11: error: 'class v8::internal::MacroAssembler' has no member named 'Addsd'; did you mean 'addsd'? [-Wtemplate-body]
+ 2151 |     masm->Addsd(kScratchDoubleReg, src);
+      |           ^~~~~
+      |           addsd
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:2155:11: error: 'class v8::internal::MacroAssembler' has no member named 'Addss'; did you mean 'addss'? [-Wtemplate-body]
+ 2155 |     masm->Addss(kScratchDoubleReg, src);
+      |           ^~~~~
+      |           addss
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'void v8::internal::MacroAssembler::Move(v8::internal::XMMRegister, v8::internal::XMMRegister)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:3153:5: error: 'Movaps' was not declared in this scope; did you mean 'movaps'?
+ 3153 |     Movaps(dst, src);
+      |     ^~~~~~
+      |     movaps
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'void v8::internal::MacroAssembler::Move(v8::internal::XMMRegister, uint32_t)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:3195:16: error: 'Pslld' was not declared in this scope; did you mean 'pslld'?
+ 3195 |       if (ntz) Pslld(dst, static_cast<uint8_t>(ntz + nlz));
+      |                ^~~~~
+      |                pslld
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'void v8::internal::MacroAssembler::Move(v8::internal::XMMRegister, uint64_t)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:3206:5: error: 'Xorpd' was not declared in this scope; did you mean 'xorpd'?
+ 3206 |     Xorpd(dst, dst);
+      |     ^~~~~
+      |     xorpd
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:3214:16: error: 'Psllq' was not declared in this scope; did you mean 'psllq'?
+ 3214 |       if (ntz) Psllq(dst, static_cast<uint8_t>(ntz + nlz));
+      |                ^~~~~
+      |                psllq
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:3215:16: error: 'Psrlq' was not declared in this scope; did you mean 'psrlq'?
+ 3215 |       if (nlz) Psrlq(dst, static_cast<uint8_t>(nlz));
+      |                ^~~~~
+      |                psrlq
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In member function 'void v8::internal::MacroAssembler::Move(v8::internal::XMMRegister, uint64_t, uint64_t)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:3232:5: error: 'Punpcklqdq' was not declared in this scope; did you mean 'punpcklqdq'?
+ 3232 |     Punpcklqdq(dst, dst);
+      |     ^~~~~~~~~~
+      |     punpcklqdq
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc: In function 'void v8::internal::{anonymous}::PinsrdPreSse41Helper(v8::internal::MacroAssembler*, v8::internal::XMMRegister, Op, uint8_t, uint32_t*)':
+../deps/v8/src/codegen/sparc64/macro-assembler-sparc64.cc:3814:11: error: 'class v8::internal::MacroAssembler' has no member named 'Movss'; did you mean 'movss'? [-Wtemplate-body]
+ 3814 |     masm->Movss(dst, kScratchDoubleReg);
+      |           ^~~~~
+      |           movss
